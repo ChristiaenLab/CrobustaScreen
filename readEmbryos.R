@@ -128,9 +128,9 @@ dat.phenotype$Date <- sub('.*\\.','',dat.phenotype[,1])
 dir.csv(dat.phenotype,'dat','out',row.names=F,append.date=F)
 
 groups <- dat.phenotype[,c(
-	'Row.names', 'Condition', 'Phenotype', 'nTVC', 'nATM',
-	'migration.perturbed', 'orientation.perturbed', 'division.perturbed',
-	'TVC.contiguous', 'ATM.contiguous'
+	'Row.names', 'Condition', 'Phenotype', #'nTVC', 'nATM',
+	'migration.perturbed', 'orientation.perturbed', 'division.perturbed'
+	#'TVC.contiguous', 'ATM.contiguous'
 )]
 dir.csv(groups,'groups','out',row.names=F,append.date=F)
 

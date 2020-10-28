@@ -41,8 +41,7 @@ def savePDF(fig, fname):
 df = pd.read_csv(args.params, index_col='Row.names')
 
 ann = pd.read_csv(args.groups, index_col='Row.names')
-
-adata = sc.AnnData(df.values, obs=ann, var=df.columns)
+adata = sc.AnnData(df.values, obs=ann)#, var=df.columns)
 
 adata.var_names = df.columns
 
@@ -62,17 +61,17 @@ sc.tl.leiden(ddata, resolution = 1)
 sc.tl.umap(ddata, min_dist = 0.01)
 
 fig, ax = dewaxer.plot_global_performance()
-savePDF(fig,'global')
+savePDF(fig, 'global')
 fig, ax = dewaxer.plot_local_performance()
-savePDF(fig,'local')
+savePDF(fig, 'local')
 
 ddata.write_csvs(os.path.join(sc.settings.figdir, 'dat'), skip_data=False)
 
 sc.pl.embedding(ddata, basis='umap', color=ddata.obs.columns, edges=True)
 
-Rcmd = "Rscript dewakss.R --params " + args.params + " --clusts " + os.path.join(sc.settings.figdir, 'dat/obs.csv') + " --out " + os.path.join(args.out, fdate)
+Rcmd = "Rscript runDewakss.R --params " + args.params + " --clusts " + os.path.join(sc.settings.figdir, 'dat/obs.csv') + " --out " + os.path.join(args.out, fdate)
 print(Rcmd)
 os.system(Rcmd)
 
 sc.settings.figdir = os.path.join(sc.settings.figdir, 'feat')
-sc.pl.embedding(ddata, basis='umap', color=ddata.var_names,edges=True)
+sc.pl.embedding(ddata, basis='umap', color=ddata.var_names, edges=True)

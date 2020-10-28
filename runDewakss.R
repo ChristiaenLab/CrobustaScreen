@@ -6,8 +6,8 @@ library(optparse)
 
 parser <- OptionParser()
 parser <- add_option(parser, '--params', action = 'store',default = 'out/params.csv')
-parser <- add_option(parser, '--clusts', action = 'store',default = 'out/2020-10-14/raw/dat/obs.csv')
-parser <- add_option(parser,'--out',action='store',default='out/2020-10-14/raw')
+parser <- add_option(parser, '--clusts', action = 'store',default = 'out/raw/2020_10_28/dat/obs.csv')
+parser <- add_option(parser,'--out',action='store',default='out/raw/2020_10_28')
 opts <- parse_args(parser)
 
 # This script contains the dotplot function.
