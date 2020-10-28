@@ -10,11 +10,6 @@ import pandas as pd
 from dewakss import denoise as dewakss
 from datetime import date
 import argparse
-import sys
-if __name__ == '__main__':
-    if '-f' in sys.argv:
-        sys.argv.remove('-f')
-    main()
 
 parser = argparse.ArgumentParser(description='Cluster embryo data using DEWAKSS to find the optimal number of neighbors and PCs.')
 
