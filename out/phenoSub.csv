@@ -1,1 +1,848 @@
 "Row.names","Condition","Phenotype","migration.perturbed","orientation.perturbed","division.perturbed"
+"ADF.Cofilin.slide1_image1_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image1_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image10.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image14_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image15.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image16.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image17_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image17_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image18_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image19_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image19_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image20_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image25_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image28_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image4_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image40_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image40_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image43.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image45_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image46.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image49.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image6.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide1_image7.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image11_left.2019_08_29","ADF","orientation perturbed",FALSE,TRUE,FALSE
+"ADF.Cofilin.slide2_image11_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image13_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image14_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image14_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image2_right.2019_08_29","ADF","division perturbed",FALSE,FALSE,TRUE
+"ADF.Cofilin.slide2_image20.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image25.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image27.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image28.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image29_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image31_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image32_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image33_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image4_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image9_left.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"ADF.Cofilin.slide2_image9_right.2019_08_29","ADF","WT",FALSE,FALSE,FALSE
+"Arhgef8.image1_left.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.image1_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image10_left.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.image10_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image11_left.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.image11_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image12.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image13_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image13_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image14.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image15.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image17_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image17_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image18.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.image19.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image2_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image2_right.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.image3_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image3_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image4_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image4_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image5.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image6.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.image7.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image8.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.image9.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image1_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image1_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image10_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image11.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image12.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image13_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image14.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image15.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image16.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image2.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.nextpart_image3.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image4.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image5.2020_01_10","Arhgef8","orientation perturbed",FALSE,TRUE,FALSE
+"Arhgef8.nextpart_image6_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image7_left.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image7_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image8.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Arhgef8.nextpart_image9_right.2020_01_10","Arhgef8","WT",FALSE,FALSE,FALSE
+"Col9a1.image1.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Col9a1.image12_right.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Col9a1.image16_left.2020_07_23","Col9a1","division/orientation perturbed",FALSE,TRUE,TRUE
+"Col9a1.image16_right.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Col9a1.image17_left.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Col9a1.image18_right.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Col9a1.image3_left.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Col9a1.image5_left.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Col9a1.image5_right.2020_07_23","Col9a1","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image1_left.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image11.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image14_right.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image17_left.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image2_right.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image23.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image25.2019_08_29","Daam","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Daam.slide1_image26_right.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image28.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image31_right.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image5_left.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image7_right.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide1_image8_left.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide2_image10_left.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide2_image12.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide2_image15.2019_08_29","Daam","orientation perturbed",FALSE,TRUE,FALSE
+"Daam.slide2_image22.2019_08_29","Daam","orientation perturbed",FALSE,TRUE,FALSE
+"Daam.slide2_image26_right.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide2_image27_left.2019_08_29","Daam","WT",FALSE,FALSE,FALSE
+"Daam.slide2_image5.2019_08_29","Daam","orientation perturbed",FALSE,TRUE,FALSE
+"Daam.slide2_image7.2019_08_29","Daam","orientation perturbed",FALSE,TRUE,FALSE
+"Ddr.image1_right.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image12.2020_07_23","Ddr","division/orientation perturbed",FALSE,TRUE,TRUE
+"Ddr.image13_left.2020_07_23","Ddr","division perturbed",FALSE,FALSE,TRUE
+"Ddr.image2_right.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image2.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image3_left.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image3_right.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image3.2020_07_23","Ddr","orientation perturbed",FALSE,TRUE,FALSE
+"Ddr.image4.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image6_left.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image7.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image7.2020_07_23.1","Ddr","WT",FALSE,FALSE,FALSE
+"Ddr.image9_right.2020_07_23","Ddr","WT",FALSE,FALSE,FALSE
+"Depdc.image1_right.2020_06_17","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image1.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image10.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image11_left.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image11_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image12.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image13.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image14_right.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image15_left.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image16_left.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image16_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image17_left.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image17_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image18_left.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image18_right.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image19_right.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image2_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image2.2020_06_17","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image20_left.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image20_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image21.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image22_left.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image22_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image3.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image3.2020_06_17","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image4_left.2020_06_17","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image4.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image5_left.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image5_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image6_right.2020_06_17","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image6.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image7_left.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image7_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image8_left.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image8_right.2020_01_10","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.image9_left.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.image9_right.2020_01_10","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image1.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image10.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image10.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image11.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image11.2020_02_06","Depdc","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Depdc.slide1_image12.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image12.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image13.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image13.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image14_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image14_right.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image14.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image15_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image15_right.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image15.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image16_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image16_left.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image16_right.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image16_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image17_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image17_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image17.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image18_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image18_right.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image18.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image19_left.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image19_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image19.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image2.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image20_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image20_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image20_right.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image20_right.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image21_left.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image21_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image22.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image23_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image24_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image24_right.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image25_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image25_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image3_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image3_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image3.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image4_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image4_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image4.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image5.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image5.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image6.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image6.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image7_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image7_right.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image7_right.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image8_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide1_image8_right.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image8_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image9_left.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide1_image9.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image1.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image1.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image10_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image10_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image10_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image11_left.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image11_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image11.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image12_left.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image12_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image12_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image12_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image13.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image14.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image15.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image16.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image17.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image19_left.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image2_left.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image2_left.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image2_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image2_right.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image20.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image21.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image3_right.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image3.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image4.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image5_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image5_right.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image5.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image6.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image6.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image7_left.2020_02_06","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image7_right.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image7.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image8.2019_08_29","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image8.2020_02_06","Depdc","orientation perturbed",FALSE,TRUE,FALSE
+"Depdc.slide2_image9.2019_08_29","Depdc","WT",FALSE,FALSE,FALSE
+"Depdc.slide2_image9.2020_02_06","Depdc","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Dync2h.image1_right.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"Dync2h.image10.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"Dync2h.image11_left.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"Dync2h.image11_right.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"Dync2h.image12.2020_06_17","Dync2h","division perturbed",FALSE,FALSE,TRUE
+"Dync2h.image19_right.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"Dync2h.image2.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"Dync2h.image7.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"Dync2h.image8.2020_06_17","Dync2h","migration perturbed",TRUE,FALSE,FALSE
+"Dync2h.image9_right.2020_06_17","Dync2h","WT",FALSE,FALSE,FALSE
+"EPB4.1.image4.2020_06_17","EPB4","migration/division perturbed",TRUE,FALSE,TRUE
+"EPB4.1.image6.2020_06_17","EPB4","WT",FALSE,FALSE,FALSE
+"EPB4.1.image9_right.2020_06_17","EPB4","WT",FALSE,FALSE,FALSE
+"Eph.image1.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image10_right.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image11.2020_06_17","Eph","division/orientation perturbed",FALSE,TRUE,TRUE
+"Eph.image12_left.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image14.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image16.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image17_left.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image17_right.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image18_left.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image18_right.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image2.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image20.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image3.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image4.2020_06_17","Eph","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Eph.image6.2020_06_17","Eph","WT",FALSE,FALSE,FALSE
+"Eph.image9.2020_06_17","Eph","migration perturbed",TRUE,FALSE,FALSE
+"Eph.slide1_image1_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image10.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image11.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image12_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image14.2020_02_06","Eph","orientation perturbed",FALSE,TRUE,FALSE
+"Eph.slide1_image15.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image18_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image19_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image22_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image22_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image25_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image25_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image26_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image31_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image31_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image33_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image5_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image7_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide1_image9_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image1_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image1_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image10.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image13.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image14_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image14_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image19_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image20.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image23_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image23_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image25_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image27_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image28_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image28_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image3.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image4_left.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image4_right.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image5.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image6.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image7.2020_02_06","Eph","WT",FALSE,FALSE,FALSE
+"Eph.slide2_image9.2020_02_06","Eph","orientation perturbed",FALSE,TRUE,FALSE
+"Farp.image1_right.2020_01_10","Farp","orientation perturbed",FALSE,TRUE,FALSE
+"Farp.image10_right.2020_06_17","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image10.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image13_left.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image14_right.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image15.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image16_right.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image19_right.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image2_left.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image20.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image22_left.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image23.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image24_left.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image24_right.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image25_left.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image25_right.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image26.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image27.2020_01_10","Farp","orientation perturbed",FALSE,TRUE,FALSE
+"Farp.image28.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image29.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image4_left.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image4_left.2020_06_17","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image4_right.2020_06_17","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image6.2020_01_10","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image7_left.2020_06_17","Farp","WT",FALSE,FALSE,FALSE
+"Farp.image7_right.2020_06_17","Farp","WT",FALSE,FALSE,FALSE
+"Foxf.image1_right.2020_07_14","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image1.2020_07_23","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image10_left.2020_07_14","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image10_left.2020_07_23","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image10_right.2020_07_23","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image10.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image11.2020_06_17","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image11.2020_07_14","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image15_left.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image15_right.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image17_left.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image19_left.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image19_right.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image2.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image2.2020_07_14","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image3.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image3.2020_07_14","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image4.2020_06_17","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image4.2020_07_23","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image5_right.2020_07_23","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.image5.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image6.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image7.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image7.2020_07_14","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image7.2020_07_23","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image8.2020_07_14","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image9.2020_06_17","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.image9.2020_07_23","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image1.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image11.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image12.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image14_left.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image15_right.2020_02_06","Foxf","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Foxf.slide1_image16.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image17.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image18.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image19.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image2.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image20.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image21.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image22_left.2020_02_06","Foxf","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Foxf.slide1_image22_right.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image3.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image5.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image6.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image7.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide1_image8.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide1_image9.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image1.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image10.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image11.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image12_left.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image12_right.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image13.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image14_left.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image14_right.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image15.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image16.2020_02_06","Foxf","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Foxf.slide2_image18.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image19.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image2.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image20.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image21.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image22.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image24.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image25_left.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image26.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image27_left.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image28.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image29.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image3_left.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image30_left.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image30_right.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image31_left.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image31_right.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image32.2020_02_06","Foxf","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Foxf.slide2_image4.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image5.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image6.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image7.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Foxf.slide2_image8.2020_02_06","Foxf","WT",FALSE,FALSE,FALSE
+"Foxf.slide2_image9.2020_02_06","Foxf","orientation perturbed",FALSE,TRUE,FALSE
+"Gata.image1.2020_06_17","Gata","WT",FALSE,FALSE,FALSE
+"Gata.image2_right.2020_06_17","Gata","WT",FALSE,FALSE,FALSE
+"Gata.image3.2020_06_17","Gata","WT",FALSE,FALSE,FALSE
+"Gata.image3.2020_06_17.1","Gata","WT",FALSE,FALSE,FALSE
+"Gata.image4_left.2020_06_17","Gata","WT",FALSE,FALSE,FALSE
+"Gata.image4_right.2020_06_17","Gata","WT",FALSE,FALSE,FALSE
+"Gata.image4.2020_06_17","Gata","division perturbed",FALSE,FALSE,TRUE
+"Gata.image6_left.2020_06_17","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image1.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image10_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image10_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image11_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image11_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image14_right.2020_02_06","Gata","orientation perturbed",FALSE,TRUE,FALSE
+"Gata.slide1_image15_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image15_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image18_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image2.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image3_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image3_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image6_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image6_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image7_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide1_image7_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image10.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image12_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image13.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image14.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image15_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image16_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image16_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image19_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image2_left.2020_02_06","Gata","orientation perturbed",FALSE,TRUE,FALSE
+"Gata.slide2_image2_right.2020_02_06","Gata","orientation perturbed",FALSE,TRUE,FALSE
+"Gata.slide2_image21.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image22.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image3_left.2020_02_06","Gata","orientation perturbed",FALSE,TRUE,FALSE
+"Gata.slide2_image3_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image4_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image5.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image7_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image7_right.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image8_left.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"Gata.slide2_image9.2020_02_06","Gata","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image10.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image11.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image12_left.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image14_left.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image15_left.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image17_left.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image18.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image19_left.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image19_right.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image20_left.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image3_left.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image3_right.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"GNA.L.S.image6_right.2020_06_17","GNA","WT",FALSE,FALSE,FALSE
+"Gna12.13.image1.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image1.2020_06_17","Gna12","orientation perturbed",FALSE,TRUE,FALSE
+"Gna12.13.image10.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image10.2020_06_17","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image12.2020_06_17","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image13.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image14.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image15_right.2020_06_17","Gna12","migration perturbed",TRUE,FALSE,FALSE
+"Gna12.13.image15.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image16.2020_01_10","Gna12","orientation perturbed",FALSE,TRUE,FALSE
+"Gna12.13.image2.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image3.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image4_left.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image4_right.2020_01_10","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image4.2020_06_17","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image5.2020_06_17","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image7.2020_01_10","Gna12","migration perturbed",TRUE,FALSE,FALSE
+"Gna12.13.image7.2020_06_17","Gna12","WT",FALSE,FALSE,FALSE
+"Gna12.13.image9.2020_01_10","Gna12","migration perturbed",TRUE,FALSE,FALSE
+"NDE.image10_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image10_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image11_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image11_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image13.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image15_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image16.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image17_left.2020_06_17","NDE","orientation perturbed",FALSE,TRUE,FALSE
+"NDE.image19_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image19_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image2_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image2_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image20_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image21_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image21_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image3_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image4_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image4_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image5_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image5_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image6_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image6_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image8_left.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"NDE.image8_right.2020_06_17","NDE","WT",FALSE,FALSE,FALSE
+"Paxillin.image1.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image10.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image11_right.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image12.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image13.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image14_left.2020_07_14","Paxillin","division perturbed",FALSE,FALSE,TRUE
+"Paxillin.image14_right.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image15.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image16.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image17.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image18_right.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image19_left.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image3.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image6.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image7.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image8.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image9_left.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.image9_right.2020_07_14","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image1_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image12.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image13_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image13_right.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image16.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image19.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image2.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image21.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image22.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image23_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image24.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image26_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image27.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image28_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image28_right.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image30_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image31_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image31_right.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image8.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide1_image9.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image1.2019_08_29","Paxillin","orientation perturbed",FALSE,TRUE,FALSE
+"Paxillin.slide2_image10.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image12_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image12_right.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image14.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image16.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image17.2019_08_29","Paxillin","migration/orientation perturbed",TRUE,TRUE,FALSE
+"Paxillin.slide2_image2_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image21_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image24_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image24_right.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image4.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image6.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image8_left.2019_08_29","Paxillin","WT",FALSE,FALSE,FALSE
+"Paxillin.slide2_image9.2019_08_29","Paxillin","orientation perturbed",FALSE,TRUE,FALSE
+"Rab5.image1_right.2020_07_23","Rab5","division perturbed",FALSE,FALSE,TRUE
+"Rab5.image1.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image10.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image11.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image12_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image12.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image13_left.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image13_right.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image13_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image14_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image14.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image15_left.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image17_left.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image17_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image18_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image18.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image19_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image19.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image20_left.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image20_left.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image20_right.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image20_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image21_left.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image3_left.2020_07_23","Rab5","division perturbed",FALSE,FALSE,TRUE
+"Rab5.image3_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image3.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image4.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image5_left.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image5_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image6.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image7_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image8_right.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image8_right.2020_07_23","Rab5","migration/division perturbed",TRUE,FALSE,TRUE
+"Rab5.image9_left.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image9_right.2020_07_23","Rab5","WT",FALSE,FALSE,FALSE
+"Rab5.image9.2020_07_14","Rab5","WT",FALSE,FALSE,FALSE
+"Rabep.image10.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image11.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image12_right.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image14.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image17.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image18_left.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image19.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image2.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image20.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rabep.image7_right.2020_07_14","Rabep","WT",FALSE,FALSE,FALSE
+"Rho.image1.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image10_right.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image12_left.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image13_right.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image14.2020_06_17","Rho","division perturbed",FALSE,FALSE,TRUE
+"Rho.image15.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image18.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image19_left.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image2_left.2020_06_17","Rho","orientation perturbed",FALSE,TRUE,FALSE
+"Rho.image2_right.2020_06_17","Rho","orientation perturbed",FALSE,TRUE,FALSE
+"Rho.image3.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image4.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image5.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image7.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image8.2020_06_17","Rho","WT",FALSE,FALSE,FALSE
+"Rho.image9.2020_06_17","Rho","orientation perturbed",FALSE,TRUE,FALSE
+"Rho.slide1_image10_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image10_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image12_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image12_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image14.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image15_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image16.2020_02_06","Rho","orientation perturbed",FALSE,TRUE,FALSE
+"Rho.slide1_image18_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image18_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image19.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image2.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image20.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image21.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image22.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image23.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image30_left.2020_02_06","Rho","orientation perturbed",FALSE,TRUE,FALSE
+"Rho.slide1_image31.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image4.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image5_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image5_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image6.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image7.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image8.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide1_image9.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image10.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image11.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image12_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image13_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image14_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image14_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image16_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image16_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image17.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image18.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image20_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image23_left.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image23_right.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image24.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image25.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image26.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image3.2020_02_06","Rho","orientation perturbed",FALSE,TRUE,FALSE
+"Rho.slide2_image4.2020_02_06","Rho","WT",FALSE,FALSE,FALSE
+"Rho.slide2_image9.2020_02_06","Rho","orientation perturbed",FALSE,TRUE,FALSE
+"Rock.image1_left.2020_07_23","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image1_right.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image10.2020_07_14","Rock","division perturbed",FALSE,FALSE,TRUE
+"Rock.image13_right.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image14.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image15.2020_07_14","Rock","orientation perturbed",FALSE,TRUE,FALSE
+"Rock.image18_left.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image19_right.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image20_left.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image20_right.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image3.2020_07_23","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image4.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image4.2020_07_23","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image6_right.2020_07_23","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image6.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image7.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image8_left.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image8_right.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Rock.image9.2020_07_14","Rock","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image1_left.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image1.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image1.2020_07_23","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image10_right.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image10.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image10.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image10.2020_07_23","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image11.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image12.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image12.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image13.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image14_left.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image14_left.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image14_right.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image15_left.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image15_left.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image15_right.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image15_right.2020_07_14","Tyrosinase","orientation perturbed",FALSE,TRUE,FALSE
+"Tyrosinase.image16_left.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image16_right.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image17.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image17.2020_07_14","Tyrosinase","orientation perturbed",FALSE,TRUE,FALSE
+"Tyrosinase.image2.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image2.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image2.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image3_left.2020_07_23","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image3_right.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image3_right.2020_07_23","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image3.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image3.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image4.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image5_left.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image5_left.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image5_right.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image6_left.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image6_left.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image6_right.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image6.2020_07_23","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image7_left.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image7_right.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image7.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image7.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image7.2020_07_23","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image8_left.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image8.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image8.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image9_left.2020_07_14","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image9.2020_01_10","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image9.2020_06_17","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.image9.2020_07_23","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image1.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image10_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image10_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image11_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image11_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image12.2019_08_29","Tyrosinase","migration perturbed",TRUE,FALSE,FALSE
+"Tyrosinase.slide1_image13.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image14.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image15.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image16.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image17.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image18_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image18_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image19_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image19_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image2_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image2_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image20.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image3_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image3_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image4_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image4_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image4.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image5_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image5_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image5.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image6_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image6_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image6.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image7_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image7_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image7_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image7_right.2020_02_06","Tyrosinase","migration perturbed",TRUE,FALSE,FALSE
+"Tyrosinase.slide1_image8_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image8_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image8_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image8_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image9_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide1_image9_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image1.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image1.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image10_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image10.2019_08_29","Tyrosinase","orientation perturbed",FALSE,TRUE,FALSE
+"Tyrosinase.slide2_image11_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image11_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image11.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image12_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image12_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image13_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image13_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image13.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image14.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image14.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image15.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image15.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image16_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image17.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image18_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image18_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image19.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image2_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image20.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image21.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image22_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image22_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image23_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image23_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image3.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image3.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image4_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image4_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image4.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image5_left.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image5_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image6_left.2020_02_06","Tyrosinase","orientation perturbed",FALSE,TRUE,FALSE
+"Tyrosinase.slide2_image6_right.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image7.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image8.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image9_left.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image9_right.2019_08_29","Tyrosinase","WT",FALSE,FALSE,FALSE
+"Tyrosinase.slide2_image9.2020_02_06","Tyrosinase","WT",FALSE,FALSE,FALSE

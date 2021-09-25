@@ -1145,7 +1145,7 @@ Experiment date (EP),EP experimentator + Imaging acquisition,Condition,ID embryo
 2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image6,yes,22.5,21.5,-,-,yes,32.1,-,look like WT,all look like WT,correct,-
 2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image7,yes,17.4,10.8,-,-,yes,35.6,-,look like WT,all look like WT,correct,-
 2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image8_left,yes,9.72,13.8,-,-,yes,35.4,-,look like WT,all look like WT,not good,-
-2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image8_right,yes,17.9,11.4,-,-,yes,37.5,-,look like WT (but the 4 cells are not  in the medio-lateral position: but no feature to extract this),all look like WT (but the 4 cells are not  in the medio-lateral position: but no feature to extract this),correct,Don't see all the ATM cells (image not centered and the 4 cells are not in the medio-lateral position but no feature to extract this
+2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image8_right,yes,17.9,11.4,-,-,yes,37.5,-,look like WT (but the 4 cells are not  in the medio-lateral position: but no feature to extract this),all look like WT (but the 4 cells are not  in the medio-lateral position: but no feature to extract this),correct,Don't see all the ATM cells (image not centered) and the 4 cells are not in the medio-lateral position but no feature to extract this
 2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image9,yes,15.3,11,-,-,yes,36.2,-,look like WT,all look like WT,not good,-
 2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image10,yes,22,17.1,-,-,yes,31.7,-,look like WT (but seems opposite asymmetric division between both TVCs),all look like WT (but seems opposite asymmetric division between both TVCs),not good,Seems opposite asymmetric division between both TVCs
 2020-07-14,Yelena Bernadskaya,3G / Rock,15072020_image12,yes,21.2,14,-,-,yes,9.54,-,problem division,the 2 TVCs didn't divide in the trunk,not good,Don't see all the ATM cells (image not centered)
@@ -1210,14 +1210,13 @@ Experiment date (EP),EP experimentator + Imaging acquisition,Condition,ID embryo
 2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image16_right,yes,27.3,17.6,-,-,yes,9.89,-,problem migration,one of the ATM migrated with the TVCs in the trunk,correct,"Ambiguous phenotype between left and right, missing a part of the segmentation not detected"
 2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image17_left,yes,27.3,18.2,-,-,yes,5.52,-,problem migration and division,"the ATMs group migrated a bit in the trunk, and one of the TVC didn't divide in the trunk",good,-
 2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image17_right,yes,27.3,16.2,-,-,yes,35.7,-,look like WT,all look like WT,good,Don't see all the ATM cells (image not centered)
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image18_left,yes,,,-,-,yes,,-,"problem division (but not seen in the segmentation, because nuclei are far enough)","one of the TVC divided not completely (not seen in the segmentation, because the nuclei are far enough so considered as 2 cells)",not good,-
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image18_right,yes,,,-,-,yes,,-,look like WT,all look like WT,not good,-
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image19_left,yes,,,-,-,yes,,-,problem division,one of the TVC didn't divide in the trunk,good,-
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image19_right,yes,,,-,-,yes,,-,look like WT,all look like WT,correct,-
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image20_left,yes,,,-,-,yes,,-,look like WT,all look like WT,not good,-
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image20_right,yes,,,-,-,yes,,-,look like WT,all look like WT,correct,-
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image21_left,yes,,,-,-,yes,,-,look like WT,all look like WT,correct,-
-2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image21_right,yes,,,-,-,yes,0,groups connected,problem migration and division,"one of the ATM divided and migrated but not completely, so still attached to the other ATM and ",not good,-
+2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image18_right,yes,22.4,9.73,-,-,yes,38.4,-,look like WT,all look like WT,not good,-
+2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image19_left,yes,27.3,22.7,-,-,yes,42.9,-,problem division,one of the TVC didn't divide in the trunk and the TVC that divided was not completed but not seen in the segmenation because nuclei far enough from each other so considered as 2 cells,good,the TVC that divided was not completed but not seen the segmentation because the nuclei are enough far from each other so considered as 2 cells
+2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image19_right,yes,20.2,17.4,-,-,yes,34.6,-,look like WT,all look like WT,good,-
+2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image20_left,yes,25.1,20,-,-,yes,47.3,-,look like WT,all look like WT,good,-
+2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image20_right,yes,25.1,20,-,-,yes,47.3,-,look like WT,all look like WT,good,-
+2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image21_left,yes,25.2,20,-,-,yes,38.5,-,look like WT,all look like WT,good,-
+2020-07-23,Yelena Bernadskaya,10C / Rab5,28072020_image21_right,yes,25.2,17.8,-,-,yes,0,groups connected,problem migration and division,one of the ATM divided and migrated and still attached to the other ATM that migrated a bit; and one of the TVC didn't divide completely but not seen in the segmentation because nuclei are far enough to each other so considered as 2 cells,good,One of the TVC didn't divide completely but not seen in the segmentation because nuclei are far enough to each other so considered as 2 cells
 2020-07-23,Yelena Bernadskaya,Ddr,23072020_image1_left,yes,25.3,9.82,-,-,yes,33.2,-,problem division,one of the TVC didn't divide in the trunk,correct,-
 2020-07-23,Yelena Bernadskaya,Ddr,23072020_image1_right,yes,25.3,13,-,-,yes,35.7,-,look like WT,all look like WT,not good,-
 2020-07-23,Yelena Bernadskaya,Ddr,23072020_image2,yes,30.3,15.9,-,-,yes,39,-,look like WT,all look like WT,good,-
@@ -1240,92 +1239,816 @@ Experiment date (EP),EP experimentator + Imaging acquisition,Condition,ID embryo
 2020-07-23,Yelena Bernadskaya,Ddr,24072020_image12,yes,25.3,17.4,-,-,yes,33.6,-,"problem division and orientation (the TVC group is not oriented medio-lateral, but no feature to extract this and the division is not completed but not seen in the segmentation as the nuclei are far enough so considered as 2 cells)","one of the TVC divided not completely, but not seen in the segmentation, as the nuclei are far enough so considered as 2 cells (also the TVC group is not oriented medio-lateral, but no feature to extract this)",good,"One of the TVC divided not completely, but not seen in the segmentation, as the nuclei are far enough so considered as 2 cells and the TVC group is not oriented medio-lateral, but no feature to extract this"
 2020-07-23,Yelena Bernadskaya,Ddr,24072020_image13_left,yes,27.5,19.3,-,-,yes,60,-,"problem division (but not seen in the segmentation, because nuclei are far enough)","one of the TVC divided but not completely (not seen in the segmentation, because the nuclei are far enough so considered as 2 cells)",good,"One of the TVC divided but not completely (not seen in the segmentation, because the nuclei are far enough so considered as 2 cells)"
 2020-07-23,Yelena Bernadskaya,Ddr,24072020_image13_right,yes,27.5,10.6,-,-,yes,44.7,-,problem migration and division,"one of the TVC didn't migrate and didn't divide, it stayed in the tail, and the other TVC that migrated in the trunk didn't divide",correct,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image1,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image2,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image3,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image4,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image5,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image6,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image7,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image8,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image9,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image10,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image11,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image12,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image13,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image14,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image15,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image16,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image17,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image18,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image19,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image20,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image21,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image22,yes,,,-,-,yes,,-,,,,-
-2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image23,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
-2020-10-02,,,,,,,,,,,,,,,
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image1,yes,25.2,22.4,-,-,yes,34.5,-,look like WT,all look like WT,good,Don't see all the ATM cells (image not centered)
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image3_left,yes,25.1,17.5,-,-,yes,55.1,-,look like WT,"all look like WT (one TVC started to do the second division, but not seen in segmentation because nuclei too close to each other) ",good,"One TVC started to do the second division, but not seen in segmentation because nuclei too close to each other"
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image5_left,yes,25.2,13.2,-,-,yes,32.5,-,look like WT,"all look like WT (the 2 TVCs seemed to start the second division, but not seen in segmentation because nuclei too close to each other) ",good,"Don't see all the ATM cells (image not centered), and the 2 TVCs seemed to start the second division, but not seen in segmentation because nuclei too close to each other"
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image5_right,yes,25.2,13.2,-,-,yes,36.7,-,look like WT,all look like WT,good,Don't see all the ATM cells (image not centered)
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image7,yes,20.2,8.44,-,-,yes,0,groups connected,problem migration,one of the ATM migrated in the trunk with the TVCs,correct,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image8,yes,25.4,20,-,-,yes,3.65,-,problem migration and division,"the TVCs group didn't migrate very far, and one of the TVC didn't divide in the trunk",good,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image12_left,yes,22.5,15.3,-,-,yes,16.6,-,problem division,the 2 TVCs didn't divide in the trunk,not good,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image12_right,yes,22.5,20.4,-,-,yes,40.4,-,look like WT (but the 4 cells are not  in the medio-lateral position: but no feature to extract this),all look like WT (but the 4 cells are not  in the medio-lateral position: but no feature to extract this),correct,The 4 cells are not in the medio-lateral position but no feature to extract this
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image13,yes,27.6,22.5,-,-,yes,17.1,-,problem division,one of the TVC didn't divide in the trunk,good,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image14,yes,47.7,15.2,-,-,yes,-,only one group in the trunk - no distance,problem migration and division,the 2 ATMs migrated in the trunk with the TVCs and the 2 TVCs didn't divide,good,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image15,yes,35.7,10.4,-,-,yes,33.9,-,problem division,one of the TVC didn't divide in the trunk,good,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image16_left,yes,20.1,16.5,-,-,yes,42.2,-,"problem division (but not seen in the segmentation, because nuclei are far enough) and problem orientation, division inantero posterior orientation not medio-lateral","one of the TVC didn't divide completely in the trunk (not seen in the segmentation because the nuclei are far enough to each other so considered as 2 cells), division in the antero-posterior orentation not medio-lateral (but no feature to extract this)",correct,a TVC didn't divide completely (but not seen in the segmentation because the nuclei are far enough to each other so considered as 2 cells
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image16_right,yes,20.1,16.5,-,-,yes,25.2,-,look like WT,all look like WT,correct,Don't see all the ATM cells (image not centered)
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image17_left,yes,17.4,11.2,-,-,yes,38.2,-,look like WT,all look like WT,correct,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image18_left,yes,17.5,11.7,-,-,yes,19.4,-,problem migration and division,"one of the ATM migrated in the trunk with the TVCs, and the 2 TVCs didn't divide",correct,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image18_right,yes,6.22,11.7,-,-,yes,24.8,-,look like WT,all look like WT,correct,-
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image19_left,yes,22.3,10.4,-,-,yes,7.96,-,problem migration and division,"one of the ATM divided and on of it migrated a bit in the trunk, and also one of the TVC didn't divide in the trunk",correct,Ambiguous phenotype between left and right
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image19_right,yes,22.3,10.4,-,-,yes,21.2,-,problem division,the 2 TVCs didn't divide in the trunk,correct,Ambiguous phenotype between left and right
+2020-07-23,Yelena Bernadskaya,Col9a1,24072020_image20,yes,36,12.6,-,-,yes,34.6,-,problem migration and division,"one of the ATM migrated in the trunk with the TVCs, and the 2 TVCs didn't divide",good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image1_left,yes,45.2,25.8,-,-,yes,36.6,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image1_right,yes,45.2,25.8,-,-,yes,35.7,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image2_left,yes,69.6,22.3,-,-,yes,26.6,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image2_right,yes,50.3,19.4,-,-,yes,29.4,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image3,yes,80.1,27.4,-,-,yes,0,-,problem migration and division,one of the ATM migrated in the trunk and divided with the TVCs,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image5_left,yes,40.2,30,-,-,yes,24.8,-,look like WT,all look like WT,not good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image5_right,yes,67.3,30,-,-,yes,36.2,-,look like WT,all look like WT,not good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image6,yes,79.1,32.4,-,-,yes,28.4,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide1_Image7,yes,93.5,22.6,-,-,yes,40,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image1,yes,73.2,22.5,-,-,yes,30.7,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image2,yes,82.1,26.3,-,-,yes,40,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image3,yes,82.3,34.2,-,-,yes,35.8,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image4_left,yes,89,27.8,-,-,yes,32.3,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image4_right,yes,89,27.8,-,-,yes,21.1,-,problem orientation and division,one of the ATM divided in the tail and the 2 TVCs divided but not in the medio-laterale orientation but no features to extract this,correct,Segmentation doesn't reflect the correct signal
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image5_left,yes,79.8,34.5,-,-,yes,29.2,-,look like WT,all look like WT,correct,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image5_right,yes,79.8,30.7,-,-,yes,36.7,-,look like WT,all look like WT,correct,-
+2020-10-06,Margaux Failla,Tyrosinase,Slide2_Image7,yes,93,30.2,-,-,yes,22,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image1,yes,81.8,32.6,-,-,yes,29.3,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image2,yes,82.8,27.1,-,-,yes,40.5,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image3_left,yes,87.8,37.5,-,-,yes,28,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image3_right,yes,87.8,35,-,-,yes,31.8,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image4,yes,86.5,35.2,-,-,yes,33.3,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",correct,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image5_right,yes,82.8,40.3,-,-,yes,23.8,-,problem orientation,"The 2 TVC divided not in the medio-lateral orientation, so cells are aligned",not good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image6,yes,84.3,50.3,-,-,yes,22,-,problem orientation,"The 2 TVC divided not in the medio-lateral orientation, so cells are aligned",good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image7_left,yes,80.6,40,-,-,yes,20.6,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image8_left,yes,88,35.2,-,-,yes,44.6,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image8_right,yes,80,29.4,-,-,yes,36,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide1_Image9,yes,78.6,32.4,-,-,yes,24.7,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",good,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image1,yes,79.3,37.4,-,-,yes,40.5,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",correct,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image2_left,yes,84.5,32.6,-,-,yes,45.8,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",correct,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image2_right,yes,84.5,32.6,-,-,yes,38.2,-,look like WT,all look like WT,correct,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image3_left,yes,60.3,29.9,-,-,yes,38.2,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",good,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image3_right,yes,75.1,40.2,-,-,yes,41.4,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image4,yes,88.3,30.6,-,-,yes,31.1,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",good,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image5_left,yes,83.6,27.7,-,-,yes,26.9,-,problem division (not seen in segmentation),"one TVC divided but not completely (not seen in the segmentation, because the nuclei are far enough to be segmented separately)",good,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image5_right,yes,83.6,27.7,-,-,yes,38.1,-,look like WT,all look like WT,correct,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image6,yes,74.8,37.4,-,-,yes,28.6,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells are aligned",not good,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image7_left,yes,45.3,27.6,-,-,yes,24.3,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Depdc,Slide2_Image7_right,yes,74.8,27.6,-,-,yes,20.5,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image1,yes,81.8,40.9,-,-,yes,27.2,-,problem orientation,"one of the TVC divided not in the medio-lateral orientation, so cells have not the correct orientation",correct,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image2,yes,87,35.2,-,-,yes,34.8,-,problem division,"one TVC divided but not completely (not seen in the segmentation, because the nuclei are far enough to be segmented separately), and the other TVC didn't divide",good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image3_left,yes,83.8,30.1,-,-,yes,33.4,-,problem migration and division,"one of the TVC didn't migrate and didn't divide, it stayed in the tail",good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image3_right,yes,77.5,25.3,-,-,yes,24.6,-,look like WT,all look like WT,good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image4,yes,83.8,33.3,-,-,yes,27.6,-,problem division,the 2 TVCs didn't divide in the trunk (one started to divide but nuclei still close so considered as 1 cell),not good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image5,yes,73,32.5,-,-,yes,0,groups connected,problem migration and division,"the 2 TVCs didn't migrate completely, so still attached to the ATMs in the tail, and the 2 TVCs didn't divide",correct,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image6,yes,70.9,23.6,-,-,yes,35.1,-,look like WT,all look like WT,not good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image7,yes,75.2,35.3,-,-,yes,9.39,-,problem migration and division,"the 2 TVCs didn't migrate completely in the trunk, and they didn't divide in the trunk, only 2 cells in the trunk",correct,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image8_left,yes,85.4,27.1,-,-,yes,16.2,-,problem divison,the 2 TVCs didn't divide in the trunk,correct,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image8_right,yes,62.9,18.4,-,-,yes,26,-,problem division,the 2 TVCs didn't divide in the trunk,correct,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image10_left,yes,70.4,40.3,-,-,yes,23.3,-,problem migration and division,"one of the ATM migrated in the trunk with the TVCs, and one of the TVCs didn't divide",correct,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image11,yes,89.8,30.4,-,-,yes,21.6,-,problem division,one of the TVCs didn't divide in the trunk,good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image12,yes,87.5,23,-,-,yes,25.3,-,look like WT,all look like WT,not good,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image13,yes,99,30.2,-,-,yes,12.5,-,problem migration and divsion,one of the TVC didn't migrate and didn't divide in the tail,correct,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image14,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image15,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image16,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image17,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image17,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,Slide1_Image18,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-06,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Tyrosinase,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Depdc,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Ets,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,Fgfr,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-10-07,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
+2020-11-10,Margaux Failla,,,yes,,,-,-,yes,,-,,,,-
