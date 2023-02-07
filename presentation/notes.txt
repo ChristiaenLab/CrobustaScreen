@@ -1,0 +1,82 @@
+For the new people, my major project has been developing a pipeline for automatic phenotype detection from 3D embryo images.
+
+Rationale
+We want to perform a large number of CRISPR-Cas9 perturbations in parallel and screen for embryonic phenotypes that can be detected in 3D confocal microscopy images. 
+(this number was 1703 as of the figures I'll be showing)
+Because we don't want to restrict ourselves to detecting known phenotypes, we can't just use known perturbations as a labeled training set.
+We don't know if any given perturbation will produce a unique phenotype or how completely penetrant a phenotype will be.
+We would like to be able to detect phenotypes that may not be apparent by eye, so we can't use experimenter-assigned labels.
+The difficult part is selecting hyperparameters for unsupervised clustering without a labeled training set.
+
+Overview
+The left side shows Margaux's procedure for obtaining the images. I'll be focusing on the right side.
+
+More Complicated Overview
+As you can see there's a lot to cover so I'll be glossing over a lot of details. If we have time I may be able to go over a few steps in more depth.
+
+Preprocessing
+The first step was to extract embryo-level summary statistics from the image segmentations.
+I computed 114 parameters normalized by z-score.
+
+
+Here we see the correlation between parameters. Strongly correlated parameters present a problem because each parameter additively contributes to distance used for clustering, resulting in disproportionate weight being given to phenotypes captured by multiple parameters.
+
+Previously I had adapted DEWAKSS for hyperparameter selection. 
+The problem with this approach is that it results in additive effects of redundant parameters. 
+The problem DEWAKSS is trying to address is sparce data. scRNA-seq experiments tend to have a lot of missing values, which DEWAKSS tries to impute.
+The problem with our data in contrast is that we have exact measurements for all of our parameters but don't know how informative each one is.
+
+I improved the dimension reduction by instead using an autoencoder, which is a method of reducing dimensionality based on information content. We probably won't have time to go into detail, but briefly it passes data through an encoder network to find a lower dimensional representation that can be read by a decoder network.
+
+This is the 2d representation I obtained from the parameters.
+
+I use the embeddings to find euclidean distance between embryo halves. To run the clustering the data needs to be represented as a graph. This can be done by taking the k nearest neighbors as the edges out of a node. This requires finding an optimal k, which in this case was 20. I'd like to come back to k selection, but first I'd like to explain the rationale behind this clustering method.
+
+The goal is to find a way of partitioning the graph that maximizes modularity.
+Modularity is useful because it lets us define clusters based on how well-connected the nodes are rather than directly using the coordinates. Maximizing modularity lets us perform unsupervised clustering without knowing how many clusters we should have.
+It's given by this equation, which actually has a rather intuitive interpretation. What this says is that the modularity H of a graph is the sum of the difference in each cluster between the number of edges between nodes in the cluster and the expected number of edges in the cluster as determined by the number of nodes in the cluster and average degree of nodes in the graph. 
+The problem is this resolution hyperparameter γ, which serves to define how much denser edges need to be within clusters than outside clusters, effectively where to draw the cluster boundaries.
+It's not actually computationally feasible to directly compute all possible modularity values. The Leiden algorithm approximates it using a method that's not important to understand the hyperparameter selection.
+
+I performed clusterings using 1000 random γ values.
+A low γ will result in larger clusters and a high γ in smaller clusters.
+γ selection was more complicated than k selection. Time permitting we'll come back to it.
+
+I was also able to use modularity to create a gene network. The interpretation is that a subgraph can be taken that consists of only edges between a given condition pair. modularity can then be calculated for each pair of conditions for each clustering. A high modularity value means that nodes of those conditions tend to cooccur in the same clusters.
+This graph shows the top 5 scores for each condition.
+
+These are the results of hypergeometric tests for enrichment of conditions in each cluster.
+Here are tests for experimenter-defined phenotypes. These are not exclusive categories. Inhibited TVC division tends to cooccur with inhibited TVC migration and enhanced ATM division tends to cooccur with enhanced ATM migration.
+
+As I said Margaux has done an impressive amount of work preparing over 1700 embryos. Even after image collection, the segmentation has its own host of problems that I don't have to deal with. 
+
+k selection
+I used prior knowledge of physical protein interactions obtained from STRINGdb. The data for C. robusta are sparse, so I had to use orthologs from mouse and human. 
+This gave me a set of edges between corresponding conditions to use as a validation set.
+
+The known protein interactions can be treated as a gene set for GSEA. Interactions can be ranked by edge count between embryos in two conditions. An enrichment score is calculated based on occurrence of known interactions near the top of the ranked list. An optimal k can be selected by maximizing enrichment score.
+
+At the top is an example enrichment score. What it shows is a running count of occurrences of known protein interactions in a list of interactions ranked by count in a graph for a given k. A higher value means known interactions are closer to the top of the list.
+The bottom shows the optimum at 20.
+
+
+I obtained 1000 clusterings on random $\gamma$ values between 0.01 and 3. 
+I assessed clustering by several metrics. 
+While there were clear trends, it was difficult to select an *optimal* value based on any one metric, so I ended up combining them into a consensus score.
+
+This in an enrichment score from a second GSEA.
+In this one interactions are ranked by modularity of a subgraph consisting of only edges between two given conditions. 
+ES was maximized at 1.491, but you'll notice a clear trend that peaks at 0.5 before getting very noisy.
+
+I used this same metric to construct a gene network. If an interaction has positive modularity the genes are considered connected. A recall score can be calculated by comparing this network to the protein interaction network. 
+
+
+This shows the silhouette widths. Silhouette width gives the relative distance between points within a cluster compared to distance between points in different clusters. 
+While the maximum is at 0.05, you can again see a trend line peaking at 0.5 before leveling off.
+
+Here I attempted to perform crossvalidation using a reduced model.
+I created a classifier using a subset of the encoding data, taking the cluters to be tested as labels, and comparing it to the test s set.
+I repeated this for 1000 iterations for each clustering.
+
+
+This shows the structure of the autoencoder. I 

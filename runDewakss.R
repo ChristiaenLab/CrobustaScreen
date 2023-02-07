@@ -7,14 +7,14 @@ library(cluster)
 
 parser <- OptionParser()
 parser <- add_option(parser, '--params', action = 'store',default = 'out/params.csv')
-parser <- add_option(parser, '--clusts', action = 'store',default = '2021_03_18/out/raw/')
-parser <- add_option(parser,'--out',action='store',default='2021_03_18/out/raw/')
+parser <- add_option(parser, '--clusts', action = 'store',default = '2022_07_23/raw/')
+parser <- add_option(parser,'--out',action='store',default='2022_07_23/raw/')
 opts <- parse_args(parser)
 
 # This script contains the dotplot function.
 # It sources hmfns.R, which contains helper functions for plotting heatmaps,
 # and dirfns.R, which contains helper functions for organizing outputs into directories.
-# source("clustfns.R")
+source("clustplots.R")
 source('condHyper.R')
 
 # data from DEWAKSS
@@ -136,17 +136,40 @@ dev.off()
 # dev.off()
 # 
 # 
+
+mse <- read.csv(paste0(opts$clusts,'MSE.csv'),header=F)
+msepcs <- sapply(split(as.data.frame(t(mse[-1:-2,-1:-2])),unlist(mse[1,-1:-2])),t,simplify=F)
+msek <- sapply(split(as.data.frame(t(mse[-1:-2,-1:-2])),unlist(mse[2,-1:-2])),t,simplify=F)
+
+dir.pdf('mse',opts$out,append.date=F,width=10,height=20)
+Heatmap(t(sapply(msepcs,apply,2,mean)))
+dev.off()
+
 pcs <- pcs[,grep('pca', names(pcs))]
 pcs <- pcs[,!apply(pcs==0,2,all)]
 
 row.names(pcs) <- row.names(dat)
 
+dir.pdf('paramPCcor',opts$out,append.date=F,width=10,height=20)
+Heatmap(sapply(pcs,function(x) sapply(dat[,-1],cor, x,method='spearman')))
+dev.off()
+
 dists <- dist(pcs)
 
 sil <- silhouette(clusts$denoised_leiden, dists)
 
+sil <- mapply(silhouettePlot,clusts[,-1:-7],paste0(opts$out,'/silhouette/',names(clusts)[-1:-7]),MoreArgs = list(dat=pcs),SIMPLIFY = F)
+
 dir.pdf('silhouette', opts$out, append.date=F)
-plot(sil)
+boxplot(sapply(sil,'[',,'sil_width'),las=2)
+dev.off()
+
+dir.pdf('silMeanClust', opts$out, append.date=F)
+boxplot(lapply(lapply(sil,summary),'[[','clus.avg.widths'),las=2)
+dev.off()
+
+dir.pdf('silClust',opts$out,append.date=F)
+boxplot(formula=sil_width ~ cluster,as.data.frame(sil))
 dev.off()
 
 # run hypergeometric tests for enrichment of conditions and phenotypes
@@ -207,7 +230,7 @@ dir.csv(cbind(
 dotPscale(
 	odds, 
 	fdr, 
-	qval, 
+	as.matrix(qval), 
 	file='condition', 
 	path=opts$out, 
 	row_split=rowsplit, 

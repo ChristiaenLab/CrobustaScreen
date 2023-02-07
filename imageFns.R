@@ -71,8 +71,11 @@ embryoCol <- function(x){
   return(x[,3,drop=F])
 }
 
-coord <- function(x,prefix="Nucleus"){
-	ix <- paste0(prefix,'.Center.of.Homogeneous.Mass')
+coord <- function(x,prefix="Nucleus",
+		  suffix='Center.of.Homogeneous.Mass'){
+	if(prefix!='') {
+		ix <- paste(prefix,suffix,sep='.')
+	} else ix <- suffix
 	if(!any(grepl(ix,names(x)))) ix <- paste0(prefix,'.Position')
 	ix <- paste0(ix,c('.X','.Y','.Z'))
 	return(x[,ix])
@@ -380,6 +383,8 @@ parseGroup <- function(groupdat,celldat){
 }
 
 zscore <- function(x) {
+	x <- as.numeric(x)
+	x[!is.finite(x)] <- NaN
 	x[x==0] <- NaN
 	m <- mean(x,na.rm=T)
 	x <- (x-m)/sd(x,na.rm=T)

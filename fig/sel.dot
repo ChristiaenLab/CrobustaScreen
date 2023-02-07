@@ -1,0 +1,72 @@
+digraph cluster0 {
+	nodesep=.05;
+	ranksep=0.05
+	node [shape=record, height=.1];
+
+	subgraph cluster5 {
+		style=filled;
+		color=lavender;
+		label="bootsrapping";
+		train; test; knnsub; classifier; cv;
+	}
+
+
+	subgraph clustersel {
+		style=filled;
+		color=lightblue;
+		label="cluster selection";
+		sil; gsea1; ressel;
+	}
+
+
+	subgraph clusterval {
+		style=filled;
+		color=lightblue;
+		label="cluster evaluation";
+		hyper; gene;
+	}
+
+
+
+	pheno [label="26 perturbations"];
+	e [label="autoencoder"];
+	aic [label="embedding selection"];
+
+
+	prot [label="protein interaction\nnetwork"]
+	clust [label="{<a> clusters | <b> γ ∈ ℝ \> 0}"]
+
+
+	sil [label="silhouette \nwidth"];
+
+	train [label="{training set | 90% data}"];
+	test [label="{test set | 10% data}"];
+	knnsub [label="reduced \nknn graph"];
+	classifier [label="reduced knn \nclassifier"];
+	cv [label="crossvalidation"];
+	
+	gsea1 [label="{GSEA | sorted by modularity}"]
+	
+	ressel [label="γ selection"]
+
+	gene [label="gene network"]
+	hyper [label="hypergeometric\ntest"];
+
+	pheno -> {hyper};
+	pheno ->  e -> aic
+	
+	pheno ->  prot 
+	aic -> {train; test}
+	prot -> clust -> cv
+
+	train -> knnsub -> classifier -> cv
+	test -> cv -> ressel;
+	clust -> sil -> ressel;
+
+	clust -> gsea1 -> ressel -> hyper
+	clust -> ressel
+
+
+	prot -> gene
+	ressel -> gene
+}

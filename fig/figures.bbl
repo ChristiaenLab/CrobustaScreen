@@ -1,0 +1,50 @@
+\begin{thebibliography}{1}
+
+\bibitem{cavanaugh2019akaike}
+Joseph~E Cavanaugh and Andrew~A Neath.
+\newblock The akaike information criterion: Background, derivation, properties,
+  application, interpretation, and refinements.
+\newblock {\em Wiley Interdisciplinary Reviews: Computational Statistics},
+  11(3):e1460, 2019.
+
+\bibitem{PhysRevE.74.016110}
+J\"org Reichardt and Stefan Bornholdt.
+\newblock Statistical mechanics of community detection.
+\newblock {\em Phys. Rev. E}, 74:016110, Jul 2006.
+
+\bibitem{ROUSSEEUW}
+Peter~J. Rousseeuw.
+\newblock Silhouettes: A graphical aid to the interpretation and validation of
+  cluster analysis.
+\newblock {\em Journal of Computational and Applied Mathematics}, 20:53--65,
+  1987.
+
+\bibitem{subramanian2005gene}
+Aravind Subramanian, Pablo Tamayo, Vamsi~K Mootha, Sayan Mukherjee, Benjamin~L
+  Ebert, Michael~A Gillette, Amanda Paulovich, Scott~L Pomeroy, Todd~R Golub,
+  Eric~S Lander, et~al.
+\newblock Gene set enrichment analysis: a knowledge-based approach for
+  interpreting genome-wide expression profiles.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  102(43):15545--15550, 2005.
+
+\bibitem{10.1093/nar/gkq973}
+Damian Szklarczyk, Andrea Franceschini, Michael Kuhn, Milan Simonovic,
+  Alexander Roth, Pablo Minguez, Tobias Doerks, Manuel Stark, Jean Muller, Peer
+  Bork, Lars~J. Jensen, and Christian~von Mering.
+\newblock {The STRING database in 2011: functional interaction networks of
+  proteins, globally integrated and scored}.
+\newblock {\em Nucleic Acids Research}, 39(suppl\_1):D561--D568, 11 2010.
+
+\bibitem{traag2019louvain}
+Vincent~A Traag, Ludo Waltman, and Nees~Jan Van~Eck.
+\newblock From louvain to leiden: guaranteeing well-connected communities.
+\newblock {\em Scientific reports}, 9(1):1--12, 2019.
+
+\bibitem{WANG2016232}
+Yasi Wang, Hongxun Yao, and Sicheng Zhao.
+\newblock Auto-encoder based dimensionality reduction.
+\newblock {\em Neurocomputing}, 184:232--242, 2016.
+\newblock RoLoD: Robust Local Descriptors for Computer Vision 2014.
+
+\end{thebibliography}

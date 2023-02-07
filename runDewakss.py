@@ -18,7 +18,7 @@ from scipy.spatial import distance_matrix
 
 parser = argparse.ArgumentParser(description='Cluster embryo data using DEWAKSS to find the optimal number of neighbors and PCs.')
 
-parser.add_argument('--params', metavar='params', type=str, default='out/params.csv',
+parser.add_argument('--dat', metavar='dat', type=str, default='out/params.csv',
                     help='The input matrix with embryos as rows and parameters as columns.')
 parser.add_argument('--groups', metavar='groups', type=str, default='out/groups.csv',
                     help='The annotation groups to be shown in the output figures.')
@@ -33,7 +33,7 @@ parser.add_argument('--neighbors', metavar='neighbors', type=int, default=20,
 parser.add_argument("-f", "--fff", help="a dummy argument to fool ipython", default="1")
 
 args = parser.parse_args()
-print(args.params)
+print(args.dat)
 print(args.groups)
 print(args.out)
 today = date.today()
@@ -45,15 +45,18 @@ sc.settings.autoshow = False
 sc.settings.autosave = True
 sc.settings.figdir = outdir
 
-os.makedirs(sc.settings.figdir, exist_ok=True)
+os.makedirs(outdir, exist_ok=True)
+
+def file(fname):
+    return os.path.join(sc.settings.figdir, fname)
 
 # Load data:
-df = pd.read_csv(args.params, index_col='Row.names')
+df = pd.read_csv(args.dat, index_col='Row.names')
 
 ann = pd.read_csv(args.groups, index_col='Row.names')
 
 def savePDF(fig, fname):
-    fig.savefig(os.path.join(sc.settings.figdir, fname + '.pdf'), format='pdf')
+    fig.savefig(file( fname + '.pdf'), format='pdf')
 
 def addclust(dat,res):
     out = sc.tl.leiden(dat, resolution = res, neighbors_key = 'neighbors', copy = True)
@@ -284,6 +287,12 @@ def dewakssCV(df,ann,bg,dwparams,frac=0.1):
     return res
 
 dw = runDewakss(df, ann)
+dw.global_performance.to_csv(file('global.csv'))
+
+for x in dw.local_performance.keys():
+    dw.local_performance[x].to_csv(file(x + '.csv'))
+
+dw.local_performance.write_csvs(file('local'),skip_data=False)
 
 # Rerun with optimal params
 dwparams = dw.global_performance.iloc[np.argmin(dw.global_performance.MSE)]
@@ -300,14 +309,15 @@ sc.tl.umap(clusts, min_dist = 1.5, spread = 12, neighbors_key = 'denoised')
 sc.pl.embedding(clusts, basis='umap', color=clusts.obs, edges=True)
 
 dists = clusts.obsp['denoised_distances']
-distout = os.path.join(sc.settings.figdir, 'dists.csv')
+distout = file( 'dists.csv')
 df = pd.DataFrame(csr_matrix.todense(dists))
 df.to_csv(distout, index=False, header=None)
 
-sc.settings.figdir = os.path.join(sc.settings.figdir, 'feat')
-sc.pl.embedding(clusts, basis='umap', color=clusts.var_names, edges=True)
+#sc.settings.figdir = file( 'feat')
+sc.pl.embedding(clusts, basis='umap', color=clusts.var_names, edges=True,save='feat')
+#sc.pl.embedding(clusts, basis='umap', color=clusts.varm["PCs"], edges=True,save='pcs')
 
-clusts.write_csvs(os.path.join(sc.settings.figdir, 'dat'), skip_data=False)
+clusts.write_csvs(file( 'dat'), skip_data=False)
 
 Rcmd = "Rscript dewakssPlots.R --params " + args.params + " --clusts " + outdir
 print(Rcmd)
@@ -324,7 +334,7 @@ os.system(Rcmd)
 #
 #plt.barh(cv['clusters'],cv['F1adj'])
 #plt.xlabel('F1*nclust')
-#plt.savefig(os.path.join(sc.settings.figdir, 'cv' + '.pdf'), format='pdf')
+#plt.savefig(file( 'cv' + '.pdf'), format='pdf')
 #
 #f = plt.figure()
 #savePDF(f,'cv')

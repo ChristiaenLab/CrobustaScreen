@@ -1,0 +1,141 @@
+digraph cluster0 {
+	nodesep=.05;
+	ranksep=0.05
+	node [shape=record, height=.1];
+
+	subgraph auto {
+		style=filled;
+		color=lavender;
+		label="autoencoder";
+		subgraph auto0 {
+			style="";
+			color=black;
+			label="embedding layer";
+			bot;
+		}
+		encoder; decoder;
+	}
+
+	subgraph esel {
+		style=filled;
+		color=lightblue;
+		label="embedding selection";
+		subgraph auto1 {
+			style="";
+			color=black;
+			label="decoded output";
+			out;
+		}
+		mse; aic;
+	}
+
+	subgraph clusterortho {
+		style=filled;
+		color=lightblue;
+		label="ortholog lookup";
+		sdb; prot; 
+	}
+
+	subgraph clust {
+		style=filled;
+		col=lavender;
+		label="clustering";
+		subgraph clust0 {
+			style="";
+			color=black;
+			label="k selection";
+			gsea0; inter;
+		}
+		d; knn; leiden;
+	}
+
+	subgraph cluster5 {
+		style="";
+		color=black;
+		label="bootsrapping";
+		train; test; knnsub; classifier; cv;
+	}
+
+	subgraph clustsel {
+		style=filled;
+		color=lightblue;
+		label="cluster selection";
+		sil; gsea1; ressel;
+	}
+
+	subgraph clusteval {
+		style=filled;
+		color=lightblue;
+		label="cluster evaluation";
+		hyper; gene;
+	}
+
+
+
+	pheno [label="26 perturbations"];
+	a [label="{<a0> segmentation | 1703 embryo halves}"];
+	b [label="{<b0> preprocessing | 114 summary statistics}"];
+
+	encoder [label="encoder"]
+	bot [label="<b0> n = 14 | <b1> n = 7 | <b2> n = 3 | <b3> n = 2"]
+	decoder [label="decoder"]
+	out [label="<o0> n = 114 | <o1> n = 114 | <o2> n = 114 | <o3> n = 114"]
+
+	mse [label="MSE"]
+	aic [label="AIC"]
+
+	d [label="euclidean \ndistance"];
+	knn [label="{<a> knn graph | k ∈ \{3,4,...,50\}}"];
+	sil [label="silhouette \nwidth"];
+	leiden [label="leiden algorithm"];
+	clust [label="{<a> clusters | <b> γ ∈ ℝ \> 0}"]
+
+	train [label="{training set | 90% data}"];
+	test [label="{test set | 10% data}"];
+	knnsub [label="reduced \nknn graph"];
+	classifier [label="reduced knn \nclassifier"];
+	cv [label="crossvalidation"];
+	
+	hyper [label="hypergeometric\ntest"];
+
+	sdb [label="{STRINGdb}"]
+	prot [label="protein interaction\nnetwork"]
+	gsea0 [label="{<a> GSEA | <b> sorted by count}"]
+	gsea1 [label="{GSEA | sorted by modularity}"]
+	
+	ksel [label="k selection"]
+	ressel [label="γ selection"]
+
+	gene [label="gene network"]
+
+	pheno -> {a hyper};
+	a -> b -> encoder  
+
+	encoder -> bot:b0
+	encoder -> bot:b1
+	encoder -> bot:b2
+	encoder -> bot:b3
+
+	bot:b0 -> decoder
+	bot:b1 -> decoder
+	bot:b2 -> decoder
+	bot:b3 -> decoder
+
+	decoder -> out -> mse -> aic -> {train; test; d}
+
+	d -> knn -> gsea0 -> leiden -> clust -> classifier;
+	
+	train -> knnsub -> classifier -> cv
+	test -> cv -> ressel;
+	clust -> sil -> ressel;
+
+	pheno -> sdb -> prot ->  gsea0 -> ksel
+	clust -> gsea1 -> ressel -> hyper
+	clust -> ressel
+
+	knn -> {gsea0; gsea1}
+
+	prot -> gene
+	ressel -> gene
+}
+
