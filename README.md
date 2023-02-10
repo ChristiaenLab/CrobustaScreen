@@ -109,7 +109,7 @@ where $e_{xy}$ is the total number of edges from embryos of condition $x$ to emb
 **Mean Silhouette Width**
 Pointwise [silhouette width](https://doi.org/10.1016/0377-0427(87)90125-7) $s(i)$ is given by 
 
-$$s(i) = \frac{b(i) - a(i)}{max\{a(i),b(i)\}}$$
+$$s(i) = \frac{b(i) - a(i)}{max[a(i),b(i)]}$$
 
 where $a(i)$ is the average distance between node $i$ and other nodes in the same cluster, and $b(i)$ is the average distance between $i$ and other nodes in the closest other cluster.
 
