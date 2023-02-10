@@ -38,10 +38,10 @@ The pipeline uses features extracted from segmentation of confocal images using 
 
 Sample parameters are often strongly correlated. This is undesirable for self-supervised learning because each parameter additively contributes to distance used for clustering, resulting in disproportionate weight being given to phenotypes captured by multiple parameters. Linear methods of dimenison reduction (e.g. PCA) assume that all variables are independent and can be linearly combined. We could not assume that all of our measured input parameters were independent, so we instead used an autoencoder for dimension reduction.
 
-An autoencoder is a neural network architecture widely used for denoising and image recognition. It works by encoding the input data into a lower dimensional representation that can be decoded with minimal loss. By extracting this lower dimensional encoding (the "bottleneck" or "embedding" layer), an autoencoder (can be used for dimension reduction)(https://doi.org/10.1016/j.neucom.2015.08.104).
+An autoencoder is a neural network architecture widely used for denoising and image recognition. It works by encoding the input data into a lower dimensional representation that can be decoded with minimal loss. By extracting this lower dimensional encoding (the "bottleneck" or "embedding" layer), an autoencoder [can be used for dimension reduction](https://doi.org/10.1016/j.neucom.2015.08.104).
 This results in an embedding that corresponds to the information content of the input data rather than absolute distance in phenotype space.
 
-`encode.R` trains four autoencoders using embedding layers of 2, 3, 7, and 14 dimensions. `leiden.R` selects the optimal embedding based on (Akaike Information Criterion)[https://en.wikipedia.org/wiki/Akaike_information_criterion] defined as 
+`encode.R` trains four autoencoders using embedding layers of 2, 3, 7, and 14 dimensions. `leiden.R` selects the optimal embedding based on [Akaike Information Criterion](https://en.wikipedia.org/wiki/Akaike_information_criterion) defined as 
 
 $$AIC = 2k - 2ln(\hat{L})$$ 
 
@@ -57,7 +57,7 @@ Euclidean distance between embeddings is used to compute a k-nearest neighbors g
 
  where $m$ is the average degree of the graph, $e_c$ is the number of edges in cluster $c$, and $K_c$ is the number of nodes in cluster $c$. This equation has a nicely intuitive interpretation. Modularity $\mathcal{H}$ of a graph is given by the sum of how well-connected its clusters are, defined as the difference between the number of edges in the cluster and the expected number of edges given the number of nodes in the graph and average degree of a node.
 
-Because optimizing modularity is NP-hard, we used the (leiden algorithm)[https://arxiv.org/abs/1810.08473] to approximate an optimal solution.
+Because optimizing modularity is NP-hard, we used the [leiden algorithm](https://arxiv.org/abs/1810.08473) to approximate an optimal solution.
 
 Though modularity ensures that clusters are well-connected, the number of clusters returned is dependent on $\gamma$, which cannot be inferred from the data. A value of $k$ must also be selected for the input graph.
 
@@ -75,7 +75,7 @@ We selected $k$ and $\gamma$ based on four validation metrics. Mean silhouette w
 `interactions.R` uses [STRINGdb](https://doi.org/10.1093/nar/gkq973) to construct a known protein interaction network of the perturbed genes. Because the *C. robusta* network is poorly characterized, we use ENSEMBL to obtain orthologs from *M. musculus* and *H. sapiens*. 
 
 **GSEA**
-The known protein interactions can be treated as a gene set for (GSEA)[https://en.wikipedia.org/wiki/Gene_set_enrichment_analysis]. Interactions can be ranked by edge count between embryos in two conditions. An enrichment score is calculated based on occurrence of known interactions near the top of the ranked list. An optimal $k$ can be selected by maximizing enrichment score.
+The known protein interactions can be treated as a gene set for [GSEA](https://en.wikipedia.org/wiki/Gene_set_enrichment_analysis). Interactions can be ranked by edge count between embryos in two conditions. An enrichment score is calculated based on occurrence of known interactions near the top of the ranked list. An optimal $k$ can be selected by maximizing enrichment score.
 
 **Gene Network**
 A gene network can be created from the $k$-NN graph by drawing an edge between a pair of conditions if the $k$-NN graph is enriched in edges between embryos in that pair of conditions.
@@ -102,7 +102,7 @@ Condition pairs for each clustering are ranked by the proportion of edges that a
 **Comparison to Known Protein Interactions**
 A second gene network is constructed using partial modularity between pairs of conditions. We define the partial modularity $H_{xy}$ of a condition pair $(x,y)$ as 
 
-$$ \,H_{xy} = \,e_{xy} - \gamma\frac{\,K_x\,K_y}{2M} $$
+$$ H_{xy} = \,e_{xy} - \gamma\frac{K_x\,K_y}{2M} $$
 
 where $e_{xy}$ is the total number of edges from embryos of condition $x$ to embryos of condition $y$, $K_x$ is the total degree of all embryos of condition $x$, $K_y$ is the total degree of all embryos in condition $y$, and M is the total degree of all nodes in the graph. If $H_{xy}$ is positive, we draw an edge between genes $x$ and $y$. We then calculate a recall score by comparing this graph to the graph of known protein interactions.
 
