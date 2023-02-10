@@ -34,7 +34,7 @@ The pipeline uses features extracted from segmentation of confocal images using 
 
 # Dimension Reduction
 
-![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/encode.dot.pdf?raw=true)
+![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/encode.dot.svg?raw=true)
 
 Sample parameters are often strongly correlated. This is undesirable for self-supervised learning because each parameter additively contributes to distance used for clustering, resulting in disproportionate weight being given to phenotypes captured by multiple parameters. Linear methods of dimenison reduction (e.g. PCA) assume that all variables are independent and can be linearly combined. We could not assume that all of our measured input parameters were independent, so we instead used an autoencoder for dimension reduction.
 
@@ -49,7 +49,7 @@ where $k$ is the number of parameters and $\hat{L}$ is a likelihood function, wh
 
 # Clustering Algorithm
 
-![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/cluster.dot.pdf?raw=true)
+![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/cluster.dot.svg?raw=true)
 
 Euclidean distance between embeddings is used to compute a k-nearest neighbors graph. The graph is then partitioned into clusters by (modularity)[10.1103/PhysRevE.74.016110], which is defined as 
 
@@ -63,7 +63,7 @@ Though modularity ensures that clusters are well-connected, the number of cluste
 
 # Hyperparameter Selection
 
-![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/sel.dot.pdf?raw=true)
+![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/sel.dot.svg?raw=true)
 
 `leiden.R` performs clustering for 100 random $\gamma$ values between 0.01 and 3.0 for $k$ values ranging from 3 to 53.
 
