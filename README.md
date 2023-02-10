@@ -6,6 +6,9 @@
 # CrobustaScreen
 A pipeline for self-supervised phenotype detection from confocal images of *Ciona robusta* embryos.
 
+![overview](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/presentation/overview.png?raw=true)
+
+
 # R Dependencies
 `circlize`, `class`, `cluster`, `ComplexHeatmap`, `fgsea`, `ggplot2`, `ggpubr`, `igraph`, `keras`, `leiden`, `optparse`, `parallel`, `purrr`, `STRINGdb`, `umap` 
 
@@ -31,6 +34,8 @@ Rscript plot.clust.R
 
 # Preprocessing
 The pipeline uses features extracted from segmentation of confocal images using Imaris. Summary statistics are extracted for segmened cells in each embryo. From the cell segmentation statistics 116 embryo-level parameters are computed. Parameters are normalized by z-score then scaled between -1 and 1.
+
+![overview](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/presentation/segmentation.png?raw=true)
 
 # Dimension Reduction
 
