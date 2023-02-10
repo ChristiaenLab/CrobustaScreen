@@ -51,7 +51,7 @@ where $k$ is the number of parameters and $\hat{L}$ is a likelihood function, wh
 
 ![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/cluster.dot.svg?raw=true)
 
-Euclidean distance between embeddings is used to compute a k-nearest neighbors graph. The graph is then partitioned into clusters by (modularity)[10.1103/PhysRevE.74.016110], which is defined as 
+Euclidean distance between embeddings is used to compute a k-nearest neighbors graph. The graph is then partitioned into clusters by [modularity](https://en.wikipedia.org/wiki/Modularity_(networks)), which is defined as 
 
  $$\mathcal{H} = \frac{1}{2m}\sum_{c}( \,e_c - \gamma\frac{K_c^2}{2m}) $$
 
