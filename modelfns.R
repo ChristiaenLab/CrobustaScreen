@@ -100,6 +100,22 @@ plot.clust <- function(dat,clust,out,x=V1,y=V2,labs=names(cols),title='',width=2
 		 width=width,height=height,...)
 }
 
+arrange.plots <- function(plots,out,labs=names(plots),
+			  title='',width=20,ncols=3,...){
+	require(ggplot2)
+	require(ggpubr)
+
+	nrows <- ceiling(ncol(cols)/ncols)
+	height <- width/ncols*nrows
+
+	g <- ggarrange(plotlist=plots,
+		       labels=labs,ncol=ncols,
+		       nrow=nrows)
+
+	ggexport(g,filename=paste0(out,'.pdf'),
+		 width=width,height=height,...)
+}
+
 model.eval <- function(model,x,y,groups,outix,out){
 	require(keras)
 	#         require(umap)

@@ -8,9 +8,9 @@ library(dirfns)
 
 parser <- OptionParser()
 parser <- add_option(parser, '--dir', action = 'store',
-		     default = '2023-01-27')
+		     default = '2023-03-10')
 parser <- add_option(parser, '--dat', action = 'store',
-		     default = '2023-01-27/dat.csv')
+		     default = '2023-03-10/dat.csv')
 parser <- add_option(parser, '--leiden_reps', 
 		     action = 'store', default = 1000)
 parser <- add_option(parser,'--all_k',action='store_true',

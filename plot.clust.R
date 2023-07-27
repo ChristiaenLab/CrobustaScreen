@@ -3,6 +3,13 @@ source('descend.R')
 source('clustplots.R')
 source('plotfns.R')
 
+library(leiden)
+library(optparse)
+library(igraph)
+library(dirfns)
+library(purrr)
+
+
 dot.stat <- function(y,dat,...){
 	require(ggplot2)
 	ggplot(dat,
@@ -19,10 +26,19 @@ dot.col <- function(y,dat,cols='',id='group',...){
 
 dir.f <- function(f,file.arg='filename'){
 	require(dirfns)
+	
 	function(...,filename='',ext='',path='.',append.date=T){
 		out <- mkdate(filename,ext=ext,path=path,append.date=append.date)
 		arglist <- append(list(...),setNames(out,file.arg))
 		do.call(f,arglist)
+	}
+}
+
+dir.plot <- function(out,outfn = dir.pdf){
+	require(dirfns)
+	function(f,...){
+		outfn(out)
+		tryCatch(f(...),finally=dev.off())
 	}
 }
 
@@ -48,40 +64,44 @@ arrange.stats <- function(plots,filename,ncols=3,...){
 			...)
 }
 
-plot.edge <- function(dat,g,out,clusts=NULL){
+plot.edge <- function(dat,g,clusts=NULL){
 	require(igraph)
 	dists <- get.edgelist(g)
-	clustn <- unique(clusts)
-	clustn <- clustn[order(clustn)]
-	clustsel <- lapply(clustn, 
-			 compose(which,
-				 partial(`==`,clusts)))
-	clustl <- lapply(clustsel,
-			 function(x){
-				 dists[do.call(`&`, as.data.frame(apply(dists, 2,`%in%`,x))),]
-			 })
-	cols <- rainbow(length(clustsel))
 	f <- function(d,col) apply(d,1,
 				   function(x) lines(dat[x,],
 					col=col))
 
-	dir.pdf(out)
+	#         dir.pdf(out)
 	plot(NULL, xlim=range(dat[,1]), 
 	     ylim=range(dat[,2]),
 	     xlab=colnames(dat)[1],
 	     ylab=colnames(dat)[2]) 
 	f(dists, col=rgb(0,0,0,0.1))
-	mapply(f,clustl,cols)
-	if(length(clustl)>1){
-		legend(
-		       'bottomleft',
-		       as.character(clustn),
-		       col=cols,
-		       lty=1,
-		)
+
+	if(length(clusts>0)){
+		clustn <- unique(clusts)
+		clustn <- clustn[order(clustn)]
+		clustsel <- lapply(clustn, 
+				 purrr::compose(which,
+					 partial(`==`,clusts)))
+		clustl <- lapply(clustsel,
+				 function(x){
+					 dists[do.call(`&`, as.data.frame(apply(dists, 2,`%in%`,x))),]
+				 })
+		cols <- rainbow(length(clustsel))
+		mapply(f,clustl,cols)
+		if(length(clustl)>1){
+			legend(
+			       'bottomleft',
+			       as.character(clustn),
+			       col=cols,
+			       lty=1,
+			)
+		}
+		#         dev.off()
 	}
-	dev.off()
 }
+
 
 statplot <- function(clusts,out){
 	plots <- lapply(names(clusts)[2:7],dot.stat,clusts)
@@ -129,13 +149,6 @@ write.dot <- function(g,filename,...){
 	#         E(g)$color <- colfn(E(g)$weight)
 	#         dir.f(write.graph,'file')(g,format='dot',filename=filename)
 }
-
-library(leiden)
-library(optparse)
-library(igraph)
-library(dirfns)
-library(purrr)
-
 parser <- OptionParser()
 parser <- add_option(parser, '--modeldir', action = 'store',
 		     default = '2023-01-27')
@@ -196,7 +209,7 @@ model$clusts <- model$clusts[model$clusts$nclust>1,]
 mapply(statplot,clusts,sub('leiden.','',names(clusts)))
 statplot(model$clusts,'leiden.k17',nrows=3,ncols=3)
 
-plot.edge(model$encoded,knn,'knn')
+dir.plot('knn')(plot.edge,model$encoded,knn)
 
 dir.f(ggexport)(dot.col('encoding2',
 			as.data.frame(model$encoded),
@@ -222,13 +235,32 @@ leidens <- leidens[,sel]
 colnames(leidens) <- names(model$clusts[2:6])
 label <- paste('resolution =',model$clusts[sel,1])
 
-dir.f(plot.clust,'out')(model$encoded,leidens,labs=label,filename='leidens')
+ggdat <- cbind(as.data.frame(model$encoded),sapply(as.data.frame(leidens),as.character),Depdc=as.character(groups$Condition=="Depdc"))
+
+g <- ggplot(ggdat, aes_string(x='encoding1', y='encoding2'))
+
+f <- function(fill) g + 
+	geom_point(aes_string(color="Depdc", fill=fill), 
+		   shape=21) + 
+	scale_color_manual(values=c("white","black"))
+
+plots <- lapply(colnames(leidens),f)
+
+dir.f(arrange.plots,'out')(plots, labs=label,
+			   filename='leidens.depdc')
 
 dists <- as.matrix(as_adjacency_matrix(knn))
 row.names(dists) <- as.numeric(1:nrow(dists))
 colnames(dists) <- as.numeric(1:nrow(dists))
 
-plot.edge(model$encoded,knn,'knn.clust',leidens[,1])
+dir.plot('knn.clust')(plot.edge,model$encoded,knn,leidens[,1])
+
+
+dir.pdf('clust.depdc')
+plot.edge(model$encoded,knn,leidens[,1])
+points(model$encoded[groups$Condition=="Depdc",])
+dev.off()
+
 clustplots(model$encoded,
 	   leidens[,1],
 	   groups$Phenotype,
