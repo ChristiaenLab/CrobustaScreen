@@ -71,6 +71,41 @@ names(embryos) <- c('name','cell','surface')
 celldat <- lapply(embryos$cell,readEmbryos)
 surfacedat <- lapply(embryos$surface,readEmbryos)
 
+library(rgl)
+
+cellaxis <- function(cell,c,var) do.call(rbind,
+                lapply(c("A","B","C"),
+                    function(axis) as.matrix(setNames(cell[,c(paste0(c,".Position.",var),
+                                        paste0(c,".Ellipsoid.Axis.",axis,".",var))],1:2))))
+
+drawcell <- function(cell){
+    X <- cellaxis(cell,"Cell","X")
+    Y <- cellaxis(cell,"Cell","Y")
+    Z <- cellaxis(cell,"Cell","Z")
+    segments3d(X,Y,Z)
+}
+drawcell(celldat[[1]])
+
+# Function to generate points for an ellipsoid
+ellipsoid_points <- function(center=c(0,0,0), radii=c(1,1,1), resolution = 50) {
+  theta <- seq(0, pi, length.out = resolution)  
+  phi <- seq(0, 2 * pi, length.out = resolution)
+  Theta <- matrix(rep(theta, each = resolution), ncol = resolution)
+  Phi <- matrix(rep(phi, times = resolution), ncol = resolution)
+  
+  x <- center[1] + radii[1] * sin(Theta) * cos(Phi)
+  y <- center[2] + radii[2] * sin(Theta) * sin(Phi)
+  z <- center[3] + radii[3] * cos(Theta)
+  
+  list(x=x, y=y, z=z)
+}
+
+# Generate ellipsoid points
+ep <- ellipsoid_points(center=c(1,2,3), radii=c(2,3,1))
+
+# Plot the ellipsoid
+surface3d(ep$x, ep$y, ep$z, color="red", alpha=1)
+
 #dat <- lapply(dirs,readEmbryos)
 #
 #sel <- meta$grouping=='surface'
