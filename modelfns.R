@@ -21,6 +21,26 @@ model.layers <- function(layers,activation){
 	return(model)
 }
 
+model.layers <- function(layers, activation) {
+  require(keras)
+  if (length(activation) == 1) {
+    activation <- rep(activation, length(layers) - 1)
+  }
+  model <- keras_model_sequential() %>%
+    layer_input(shape = c(layers[1])) %>%
+    layer_dense(units = layers[2], activation = activation[1])
+  
+  for (i in 2:(length(layers) - 1)) {
+    model <- model %>%
+      layer_dense(units = layers[i + 1], activation = activation[i])
+  }
+  
+  model <- model %>%
+    layer_dense(units = layers[length(layers)], activation = "linear") # Assuming the last layer typically does not use the same activation as others.
+  
+  return(model)
+}
+
 
 get.model <- function(x,y,layers,activation='tanh',
 		      loss='mean_squared_error',

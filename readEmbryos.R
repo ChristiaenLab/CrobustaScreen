@@ -1,5 +1,8 @@
 source("imageFns.R")
 library(dirfns)
+append.date <- T
+
+csv <- function(x,f,row.names=F) dir.csv(x,f,'out',append.date=append.date,row.names=row.names)
 
 dirs <- list.files(
   "segdat",
@@ -71,41 +74,6 @@ names(embryos) <- c('name','cell','surface')
 celldat <- lapply(embryos$cell,readEmbryos)
 surfacedat <- lapply(embryos$surface,readEmbryos)
 
-library(rgl)
-
-cellaxis <- function(cell,c,var) do.call(rbind,
-                lapply(c("A","B","C"),
-                    function(axis) as.matrix(setNames(cell[,c(paste0(c,".Position.",var),
-                                        paste0(c,".Ellipsoid.Axis.",axis,".",var))],1:2))))
-
-drawcell <- function(cell){
-    X <- cellaxis(cell,"Cell","X")
-    Y <- cellaxis(cell,"Cell","Y")
-    Z <- cellaxis(cell,"Cell","Z")
-    segments3d(X,Y,Z)
-}
-drawcell(celldat[[1]])
-
-# Function to generate points for an ellipsoid
-ellipsoid_points <- function(center=c(0,0,0), radii=c(1,1,1), resolution = 50) {
-  theta <- seq(0, pi, length.out = resolution)  
-  phi <- seq(0, 2 * pi, length.out = resolution)
-  Theta <- matrix(rep(theta, each = resolution), ncol = resolution)
-  Phi <- matrix(rep(phi, times = resolution), ncol = resolution)
-  
-  x <- center[1] + radii[1] * sin(Theta) * cos(Phi)
-  y <- center[2] + radii[2] * sin(Theta) * sin(Phi)
-  z <- center[3] + radii[3] * cos(Theta)
-  
-  list(x=x, y=y, z=z)
-}
-
-# Generate ellipsoid points
-ep <- ellipsoid_points(center=c(1,2,3), radii=c(2,3,1))
-
-# Plot the ellipsoid
-surface3d(ep$x, ep$y, ep$z, color="red", alpha=1)
-
 #dat <- lapply(dirs,readEmbryos)
 #
 #sel <- meta$grouping=='surface'
@@ -134,11 +102,11 @@ colnames(membrane) <- embryos$name
 
 params <- merge(t(cell),t(membrane),0)
 params[sapply(params,function(x) !is.finite(x)&is.numeric(x))] <- 0
-dir.csv(params, 'params', 'out', row.names=F, append.date=F)
+csv(params, 'params')
 
 z <- zdf(params[,-1])
 z <- cbind(Row.names=params[,1],as.data.frame(z))
-dir.csv(z, 'z_dat', 'out', append.date=F, row.names=F)
+csv(z, 'z_dat')
 
 phenotype <- read.csv('phenotype.csv',stringsAsFactors=F)
 names(phenotype)[1] <- 'Date'
@@ -209,7 +177,7 @@ dat.phenotype <- merge(params,phenotype,by.x='Row.names',by.y=0,all.x=T)
 # dat.phenotype$Condition <- sub('\\..*','',dat.phenotype[,1])
 dat.phenotype$Date <- sub('.*\\.','',dat.phenotype[,1])
 
-dir.csv(dat.phenotype,'dat','out',row.names=F,append.date=F)
+csv(dat.phenotype,'dat')
 
 groups <- dat.phenotype[,c(1,(length(params)+1):length(dat.phenotype))]
 			   #         'Row.names', 'Condition', 'Phenotype',# 'nTVC', 'nATM',
@@ -252,7 +220,7 @@ pheno[pheno.sel$`TVC cell alignment`,
 #       "other"] <- "ATM disposition"
 # pheno <- cbind(Condition=groups$Condition,pheno)
 row.names(pheno) <- groups$Row.names
-dir.csv(pheno,'phenotype', 'out', append.date=F)
+csv(pheno,'phenotype',T)
 
 
 pheno.sub <- groups[
@@ -261,10 +229,10 @@ pheno.sub <- groups[
 
 sapply(phenotype[,c("Threshold.nuclei","Threshold.membrane")],as.numeric)
 
-dir.csv(groups,'groups', 'out', row.names=F, append.date=F)
-dir.csv(pheno.sub,'phenoSub','out',row.names=F,append.date=F)
-dir.csv(params[params[,1]%in%pheno.sub[,1],],'phenoSubParam','out',row.names=F,append.date=F)
-dir.csv(z[z[,1]%in%pheno.sub[,1],],'phenoSubZ','out',row.names=F,append.date=F)
+csv(groups,'groups')
+csv(pheno.sub,'phenoSub')
+csv(params[params[,1]%in%pheno.sub[,1],],'phenoSubParam')
+csv(z[z[,1]%in%pheno.sub[,1],],'phenoSubZ')
 
 library(dirfns)
 library(moreComplexHeatmap)
@@ -272,6 +240,42 @@ corHeatmap(params[,-1], buffer.h=50, buffer.w=50)
 quantHeatmap(params[,c(-1,-106,-107,-116,-117)], 'params', cell.w=0.012, cell.h=0.005, conds=groups[,-1])
 
 quantHeatmap(z[,c(-1,-106,-107,-116,-117)], 'z', cell.w=0.012, cell.h=0.005, conds=groups[,-1])
+
+# library(rgl)
+# 
+# cellaxis <- function(cell,c,var) do.call(rbind,
+#                 lapply(c("A","B","C"),
+#                     function(axis) as.matrix(setNames(cell[,c(paste0(c,".Position.",var),
+#                                         paste0(c,".Ellipsoid.Axis.",axis,".",var))],1:2))))
+# 
+# drawcell <- function(cell){
+#     X <- cellaxis(cell,"Cell","X")
+#     Y <- cellaxis(cell,"Cell","Y")
+#     Z <- cellaxis(cell,"Cell","Z")
+#     segments3d(X,Y,Z)
+# }
+# drawcell(celldat[[1]])
+# 
+# # Function to generate points for an ellipsoid
+# ellipsoid_points <- function(center=c(0,0,0), radii=c(1,1,1), resolution = 50) {
+#   theta <- seq(0, pi, length.out = resolution)  
+#   phi <- seq(0, 2 * pi, length.out = resolution)
+#   Theta <- matrix(rep(theta, each = resolution), ncol = resolution)
+#   Phi <- matrix(rep(phi, times = resolution), ncol = resolution)
+#   
+#   x <- center[1] + radii[1] * sin(Theta) * cos(Phi)
+#   y <- center[2] + radii[2] * sin(Theta) * sin(Phi)
+#   z <- center[3] + radii[3] * cos(Theta)
+#   
+#   list(x=x, y=y, z=z)
+# }
+# 
+# # Generate ellipsoid points
+# ep <- ellipsoid_points(center=c(1,2,3), radii=c(2,3,1))
+# 
+# # Plot the ellipsoid
+# surface3d(ep$x, ep$y, ep$z, color="red", alpha=1)
+
 
 # source('dewakss.R')
 #res <- seq(0.25, 2, 0.25)

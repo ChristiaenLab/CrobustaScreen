@@ -8,9 +8,9 @@ parser <- OptionParser()
 parser <- add_option(parser, '--threshold', 
 		     action = 'store_true',default=F)
 parser <- add_option(parser, '--dat', action = 'store',
-		     default = 'out/z_dat.csv')
+		     default = 'data/z_dat.csv')
 parser <- add_option(parser, '--groups', action = 'store',
-		     default = 'out/groups.csv')
+		     default = 'data/groups.csv')
 opts <- parse_args(parser)
 
 groups <- read.csv(opts$groups)
