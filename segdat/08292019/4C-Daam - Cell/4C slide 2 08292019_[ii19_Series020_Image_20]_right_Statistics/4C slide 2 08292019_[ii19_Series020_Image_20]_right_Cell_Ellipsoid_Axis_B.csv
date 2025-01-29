@@ -2,8 +2,9 @@
 Cell Ellipsoid Axis B
  ==================== 
 Cell Ellipsoid Axis B X,Cell Ellipsoid Axis B Y,Cell Ellipsoid Axis B Z,Unit,Category,Collection,Time,Default Labels,ID,
-0.183281,-0.205794,-0.961279,um,Cell,Cell Ellipsoid Axis B,1,ATM,0,
-0.80963,-0.299297,-0.504896,um,Cell,Cell Ellipsoid Axis B,1,ATM,8,
--0.0798541,-0.136297,0.987444,um,Cell,Cell Ellipsoid Axis B,1,TVC,5,
-0.0662034,-0.946965,-0.314443,um,Cell,Cell Ellipsoid Axis B,1,TVC,6,
--0.226603,0.528914,0.817864,um,Cell,Cell Ellipsoid Axis B,1,TVC,7,
+0.182123,-0.201969,-0.96231,um,Cell,Cell Ellipsoid Axis B,1,ATM,0,
+0.808064,-0.299224,-0.507443,um,Cell,Cell Ellipsoid Axis B,1,ATM,8,
+-0.130448,0.478015,-0.868611,um,Cell,Cell Ellipsoid Axis B,1,TVC,3,
+-0.0950214,-0.143655,0.985055,um,Cell,Cell Ellipsoid Axis B,1,TVC,5,
+0.0677181,-0.946064,-0.316824,um,Cell,Cell Ellipsoid Axis B,1,TVC,6,
+-0.213982,0.504791,0.8363,um,Cell,Cell Ellipsoid Axis B,1,TVC,7,

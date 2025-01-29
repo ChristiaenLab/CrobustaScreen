@@ -2,8 +2,9 @@
 Nucleus Ellipticity (prolate)
  ==================== 
 Nucleus Ellipticity (prolate),Unit,Category,Time,Default Labels,CellID,ID,
-0.514476,,Nucleus,1,TVC,5,100000004,
-0.380811,,Nucleus,1,ATM,0,100000005,
-0.288468,,Nucleus,1,TVC,6,100000006,
-0.309113,,Nucleus,1,TVC,7,100000007,
-0.360086,,Nucleus,1,ATM,8,100000008,
+0.39911,,Nucleus,1,TVC,3,100000002,
+0.516926,,Nucleus,1,TVC,5,100000004,
+0.380803,,Nucleus,1,ATM,0,100000005,
+0.265457,,Nucleus,1,TVC,6,100000006,
+0.310671,,Nucleus,1,TVC,7,100000007,
+0.363296,,Nucleus,1,ATM,8,100000008,

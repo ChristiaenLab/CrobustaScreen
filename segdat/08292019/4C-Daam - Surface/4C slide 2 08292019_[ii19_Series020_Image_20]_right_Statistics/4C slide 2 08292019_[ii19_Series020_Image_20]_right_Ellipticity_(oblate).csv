@@ -2,5 +2,6 @@
 Ellipticity (oblate)
  ==================== 
 Ellipticity (oblate),Unit,Category,Time,Default Labels,ID,
-0.604005,,Surface,1,TVCgroup,0,
-0.0158593,,Surface,1,ATMgroup,3,
+0.518302,,Surface,1,TVCgroup,0,
+0.214468,,Surface,1,ATM,4,
+0.15487,,Surface,1,ATM,5,

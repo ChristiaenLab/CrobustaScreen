@@ -2,5 +2,6 @@
 Ellipsoid Axis A
  ==================== 
 Ellipsoid Axis A X,Ellipsoid Axis A Y,Ellipsoid Axis A Z,Unit,Category,Collection,Time,Default Labels,ID,
-0.00667105,0.244568,-0.969609,um,Surface,Ellipsoid Axis A,1,ATMgroup,3,
-0.258325,-0.812867,-0.522029,um,Surface,Ellipsoid Axis A,1,TVCgroup,0,
+-0.40601,0.302091,-0.862494,um,Surface,Ellipsoid Axis A,1,ATM,4,
+0.298024,-0.917091,0.264813,um,Surface,Ellipsoid Axis A,1,ATM,5,
+-0.247165,0.809254,0.532933,um,Surface,Ellipsoid Axis A,1,TVCgroup,0,

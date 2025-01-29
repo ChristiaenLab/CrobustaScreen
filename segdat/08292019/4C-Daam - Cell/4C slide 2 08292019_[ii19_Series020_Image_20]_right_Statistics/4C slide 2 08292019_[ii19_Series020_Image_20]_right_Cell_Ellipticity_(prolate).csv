@@ -2,8 +2,9 @@
 Cell Ellipticity (prolate)
  ==================== 
 Cell Ellipticity (prolate),Unit,Category,Time,Default Labels,ID,
-0.650247,,Cell,1,ATM,0,
-0.355891,,Cell,1,TVC,5,
-0.271775,,Cell,1,TVC,6,
-0.599738,,Cell,1,TVC,7,
-0.617446,,Cell,1,ATM,8,
+0.648835,,Cell,1,ATM,0,
+0.359817,,Cell,1,TVC,3,
+0.356451,,Cell,1,TVC,5,
+0.273801,,Cell,1,TVC,6,
+0.596861,,Cell,1,TVC,7,
+0.616297,,Cell,1,ATM,8,

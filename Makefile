@@ -1,16 +1,21 @@
-DATE=$(date +%Y-%m-%d)
+# Fetch putative orthologs between C. robusta, human, and mouse
 
-out/raw/$DATE: out/params.csv
-	python3 runDewakss.py
+all: data/interactions.csv data/X.csv
 
-out/z/$DATE: out/z.csv
-	python3 runDewakss.py --params out/z_dat.csv --out out/z
+data/interactions.csv: STRINGdb
+	Rscript get.interactions.R
 
-out/phenoSub/$DATE: out/phenoSub.csv
-	python3 runDewakss.py --params out/phenoSubParam.csv --groups out/phenoSub.csv --out out/phenoSub
+STRINGdb: ensembl
+	Rscript STRINGdb.R
 
-out/phenoSubZ/$DATE: out/phenoSubZ.csv
-	python3 runDewakss.py --params out/phenoSubZ.csv --groups out/phenoSub.csv --out out/phenoSubZ
+ensembl: 
+	Rscript cint.ensembl.R
 
-out/params.csv:
+data/X.csv: data/z_dat.csv
+	julia preprocess.jl
+
+data/params.csv:
+	Rscript readPheno.R
+
+data/embryodat.csv:
 	Rscript readEmbryos.R

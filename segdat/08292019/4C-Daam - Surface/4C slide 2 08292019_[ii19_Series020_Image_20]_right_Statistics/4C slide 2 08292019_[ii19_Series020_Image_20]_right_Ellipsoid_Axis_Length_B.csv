@@ -2,5 +2,6 @@
 Ellipsoid Axis Length B
  ==================== 
 Ellipsoid Axis Length B,Unit,Category,Time,Default Labels,ID,
-14.415,um,Surface,1,TVCgroup,0,
-10.0761,um,Surface,1,ATMgroup,3,
+14.0045,um,Surface,1,TVCgroup,0,
+7.49407,um,Surface,1,ATM,4,
+6.89957,um,Surface,1,ATM,5,

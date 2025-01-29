@@ -2,5 +2,6 @@
 Ellipsoid Axis B
  ==================== 
 Ellipsoid Axis B X,Ellipsoid Axis B Y,Ellipsoid Axis B Z,Unit,Category,Collection,Time,Default Labels,ID,
-0.650265,-0.737685,-0.181595,um,Surface,Ellipsoid Axis B,1,ATMgroup,3,
--0.41939,0.392432,-0.818602,um,Surface,Ellipsoid Axis B,1,TVCgroup,0,
+0.815629,-0.305905,-0.491093,um,Surface,Ellipsoid Axis B,1,ATM,4,
+0.185467,-0.2165,-0.958504,um,Surface,Ellipsoid Axis B,1,ATM,5,
+-0.0787481,-0.564954,0.821356,um,Surface,Ellipsoid Axis B,1,TVCgroup,0,

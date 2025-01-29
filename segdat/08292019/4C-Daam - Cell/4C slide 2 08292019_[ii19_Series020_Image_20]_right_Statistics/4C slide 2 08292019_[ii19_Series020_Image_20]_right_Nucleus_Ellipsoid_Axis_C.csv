@@ -2,8 +2,9 @@
 Nucleus Ellipsoid Axis C
  ==================== 
 Nucleus Ellipsoid Axis C X,Nucleus Ellipsoid Axis C Y,Nucleus Ellipsoid Axis C Z,Unit,Category,Collection,Time,Default Labels,CellID,ID,
--0.0850311,0.027879,0.995988,um,Nucleus,Nucleus Ellipsoid Axis C,1,ATM,0,100000005,
--0.166251,0.0426122,0.985162,um,Nucleus,Nucleus Ellipsoid Axis C,1,ATM,8,100000008,
--0.105698,0.0441403,0.993418,um,Nucleus,Nucleus Ellipsoid Axis C,1,TVC,5,100000004,
-0.150202,0.13824,0.978943,um,Nucleus,Nucleus Ellipsoid Axis C,1,TVC,6,100000006,
-0.0722277,0.0382637,0.996654,um,Nucleus,Nucleus Ellipsoid Axis C,1,TVC,7,100000007,
+-0.0831093,0.0275502,0.99616,um,Nucleus,Nucleus Ellipsoid Axis C,1,ATM,0,100000005,
+-0.165716,0.0437113,0.985204,um,Nucleus,Nucleus Ellipsoid Axis C,1,ATM,8,100000008,
+0.186187,0.31704,0.929957,um,Nucleus,Nucleus Ellipsoid Axis C,1,TVC,3,100000002,
+-0.105258,0.0464415,0.99336,um,Nucleus,Nucleus Ellipsoid Axis C,1,TVC,5,100000004,
+0.321862,0.183753,0.928784,um,Nucleus,Nucleus Ellipsoid Axis C,1,TVC,6,100000006,
+0.0730586,0.0404334,0.996508,um,Nucleus,Nucleus Ellipsoid Axis C,1,TVC,7,100000007,

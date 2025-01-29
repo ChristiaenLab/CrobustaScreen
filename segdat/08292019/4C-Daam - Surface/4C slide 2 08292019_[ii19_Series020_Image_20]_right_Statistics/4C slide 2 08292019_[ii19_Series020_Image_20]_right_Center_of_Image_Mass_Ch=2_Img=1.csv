@@ -2,5 +2,6 @@
 Center of Image Mass Ch=2 Img=1
  ==================== 
 Center of Image Mass X,Center of Image Mass Y,Center of Image Mass Z,Unit,Category,Channel,Collection,Image,Time,Default Labels,ID,
-42283.2,51406.6,28.3628,um,Surface,2,Center of Image Mass,Image 1,1,ATMgroup,3,
-42340.2,51467.8,23.1336,um,Surface,2,Center of Image Mass,Image 1,1,TVCgroup,0,
+42317.5,51434.4,36.0746,um,Surface,2,Center of Image Mass,Image 1,1,ATM,4,
+42243.5,51374.6,19.4306,um,Surface,2,Center of Image Mass,Image 1,1,ATM,5,
+42338.7,51467.7,22.6275,um,Surface,2,Center of Image Mass,Image 1,1,TVCgroup,0,

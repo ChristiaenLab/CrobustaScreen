@@ -2,8 +2,9 @@
 Cell Sphericity
  ==================== 
 Cell Sphericity,Unit,Category,Time,Default Labels,ID,
-0.483949,,Cell,1,ATM,0,
-0.52896,,Cell,1,TVC,5,
-0.55714,,Cell,1,TVC,6,
-0.473661,,Cell,1,TVC,7,
-0.477693,,Cell,1,ATM,8,
+0.46937,,Cell,1,ATM,0,
+0.460688,,Cell,1,TVC,3,
+0.526896,,Cell,1,TVC,5,
+0.551203,,Cell,1,TVC,6,
+0.459539,,Cell,1,TVC,7,
+0.472028,,Cell,1,ATM,8,

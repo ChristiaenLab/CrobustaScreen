@@ -2,5 +2,6 @@
 BoundingBoxAA Length
  ==================== 
 BoundingBoxAA Length X,BoundingBoxAA Length Y,BoundingBoxAA Length Z,Unit,Category,Collection,Time,Default Labels,ID,
-108.633,93.9102,32.2171,um,Surface,BoundingBoxAA Length,1,ATMgroup,3,
-34.6914,24.4688,27.1302,um,Surface,BoundingBoxAA Length,1,TVCgroup,0,
+24.457,44.1094,16.5324,um,Surface,BoundingBoxAA Length,1,ATM,4,
+42.9414,18.7812,18.652,um,Surface,BoundingBoxAA Length,1,ATM,5,
+41.8008,24.4688,27.554,um,Surface,BoundingBoxAA Length,1,TVCgroup,0,
