@@ -1,7 +1,0 @@
-kh.ky <- read.table('targets/KH2012_KY2019.txt')
-names(kh.ky) <- c("KHID","KYID")
-khname <- read.table('KH2013-UniqueNAME.txt',header=T)  
-names(khname) <- c("KHID","GeneName")
-khname$KHID <- sub('KH2013:','',khname$KHID)
-kh.ky <- merge(kh.ky,khname,all.x=T,all.y=T)
-write.table(kh.ky,"KH.KYname.tsv",row.names=F,quote=F)
