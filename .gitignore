@@ -34,8 +34,13 @@
 **/*.jld2
 **/*.pb
 **/*.pickle
-**/*.Robj
 **/*.model
+
+**/*.Robj
+**/*.Rdata
+**/*.Rda
+**/*.RData
+**/*.Rhistory
 
 # compressed
 **/*.zip
@@ -90,7 +95,5 @@ interactionExample/**
 
 # cached environments
 **/environment*
-**/_*
-**/.RData
-**/.Rhistory
+**/__pycache__
 **/edit

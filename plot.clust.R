@@ -1,10 +1,12 @@
-source("R/modelfns.R")
-source("R/test.knn.R")
 source("R/leiden.R")
-source("R/clustplots.R")
-source("R/plotfns.R")
-source("R/io.R")
 source("R/gene.network.R")
+
+source("R/hyper.R")
+source("R/clust.params.R")
+
+source("R/plotfns.R")
+source("R/clustplots.R")
+source("R/io.R")
 
 library(optparse)
 library(igraph)
@@ -51,7 +53,8 @@ dir.plot("knn")(plot.edge, umap.coords, knn)
 plots <- lapply(names(leidens)[2:7], dot.stat, leidens)
 
 es <- dot.stat("ES", ks)
-dir.f(ggexport)(ggarrange(plotlist = list(es), ncol = 3, nrow = 3),
+dir.f(ggexport)(ggarrange(plotlist = list(es), 
+			  ncol = 3, nrow = 3),
 		filename = "ES.pdf")
  
 plots <- append(plots, list(es))
@@ -105,15 +108,29 @@ dir.f(quantHeatmap)(encoded, filename = "embedding",
 		    cell.w = 0.001, cell.h = 0.005,
 		    show_row_names = F)
 
-dir.f(clusthyper, 'out')(groups[, "Condition", drop = F], clusts[, 1])
+dir.f(clusthyper, 'out')(groups[, "Condition", drop = F], 
+			 clusts[, 1], 
+			 filename = "condition")
 dir.f(clusthyper, 'out')(as.data.frame(pheno), clusts[, 1],
 			filename = 'pheno')
+
+dir.f(clustparam, "out")(params, clusts[,1],
+			 filename = "params")
+dir.f(clustparam, "out")(z, clusts[,1],
+			 filename = "z")
 
 g <- gene.network(knn, resolution, groups$Condition, 
 		  mode = 'directed')
 
 edgelist <- cbind(as.data.frame(as_edgelist(g)), E(g)$weight)
-edgelist <- do.call(rbind, lapply(split(edgelist, edgelist[, 1]), function(x) x[order(x[, 3], decreasing = T)[1:min(nrow(x), 5)], ]))
+edgelist <- do.call(rbind, 
+    lapply(split(edgelist, 
+		 edgelist[, 1]), 
+	   function(x) { 
+		   x[order(x[, 3], 
+			   decreasing = T)[1:min(nrow(x), 5)], ]
+	   }))
+
 reduced <- graph_from_edgelist(as.matrix(edgelist[, -3]), F)
 write.dot(reduced, 'gene_network')
 graph.pdf('gene_network', reduced)

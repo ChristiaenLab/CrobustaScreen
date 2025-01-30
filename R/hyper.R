@@ -1,9 +1,8 @@
-writepdf <- function(expr,file,out='.',...){
-    pdf(paste0(out,'/',file),...)
-    tryCatch(expr,finally=dev.off())
-}
-        
-clusthyper <- function(dat, clusts, out,...){
+source("R/dotplot.R")
+
+clusthyper <- function(dat, clusts, out, ...){
+	# require(moreComplexHeatmap)
+
 	# run hypergeometric tests for enrichment of conditions and phenotypes
 	hyper <- lapply(dat, 
 			function(x) condhyper(row.names(dat),
@@ -12,6 +11,7 @@ clusthyper <- function(dat, clusts, out,...){
 	# extract fields from test & reformat as matrices
 	odds <- do.call(rbind,lapply(hyper,'[[','log2OR'))
 	fdr <- do.call(rbind,lapply(hyper,'[[','FDR'))
+	logfdr <- -log10(fdr)
 	qval <- as.matrix(do.call(rbind,
 				  lapply(hyper,'[[','q')))
 
@@ -44,15 +44,33 @@ clusthyper <- function(dat, clusts, out,...){
 	),'size', out, append.date=F)
 
         writepdf({
-    pdf(paste0(out,'/hyper.pdf'))
-            dotplot(
-                odds,
-                fdr,
-                qval,
-                row_split=rowsplit,
-                row_title_rot=0,...)
-    dev.off()
+    #pdf(paste0(out,'/hyper.pdf'))
+            dotplot.outl(odds,
+                	 logfdr,
+                	 qval,
+                	 row_split = rowsplit,
+                	 row_title_rot = 0, ...)
+    #dev.off()
+        },'hyper.outl.pdf',out)
+
+        writepdf({
+            dotplot(odds,
+                    logfdr,
+                    row_split = rowsplit,
+                    row_title_rot = 0, ...)
         },'hyper.pdf',out)
+
+	#if(length(unique(clusts)) > 1){
+	#	dotPscale(
+	#		odds, 
+	#		fdr, 
+	#		qval, 
+	#		file = 'condition', 
+	#		path = out, 
+	#		row_split = rowsplit, 
+	#		row_title_rot = 0
+	#	)
+	#}
 }
 
 
@@ -150,5 +168,4 @@ condHyper <- function(id, conds, clusts, padj.method = 'fdr'){
 	row.names(testHyper) <- names(test)
 	return(list(log2OR = log2OR, FDR = testFdr, q = q))
 }
-
 
