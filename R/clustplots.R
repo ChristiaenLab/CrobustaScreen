@@ -1,5 +1,7 @@
+source("R/dirfns.R")
+
 silhouettePlot <- function(dat, clusts, distmat = NULL, out){
-	require(dirfns)
+	#require(dirfns)
 	require(cluster)
 	pcs <- dat[, grep('pca', names(pcs))]
 	pcs <- dat[, !apply(pcs == 0, 2, all)]
@@ -21,7 +23,7 @@ silhouettePlot <- function(dat, clusts, distmat = NULL, out){
 }
 
 plotDist <- function(dat, conds, distmat, out, clustcol = 'gray', ...){
-	require(dirfns)
+	#require(dirfns)
 
 	dat <- dat[, grep('umap', names(dat))]
 	cols <- c(Depdc = 'royalblue', Tyrosinase = 'saddlebrown')
@@ -52,7 +54,7 @@ plotDist <- function(dat, conds, distmat, out, clustcol = 'gray', ...){
 clustplots <- function(dat, clusts, conds, distmat, 
 		       out = '.', append.date = T,
 		       legend.ncol = 2, legend.cex = 0.5){
-	require(dirfns)
+	#require(dirfns)
 	require(cluster)
 
 	row.names(dat) <- as.character(1:nrow(dat))

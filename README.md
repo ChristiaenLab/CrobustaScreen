@@ -22,8 +22,6 @@ Clustering:
 Visualization:
 `circlize`, `ComplexHeatmap`, `ggplot2`, `ggpubr`, `umap` 
 
-This pipeline also uses [`dirfns`](https://github.com/kewiechecki/dirfns) and [`moreComplexHeatmap`](https://github.com/kewiechecki/moreComplexHeatmap)
-
 ### Python 
 `leidenalg`, `igraph`, `umap`
 

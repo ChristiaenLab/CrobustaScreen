@@ -1,6 +1,7 @@
 #source('modelfns.R')
 #source('descend.R')
 #source('clustplots.R')
+source("R/dirfns.R")
 
 dot.stat <- function(y, dat, ...){
 	require(ggplot2)
@@ -20,7 +21,7 @@ dot.col <- function(y, dat, cols = '', id = 'group', ...){
 
 
 dir.f <- function(f, file.arg = 'filename'){
-	require(dirfns)
+	#require(dirfns)
 
 	function(..., filename = '', ext = '', path = '.', append.date = T){
 		out <- mkdate(filename, ext = ext, path = path, append.date = append.date)
@@ -30,7 +31,7 @@ dir.f <- function(f, file.arg = 'filename'){
 }
 
 dir.plot <- function(out, outfn = dir.pdf){
-	require(dirfns)
+	#require(dirfns)
 	function(f, ...){
 		outfn(out)
 		tryCatch(f(...), finally = dev.off())
@@ -41,7 +42,7 @@ arrange.stats <- function(plots, filename, ncols = 3,
 			  nrows = ceiling(length(plots)/ncols),
 			  ...){
 	require(ggpubr)
-	require(dirfns)
+	#require(dirfns)
 
 	#         nrows <- ceiling(length(plots)/ncols)
 	dat <- lapply(plots, '[[', 'data')

@@ -1,8 +1,9 @@
+source("R/dirfns.R")
 source("R/pois.R")
 
 dotPois <- function(pois, out, append.date = T){
 	require(moreComplexHeatmap)
-	require(dirfns)
+	#require(dirfns)
 
 	dotPscale(
 		pois$log2OR, 
@@ -51,7 +52,7 @@ networkPois <- function(g, file, out = '.',
 			title = 'log2OR',
 			layout = layout_nicely, ...){
 	require(igraph)
-	require(dirfns)
+	#require(dirfns)
 
 	E(g)$edge.color <- colfn(E(g)$weight)
 
@@ -102,7 +103,7 @@ plotNetworkCircle <- function(g, file, out = '.', colfn, lgd,
 			      title = 'log2OR', 
 			      layout = layout.circle, 
 			      append.date = T){
-	require(dirfns)
+	#require(dirfns)
 
 	dir.pdf(file, out, append.date = append.date)
 	plot(g, vertex.shape = 'none', 

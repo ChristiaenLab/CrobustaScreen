@@ -1,5 +1,7 @@
-source("imageFns.R")
-library(dirfns)
+source("R/imageFns.R")
+source("R/dirfns.R")
+
+#library(dirfns)
 library(purrr)
 
 dirs <- list.files("segdat", 

@@ -2,10 +2,11 @@
 
 source('R/optimization.R')
 source("R/io.R")
+source("R/dirfns.R")
 
 library(optparse)
 library(igraph)
-library(dirfns)
+#library(dirfns)
 
 parser <- data.parser()
 
