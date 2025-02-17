@@ -2,19 +2,19 @@ source("R/dotplot.R")
 
 clust.t.test <- function(x, clust, dat){
         mu <- mean(dat[, x], na.rm = T)
-        FC <- mean(clust[, x], na.rm = T)/mu
+        mu_cl <- mean(clust[, x], na.rm = T)
+        FC <- mu_cl / mu
         if(FC != 1 & length(unique(clust[, x])) > 1){
 	utest <- wilcox.test(clust[, x], 
-			     mu = mean(dat[, x], 
-				       na.rm = T))$p.value
+			     mu = mu)$p.value
 	ttest <- t.test(clust[, x], 
-			mu = mean(dat[, x], 
-				  na.rm = T))$p.value
+			mu = mu)$p.value
         } else {
                 utest <- NaN
                 ttest <- NaN
         }
-        return(c(FC = FC, u = utest, t = ttest))
+        return(c(mu = mu_cl, FC = FC, 
+		 u = utest, t = ttest))
 } 
 
 test.clust.params <- function(dat,clustdat){
@@ -99,6 +99,7 @@ clustparam <- function(dat, clusts, out,
 	test <- test.clust.params(dat,clustdat)
 
 	# select fields from output
+	mudat <- sapply(test, '[', "mu", )
 	fcdat <- sapply(test, '[', "FC", )
 	p.t <- sapply(test, '[', 't', )
 	p.u <- sapply(test, '[', 'u', )
@@ -150,12 +151,26 @@ clustparam <- function(dat, clusts, out,
 				log.t[rsel.t,],
 				mat.name = "log2(FC)",
 				row_title_rot = 0)
-		}, "t.pdf", out, height = 24)
+		}, "t.fc.pdf", out, height = 24)
 
 		writepdf({
 			dotplot(log.fc[rsel.u,], 
 				log.u[rsel.u,],
 				mat.name = "log2(FC)",
+				row_title_rot = 0)
+		}, "u.fc.pdf", out, height = 24)
+	
+		writepdf({
+			dotplot(mudat[rsel.t,], 
+				log.t[rsel.t,],
+				mat.name = "mean",
+				row_title_rot = 0)
+		}, "t.pdf", out, height = 24)
+
+		writepdf({
+			dotplot(mudat[rsel.u,], 
+				log.u[rsel.u,],
+				mat.name = "mean",
 				row_title_rot = 0)
 		}, "u.pdf", out, height = 24)
 	}

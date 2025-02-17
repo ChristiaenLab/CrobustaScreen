@@ -18,9 +18,12 @@ library(ggpubr)
 parser <- data.parser()
 parser <- add_option(parser, c("-c", "--clust_dir"), 
 		     action = "store",
-		     default = Sys.Date(),
+		     #default = Sys.Date(),
+		     default = "data",
 		     help = "Location of clustering output")
 parse.env(parser)
+
+# read data into global env
 list2env(read.clusts(clust_dir), globalenv())
 
 umap.coords <- umap(encoded)$layout
@@ -75,14 +78,19 @@ colnames(dists) <- as.numeric(1:nrow(dists))
 dir.plot('knn.clust')(plot.pt, umap.coords, knn, clusts[, 1])
 
 clustcond <- function(cond, clusts = NULL, ...){
-	dir.pdf(paste0('umap/', gsub("/", "_", cond)))
+	dir.pdf(paste0('umap/edge/', gsub("/", "_", cond)))
 	plot.edge(umap.coords, knn, clusts)
+	points(umap.coords[groups$Condition == cond, ], ...)
+	dev.off()
+
+	dir.pdf(paste0('umap/point/', gsub("/", "_", cond)))
+	plot.pt(umap.coords, knn, clusts)
 	points(umap.coords[groups$Condition == cond, ], ...)
 	dev.off()
 }
 sapply(unique(groups$Condition), clustcond, 
        clusts = clusts[, 1], 
-       pch = 19, cex = 0.8, col = 1)
+       pch = 1, cex = 0.8, col = 1)
 
 
 clustplots(encoded,
@@ -118,6 +126,8 @@ dir.f(clustparam, "out")(params, clusts[,1],
 			 filename = "params")
 dir.f(clustparam, "out")(z, clusts[,1],
 			 filename = "z")
+dir.f(clustparam, "out")(encoded, clusts[,1],
+			 filename = "embeddings")
 
 g <- gene.network(knn, resolution, groups$Condition, 
 		  mode = 'directed')

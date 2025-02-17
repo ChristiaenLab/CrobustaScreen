@@ -11,9 +11,18 @@ A pipeline for self-supervised phenotype detection from confocal images of *Cion
 ## Dependencies
 
 ### R
-`circlize`, `class`, `cluster`, `ComplexHeatmap`, `fgsea`, `ggplot2`, `ggpubr`, `igraph`, `keras`, `leiden`, `optparse`, `parallel`, `purrr`, `STRINGdb`, `umap` 
+`optparse`, `parallel`, `purrr`
 
-This pipeline also uses the packages [`dirfns`](https://github.com/kewiechecki/dirfns) and [`moreComplexHeatmap`](https://github.com/kewiechecki/moreComplexHeatmap)
+To fetch interactions:
+`biomaRt`, `STRINGdb`
+
+Clustering:
+`class`, `cluster`, `fgsea`, `igraph`, `leiden`, 
+
+Visualization:
+`circlize`, `ComplexHeatmap`, `ggplot2`, `ggpubr`, `umap` 
+
+This pipeline also uses [`dirfns`](https://github.com/kewiechecki/dirfns) and [`moreComplexHeatmap`](https://github.com/kewiechecki/moreComplexHeatmap)
 
 ### Python 
 `leidenalg`, `igraph`, `umap`
