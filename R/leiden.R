@@ -1,23 +1,29 @@
 source("R/test.knn.R")
 
-test.leiden <- function(res,k,g,dat,reps,groups,int,...){
+test.leiden <- function(res, k, g, dat, 
+			reps, groups, int, ...){
 	require(cluster)
 	require(leiden)
 
 	dists <- as.matrix(dist(dat))
 
-	clust <- leiden(g,resolution_parameter=res)
-	if(all(clust==1)) return(c(rep(0,6),clust))
+	clust <- leiden(g, resolution_parameter = res)
+	if(all(clust == 1)){
+		err <- NaN
+		es <- NaN
+		sil <- NaN
+		recall <- 1
+	} else{
+		err <- test.knn(dat, k, clust, reps = reps)
 
-	err <- test.knn(dat,k,clust,reps=reps)
+		es <- test.leiden.gsea(g, clust, groups, int)
+		sil <- mean(silhouette(clust, dists)[,3])
 
-	es <- test.leiden.gsea(g,clust,groups,int)
-	sil <- mean(silhouette(clust,dists)[,3])
+		g.gene <- gene.network(g, res, groups)
+		recall <- score.gene.network(g.gene, int)
+	}
 
-	g.gene <- gene.network(g,res,groups)
-	recall <- score.gene.network(g.gene,int)
-
-	#stat <- err*es*sil*recall
+	#stat <- err * es * sil * recall
 	stat <- es * recall
 	return(c(combined_score = stat,
 		 ES = es, 
@@ -28,19 +34,19 @@ test.leiden <- function(res,k,g,dat,reps,groups,int,...){
 		 clust))
 }
 
-test.leiden.gsea <- function(g,clust,groups,int,...){
+test.leiden.gsea <- function(g, clust, groups, int, ...){
 	require(fgsea)
 	require(leiden)
 
-	e.group <- edge.factor(group.edge(g,groups),T)
+	e.group <- edge.factor(group.edge(g, groups), T)
 
-	e.clust <- group.edge(g,clust)
+	e.clust <- group.edge(g, clust)
 
-	is.cis <- e.clust[,1]==e.clust[,2]
-	scores <- table(e.group[is.cis])/table(e.group[!is.cis])
+	is.cis <- e.clust[,1] == e.clust[,2]
+	scores <- table(e.group[is.cis]) / table(e.group[!is.cis])
 	scores[!is.finite(scores)] <- max(Filter(is.finite,
 						 scores))
-	cl <- fgsea(list(interactions=int),scores)
+	cl <- fgsea(list(interactions = int), scores)
 
 	return(cl$ES)
 }
@@ -51,9 +57,9 @@ gene.network <- function(g, res, groups,
 			 diag = F, ...){
 	require(igraph)
 	gene.edge <- group.edge(g, groups)
-	K.out <- sapply(split(igraph::degree(g, mode='out'),
+	K.out <- sapply(split(igraph::degree(g, mode = 'out'),
 			      groups), sum)
-	K.in <- sapply(split(igraph::degree(g, mode='in'),
+	K.in <- sapply(split(igraph::degree(g, mode = 'in'),
 			     groups), sum)
 
 	fy <- function(y, x){ 

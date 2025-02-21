@@ -118,12 +118,6 @@ Sample parameters are often strongly correlated. This is undesirable for self-su
 An autoencoder is a neural network architecture widely used for denoising and image recognition. It works by encoding the input data into a lower dimensional representation that can be decoded with minimal loss. By extracting this lower dimensional encoding (the "bottleneck" or "embedding" layer), an autoencoder [can be used for dimension reduction](https://doi.org/10.1016/j.neucom.2015.08.104).
 This results in an embedding that corresponds to the information content of the input data rather than absolute distance in phenotype space.
 
-`encode.R` trains four autoencoders using embedding layers of 2, 3, 7, and 14 dimensions. `cluster.R` selects the optimal embedding based on [Akaike Information Criterion](https://en.wikipedia.org/wiki/Akaike_information_criterion) defined as 
-
-$$AIC = 2k - 2ln(\hat{L})$$ 
-
-where $k$ is the number of parameters and $\hat{L}$ is a likelihood function, which we define as $1 - MSE$.
-
 ### Clustering Algorithm
 
 ![alt text](https://github.com/ChristiaenLab/CrobustaScreen/blob/main/fig/cluster.dot.svg?raw=true)

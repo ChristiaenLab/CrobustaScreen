@@ -21,6 +21,11 @@ parser <- add_option(parser, c("-c", "--clust_dir"),
 		     #default = Sys.Date(),
 		     default = "data",
 		     help = "Location of clustering output")
+parser <- add_option(parser, c("-s", "--clust_sel_method"), 
+		     action = "store",
+		     #default = "combined_score",
+		     default = "ES",
+		     help = "resolution selection parameter method for clusters. One of \"combined_score\", \"ES\", \"log2error\", \"mean_silhouette\", \"nclusts\".")
 parse.env(parser)
 
 # read data into global env
@@ -75,7 +80,7 @@ dists <- as.matrix(as_adjacency_matrix(knn))
 row.names(dists) <- as.numeric(1:nrow(dists))
 colnames(dists) <- as.numeric(1:nrow(dists))
 
-dir.plot('knn.clust')(plot.pt, umap.coords, knn, clusts[, 1])
+dir.plot('knn.clust')(plot.pt, umap.coords, knn, clusts[,clust_sel_method])
 
 clustcond <- function(cond, clusts = NULL, ...){
 	dir.pdf(paste0('umap/edge/', gsub("/", "_", cond)))
@@ -89,44 +94,44 @@ clustcond <- function(cond, clusts = NULL, ...){
 	dev.off()
 }
 sapply(unique(groups$Condition), clustcond, 
-       clusts = clusts[, 1], 
+       clusts = clusts[,clust_sel_method], 
        pch = 1, cex = 0.8, col = 1)
 
 
 clustplots(encoded,
-	   clusts[, 1],
+	   clusts[,clust_sel_method],
 	   groups$Phenotype,
 	   dists, 'pheno')
 
 clustplots(encoded,
-	   clusts[, 1],
+	   clusts[,clust_sel_method],
 	   NULL,
 	   dists, legend.ncol = 1, legend.cex = 1)
 
 dir.f(quantHeatmap)(params, filename = "params",
-		    split = clusts[, 1],
+		    split = clusts[,clust_sel_method],
 		    cell.w = 0.012, cell.h = 0.005,
 		    show_row_names = F)
 dir.f(quantHeatmap)(z, filename = "z",
-		    split = clusts[, 1],
+		    split = clusts[,clust_sel_method],
 		    cell.w = 0.012, cell.h = 0.005,
 		    show_row_names = F)
 dir.f(quantHeatmap)(encoded, filename = "embedding",
-		    split = clusts[, 1],
+		    split = clusts[,clust_sel_method],
 		    cell.w = 0.001, cell.h = 0.005,
 		    show_row_names = F)
 
 dir.f(clusthyper, 'out')(groups[, "Condition", drop = F], 
-			 clusts[, 1], 
+			 clusts[,clust_sel_method], 
 			 filename = "condition")
-dir.f(clusthyper, 'out')(as.data.frame(pheno), clusts[, 1],
+dir.f(clusthyper, 'out')(as.data.frame(pheno), clusts[,clust_sel_method],
 			filename = 'pheno')
 
-dir.f(clustparam, "out")(params, clusts[,1],
+dir.f(clustparam, "out")(params, clusts[,clust_sel_method],
 			 filename = "params")
-dir.f(clustparam, "out")(z, clusts[,1],
+dir.f(clustparam, "out")(z, clusts[,clust_sel_method],
 			 filename = "z")
-dir.f(clustparam, "out")(encoded, clusts[,1],
+dir.f(clustparam, "out")(encoded, clusts[,clust_sel_method],
 			 filename = "embeddings")
 
 g <- gene.network(knn, resolution, groups$Condition, 

@@ -38,19 +38,23 @@ map.eta <- function(FMAP, msg){
 	}
 }
 
-get.res <- function(range,breaks,rate,maxiter,
-		    k,dat,int,groups,...){
+get.res <- function(range, breaks, rate, maxiter,
+		    k, dat, int, groups, ...){
 	require(igraph)
 	dists <- as.matrix(dist(dat))
-	g <- get.knn(dists,k)
-	descend(range,test.leiden,
-		k=k,g=g,dat=dat,reps=1000,groups=groups,
-		int=int,breaks=breaks,rate=rate,
-		maxiter=maxiter,min=0.05,
-		trace=matrix(nrow=0,ncol=7+nrow(dat)),...)
+	g <- get.knn(dists, k)
+	descend(range, test.leiden,
+		k = k, g = g, dat = dat,
+		reps = 1000, 
+		groups = groups, int = int, 
+		breaks = breaks, rate = rate,
+		maxiter = maxiter, min = 0.05,
+		trace = matrix(nrow = 0, 
+			       ncol = 7 + nrow(dat)), ...)
 }
 
-get.k <- function(range, dists, group, int, mode='plus'){
+get.k <- function(range, dists, group, int, 
+		  mode = 'plus'){
 	res <- par.apply(range, gsea.prot, 
 			 dists, group, int, 
 			 mode = mode)
@@ -66,10 +70,10 @@ get.res.unif <- function(range, k, dat, int, groups,
 	g <- get.knn(dists, k, 'plus')
 
 	res <- runif(reps, range[1], range[2])
-	out <- par.apply(res, test.leiden,
-		k = k,g = g,dat = dat,reps = 1000,
-		groups = groups,
-		int = int)
+	out <- par.apply(res, test.leiden, 
+			 k = k, g = g, dat = dat, 
+			 reps = 1000, 
+			 groups = groups, int = int)
 	return(cbind(resolution = res, t(out)))
 }
 
@@ -78,13 +82,14 @@ get.leidens <- function(range, k, dat){
 	require(leiden)
 	 
 	dists <- as.matrix(dist(dat))
-	g <- get.knn(dists,k,'plus')
+	g <- get.knn(dists, k, 'plus')
 
-	res <- runif(reps,range[1],range[2])
-	clust <- par.apply(leiden,resolution_parameter=res,
-			   MoreArgs=list(object=g),
-			   f=clusterMap)
+	res <- runif(reps, range[1], range[2])
+	clust <- par.apply(leiden, 
+			   resolution_parameter = res,
+			   MoreArgs = list(object = g),
+			   f = clusterMap)
 
-	return(cbind(res,t(clusts)))
+	return(cbind(res, t(clusts)))
  }
 

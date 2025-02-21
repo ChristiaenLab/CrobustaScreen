@@ -1,4 +1,4 @@
-data.parser <- function(){
+data.parser <- function(outdir = Sys.Date()){
 	parser <- OptionParser()
 	parser <- add_option(parser, 
 			     c("-e", "--encoder_dir"), 
@@ -11,7 +11,7 @@ data.parser <- function(){
 			     help = "Location of metadata")
 	parser <- add_option(parser, c("-o", "--out_dir"), 
 			     action = 'store',
-			     default = Sys.Date(),
+			     default = outdir,
 			     help = "Output directory")
 	return(parser)
 }
@@ -33,7 +33,7 @@ int <- read.opt(dir, "interactions.csv",
 			      rep,2)))
 	int <- int[!duplicated(int),]
 
-	int <- apply(int,1,paste,collapse='- > ')
+	int <- apply(int, 1, paste, collapse = '->')
 	return(int)
 }
 	

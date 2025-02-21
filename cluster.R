@@ -6,9 +6,10 @@ source("R/dirfns.R")
 
 library(optparse)
 library(igraph)
+library(leiden)
 #library(dirfns)
 
-parser <- data.parser()
+parser <- data.parser("data")
 
 parser <- add_option(parser, c("-k", "--k_min"), 
 		     action = "store", 
@@ -42,7 +43,7 @@ dir.csv(ks, 'k', out_dir, append.date = F)
 
 k <- ks[which.max(ks[,'ES']),'k']
 
-leidens <- get.res.unif(c(0.01, gamma_max), k, encoded, 
+leidens <- get.res.unif(c(0.05, gamma_max), k, encoded, 
 			interactions, groups$Condition, 
 			leiden_reps)
 
