@@ -1,3 +1,5 @@
+library(circlize)
+
 #' Color scale for a specified quantile. This scale is intended for heatmaps containing negative and positive values, so the range is set to \code{c(quant,1-quant)}.
 #'
 #' @param x A numeric matrix or vector.

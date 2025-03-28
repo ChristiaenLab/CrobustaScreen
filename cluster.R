@@ -41,7 +41,7 @@ ks <- get.k(k_min:k_max, dists, groups$Condition, interactions, 'directed')
 
 dir.csv(ks, 'k', out_dir, append.date = F)
 
-k <- ks[which.max(ks[,'ES']),'k']
+k <- ks[which.max(ks[,'ES']), 'k']
 
 leidens <- get.res.unif(c(0.05, gamma_max), k, encoded, 
 			interactions, groups$Condition, 

@@ -108,6 +108,20 @@ Generate plots and characterize optimal clusterings
 Rscript plot.clust.R
 ```
 
+### DEWAK
+Requires the additional package [`DeePWAK.jl`](https://github.com/kewiechecki/DeePWAK.jl)
+
+```julia
+julia dewak.jl
+```
+
+Cluster using PCs instead of embeddings
+```bash
+Rscript cluster.R -e data/PCs.csv -o data/PCA
+Rscript plot.clust.R -e data/PCs.csv -o fig/PCA/ -c data/PCA/ -s combined_score
+```
+
+
 ## Motivation
 ### Dimension Reduction
 

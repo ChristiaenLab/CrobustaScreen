@@ -1,9 +1,10 @@
 data.parser <- function(outdir = Sys.Date()){
 	parser <- OptionParser()
 	parser <- add_option(parser, 
-			     c("-e", "--encoder_dir"), 
+			     #c("-e", "--encoder_dir"), 
+			     c("-e", "--embeddings"), 
 			     action = 'store',
-			     default = 'data',
+			     default = 'data/E.csv',
 			     help = "Location of autoencoder output")
 	parser <- add_option(parser, c("-m", '--meta_dir'), 
 			     action = 'store',
@@ -61,8 +62,9 @@ read.params <- function(dir){
 	     interactions = interactions)
 }
 
-read.embeddings <- function(dir){
-	encoded <- read.opt(dir, "E.csv")
+read.embeddings <- function(path){
+	#encoded <- read.opt(path, "E.csv")
+	encoded <- read.csv(path)
 	names(encoded) <- sub("Column", "embedding",
 			      names(encoded))
 
@@ -93,7 +95,7 @@ parse.env <- function(parser){
 	opts <- parse_args(parser)
 	
 	dat <- read.params(opts$meta_dir)
-	embedding <- read.embeddings(opts$encoder_dir)
+	embedding <- read.embeddings(opts$embeddings)
 
 	list2env(opts, globalenv())
 	list2env(dat, globalenv())
