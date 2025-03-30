@@ -39,8 +39,9 @@ dir.plot <- function(out, outfn = dir.pdf){
 }
 
 arrange.stats <- function(plots, filename, ncols = 3,
-			  nrows = ceiling(length(plots)/ncols),
-			  ...){
+						  nrows = ncols, 
+						  #nrows = ceiling(length(plots)/ncols),
+						  ...){
 	require(ggpubr)
 	#require(dirfns)
 

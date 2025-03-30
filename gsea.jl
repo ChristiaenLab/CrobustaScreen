@@ -26,14 +26,22 @@ ids_sig = readcsv("data/stringdblabels.csv")[:, 1]
 
 i_stringdb = mapreduce(x->findall(ids .== x), vcat, ids_sig)
 
-function interactionscore(G::AbstractMatrix, i::Integer, j::Integer)
+function interactionscore(G::AbstractMatrix, i::Integer, j::Integer;
+                          weighted = false)
+    if !weighted
+        G = G .> 0
+    end
     sum(G[C[i, :], C[j, :]])
 end
 
-function interactionscore(G::AbstractMatrix)
+function interactionscore(G::AbstractMatrix; scale = false)
     score = mapreduce(hcat, 1:c) do i
         mapreduce(vcat, 1:c) do j
-            interactionscore(G, i, j) / (sum(C[i, :]) * sum(C[j, :]))
+            s = interactionscore(G, i, j)
+            if scale
+                s = s / (sum(C[i, :]) * sum(C[j, :]))
+            end
+            s
         end
     end
     reshape(score, c^2)
@@ -131,7 +139,10 @@ end
 
 function loss_stringdb(G)
     precision,recall = pr_stringdb(G)
-    ES = es_stringdb(G)
-    ES, precision, recall
+    #ES = es_stringdb(G)
+    gsea = @suppress fgsea(G)
+    ES = gsea.ES
+    NES = gsea.NES
+    ES, NES, precision, recall
 end
 

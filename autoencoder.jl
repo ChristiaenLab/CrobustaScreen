@@ -24,14 +24,13 @@ path = args["path"]
 ###############################
 # define hyperparameters
 epochs = 10000
-batchsize=512
 
 # learning rate
 η = 0.0001
 
 # weight decay rate
 λ = 0.0001
-optimiser = OptimiserChain(Flux.AdamW(η),Flux.WeightDecay(λ))
+optimiser = OptimiserChain(Flux.AdamW(η), Flux.WeightDecay(λ))
 
 ################################
 
@@ -39,7 +38,7 @@ optimiser = OptimiserChain(Flux.AdamW(η),Flux.WeightDecay(λ))
 ################################
 # load data
 X = readmat("data/X.csv")'
-m,n = size(X)
+m, n = size(X)
 ################################
 
 
@@ -47,14 +46,14 @@ m,n = size(X)
 # define training set & test set; split training set into minibatches 
 # fraction to use for test set
 frac = 10
-n_test = Integer(2^round(log2(n) - log2(frac)))
+n_test = Integer(2 ^ round(log2(n) - log2(frac)))
 n_train = n - n_test
 
 # split into training and test set
-test,train = sampledat(X,n_test) |> gpu
+test,train = sampledat(X, n_test) |> gpu
 
 # split into minibatches of batchsize
-loader = Flux.DataLoader((train,train),batchsize=n_test,shuffle=true) 
+loader = Flux.DataLoader((train,train), batchsize = n_test, shuffle = true) 
 ################################
 
 
@@ -66,7 +65,7 @@ f = loss(Flux.mse)
 
 # `loss_test(f, model, testdata, trainingdata)` returns a tuple `(L_train, L_test)`,
 # where `L_train` is training set loss and `L_test` is test set loss.
-lossfn = (M,x,y)->loss_test(f,M,test,x)
+lossfn = (M, x, y)->loss_test(f, M, test, x)
 ################################
 
 
@@ -74,11 +73,11 @@ lossfn = (M,x,y)->loss_test(f,M,test,x)
 # define autoencoder
 
 # build a dense MLP from a vector of layer widths
-function mlp(l::AbstractVector{<: Integer},f::Function)
+function mlp(l::AbstractVector{<: Integer}, f::Function)
     θ = foldl(l[3:length(l)],
-              init=Chain(Dense(l[1] => l[2],f))) do layers,d
+              init = Chain(Dense(l[1] => l[2],f))) do layers, d
         d_0 = size(layers[length(layers)].weight)[1]
-        return Chain(layers...,Dense(d_0 => d,f))
+        return Chain(layers..., Dense(d_0 => d, f))
     end
 end
 
@@ -89,7 +88,7 @@ layers = [m, 58, 29, 14]
 encoder = mlp(layers, tanh) |> gpu
 decoder = mlp(reverse(layers), tanh) |> gpu
 
-autoenc = Autoencoder(encoder,decoder)
+autoenc = Autoencoder(encoder, decoder)
 
 ################################
 
@@ -104,7 +103,7 @@ L = train!(autoenc,
            loader,
            optimiser,
            epochs,
-           savecheckpts=args["savecheckpts"]) # if true, saves a separate model each epoch
+           savecheckpts = args["savecheckpts"]) # if true, saves a separate model each epoch
 ################################
 
 
@@ -112,7 +111,55 @@ L = train!(autoenc,
 # write embeddings to `data/E.csv`
 
 # embeddings
-E = encode(autoenc,gpu(X))
+E = encode(autoenc, gpu(X))
 
 # move to CPU and write to file
-writecsv(cpu(E'), path,"E.csv")
+writecsv(cpu(E'), path, "E.csv")
+################################
+
+
+################################
+# sparse autoencoder
+# sparse rather than dense embeddings
+################################
+
+
+################################
+# hyperparams
+# faster learning rate & weight decay
+η = 0.001
+λ = 0.001
+opt = OptimiserChain(Flux.AdamW(η), Flux.WeightDecay(λ))
+################################
+
+
+################################
+# architecture
+sae = SAE(m, 5 * m, relu) |> gpu
+encoder = Chain(Dense(m => m, tanh), X->encode(sae, X)) |> gpu
+decoder = Chain(X->decode(sae, X), Dense(m => m, tanh)) |> gpu
+autoenc = Autoencoder(encoder, decoder)
+################################
+
+
+################################
+# sparsity loss function
+α = 0.00001
+f = (M, x, y)->begin
+    E = encode(M, x)
+    l1 = L1(E) * α
+    l2 = Flux.mse(decode(M, E), y)
+    l1 + l2, l1, l2
+end
+
+lossfn = (M, x, y)->loss_test(f, M, test, x)
+
+################################
+# training
+L_sae = train!(autoenc, path * "SAE", lossfn, loader, opt, epochs;
+               savecheckpts = false)
+               #savecheckpts = args["savecheckpts"]) # if true, saves a separate model each epoch
+
+F = encode(autoenc, X |> gpu)
+writecsv(F' |> cpu, path * "SAE", "E.csv")
+################################

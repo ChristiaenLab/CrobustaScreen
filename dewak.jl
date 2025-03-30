@@ -4,7 +4,7 @@ using PyCall
 @pyimport leidenalg
 @pyimport igraph
 
-using RCall
+#using RCall
 #@rimport fgsea
 
 include("gsea.jl")
@@ -27,22 +27,24 @@ function jleiden(G, γ)
 end
 
 loss_dewak = (dewak, G, E, Ê, X̂, X)->begin
+    G = zerodiag(G)
     L = Flux.mse(X̂, X)
-    ES, precision, recall = loss_stringdb(G)
-    L, ES, precision, recall
+    ES, NES, precision, recall = loss_stringdb(G)
+    L, ES, NES, precision, recall
 end
 
-losslabs = [:MSE, :ES, :precision, :recall]
+losslabs = [:MSE, :ES, :NES, :precision, :recall]
     
 ################################
 # load data
 X = readmat("data/X.csv")'
 m, n = size(X)
-################################
 
-# initialize model
-dewak = DEWAK(X; d_0 = 6, k_0 = 6,
-              lossfn = loss_dewak, losslabs = losslabs)
+E = readmat("data/E.csv")'
+ŋ, _ = size(E)
+
+F = readmat("data/SAE/E.csv")'
+################################
 
 window_d = 5
 window_k = 5
@@ -52,48 +54,47 @@ n_γ = 5
 steps = 100
 path = "data/" 
 
+# initialize model
+dewak = DEWAK(X; d_0 = window_d + 1, k_0 = window_k + 1,
+              lossfn = loss_dewak, losslabs = losslabs)
+
 L_dewak = @showprogress mapreduce(vcat, 1:steps) do _
     update!(dewak, G_i->loss(dewak, G_i),
             window_d, window_k)
 end
-writecsv(losslog(dewak), path, "loss_DEWAK.csv")
+writecsv(losslog(dewak), path*"fgsea", "loss_DEWAK.csv")
 writecsv(dewak.pcs', path, "PCs.csv")
+
+L_dk = update!(dewak, G_i->loss(dewak, G_i),
+            dewak.d - 1, dewak.k - 1)
+writecsv(hcat(L_dk...), path * "fgsea", "loss_dk.csv")
+
+dewak_E = DEWAK(E; d_0 = ŋ, k_0 = dewak.k,
+                lossfn = loss_dewak, losslabs = losslabs)
+L_dewak_E = update!(dewak_E, G_i->loss(dewak_E, G_i),
+            0, dewak.k - 1)
+writecsv(hcat(L_dewak_E...), path * "fgsea", "loss_enc.csv")
+
+dewak_sae = DEWAK(F; d_0 = window_d + 1, k_0 = window_k + 1,
+              lossfn = loss_dewak, losslabs = losslabs)
+
+L_sae = @showprogress mapreduce(vcat, 1:steps) do _
+    update!(dewak_sae, G_i->loss(dewak, G_i),
+            window_d, window_k)
+end
+writecsv(losslog(dewak_sae), path*"SAE", "loss_DEWAK.csv")
+writecsv(dewak_sae.pcs', path * "SAE", "PCs.csv")
+
+L_sae_dk = update!(dewak_sae, G_i->loss(dewak, G_i),
+            dewak_sae.d - 1, dewak_sae.k - 1)
+writecsv(hcat(L_sae_dk...), path * "SAE", "loss_dk.csv")
+
 
 depwak = DEPWAK(dewak, pyleiden; graphfn = pygraph)
 
+#
 L_depwak = @showprogress mapreduce(vcat, 1:steps) do _
     update!(depwak, G->loss(depwak, G),
             window_d, window_k, window_γ, n_γ)
-end
-
-sae = SAE(m, 4 * m, relu) |> gpu
-encoder = Chain(Dense(m => m, tanh), X->encode(sae, X)) |> gpu
-decoder = Chain(X->decode(sae, X), Dense(m => m, tanh)) |> gpu
-autoenc = Autoencoder(encoder, decoder)
-
-epochs = 1000
-batchsize = 512
-
-# learning rate
-η = 0.001
-
-# weight decay rate
-λ = 0.001
-opt = Flux.Optimiser(Flux.AdamW(η), Flux.WeightDecay(λ))
-
-# sparsity coefficient
-α = 0.001
-
-loader = Flux.DataLoader((X, X), batchsize = batchsize, shuffle = true)
-
-L_dec = train!(autoenc, path, loss(Flux.mse), loader, opt, epochs;
-               savecheckpts = false)
-
-E = encode(autoenc, X |> gpu)
-
-dewak = DEWAK(E |> cpu)
-L_dewak = @showprogress mapreduce(vcat, 1:steps) do _
-    update!(dewak, G_i->loss(dewak, G_i),
-            window_d, window_k)
 end
 

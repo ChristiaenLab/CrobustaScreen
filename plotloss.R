@@ -1,4 +1,5 @@
 source("R/heatmapfns.R")
+source("R/plotfns.R")
 
 library(ComplexHeatmap)
 library(purrr)
@@ -17,10 +18,24 @@ Ms <- lapply(split(as.data.frame(t(dat)), sp),
 				 row.names(M) <- sub(".*\\.", "", row.names(M))
 				 t(M)
 			 })
-names(Ms) <- unique(sp)
+labs <- unique(sp)
+
 
 hms <- mapply(function(M, name, col) {
 				  Heatmap(M, col.abs(M, cols = c("white",col)), name, 
-						  row_title = "k", column_title = "d")
-			 }, Ms, names(Ms), c("black", "blue", "red", "darkgreen"))
+						  row_title = "k", column_title = "d",
+				  		  cluster_rows = F, cluster_columns = F)
+			 }, Ms, labs, c("black", "blue", "red", "darkgreen"))
 hm <- Reduce(`+`, hms)
+
+dir.pdf("loss_DEWAK.pdf")
+draw(hm)
+dev.off()
+
+loss <- read.csv("data/loss_dk.csv")
+loss_d <- loss[1:54, -2]
+loss_k <- loss[55:nrow(loss), -1]
+plots_d <- lapply(names(loss)[3:6], dot.stat, loss_d)
+plots_k <- lapply(names(loss)[3:6], dot.stat, loss_k)
+plots <- append(plots_d, plots_k)
+arrange.stats(plots, "loss_dk", ncols = 4, nrows = 4)
