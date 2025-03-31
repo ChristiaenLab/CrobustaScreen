@@ -1,9 +1,9 @@
 using Plots
-#using Plots.PlotMeasures
+using Plots.PlotMeasures
 
 function newplot(ylab::String, xlab::String = "batch", args...; kwargs...)
     scatter(xlabel = xlab, ylabel = ylab,
-            #margin=10mm,
+            margin=2mm,
             args...; kwargs...);
 end
 
@@ -28,14 +28,18 @@ end
 function plotloss(L::AbstractVector,
                   labs::AbstractArray{String},
                   ylab::String,
-                  path::String,
-                  file::String,
-                  args...; kwargs...)
+                  args...; markershape = :cross, markersize = 1,
+                  path::String = "", file::String = "", kwargs...)
     p = newplot(ylab, args...; kwargs...);
     map(zip(L, labs)) do x
-        points!(x[1], x[2], markershape = :cross, markersize = 1);
+        points!(x[1], x[2];
+                markershape = markershape, markersize = markersize);
     end
-    savepath(p, path, file);
+    if length(file) > 0
+        savepath(p, path, file);
+    else
+        p;
+    end
 end
 
 function plotloss(L::Dict,
@@ -43,10 +47,12 @@ function plotloss(L::Dict,
                   ylab::String,
                   path::String,
                   file::String,
-                  args...;kwargs...)
+                  args...; markershape = :cross, markersize = 1,
+                  kwargs...)
     p = newplot(ylab, args...; kwargs...);
     mapkey(L,labs) do y, lab
-        points!(y, lab);
+        points!(y, lab;
+                markershape = markershape, markersize = markersize);
     end
     savepath(p, path, file);
 end
@@ -55,14 +61,11 @@ function plotloss(n::Integer,
                   L::AbstractVector,
                   labs::AbstractArray{String},
                   ylab::String,
-                  path::String,
-                  file::String,
                   args...; kwargs...)
     p = newplot(ylab,args...; kwargs...);
     map(zip(L, labs)) do x
         points!(n, x[1], x[2], markershape = :cross, markersize = 0.5);
     end
-    savepath(p, path, file);
 end
     
     
