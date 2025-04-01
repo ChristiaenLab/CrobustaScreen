@@ -7,6 +7,11 @@
   inputs = {
     utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    Autoencoders.url = "github:kewiechecki/Autoencoders.jl";
+    TrainingIO.url = "github:kewiechecki/TrainingIO.jl";
+    DictMap.url = "github:kewiechecki/DictMap.jl";
+    DeePWAK.url = "github:kewiechecki/DeePWAK.jl";
   };
 
   outputs = { self, nixpkgs, utils  }:
@@ -44,6 +49,11 @@
             source ${git}/share/bash-completion/completions/git-prompt.sh
 	        export LD_LIBRARY_PATH=/usr/lib
 	        export DEVICE="cuda:0"
+            julia --project=. -e 'using Pkg; 
+			                      Pkg.develop(path="${Autoencoders}"); 
+								  Pkg.develop(path="${TrainingIO}"); 
+								  Pkg.develop(path="${DictMap}"); 
+								  Pkg.develop(path="${DeePWAK}")'
           '';
         };
       });
