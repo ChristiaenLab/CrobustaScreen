@@ -1,5 +1,4 @@
-using DeePWAK
-using PyCall
+using DeePWAK, InvertedIndices, PyCall
 
 include("gsea.jl")
 
@@ -28,7 +27,7 @@ function interactionscore(G::AbstractMatrix, P::AbstractMatrix;
     score = reshape(score, c^2)
     sub = filter(isfinite, score)
     if length(sub) > 0
-        score[!isfinite(score)] .= maximum(sub)
+        score[Not(isfinite.(score))] .= maximum(sub)
     else
         score .= 0
     end
