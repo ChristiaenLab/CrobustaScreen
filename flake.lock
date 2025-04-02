@@ -1,5 +1,117 @@
 {
   "nodes": {
+    "Autoencoders": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736367210,
+        "narHash": "sha256-eFPWy8sffTVIyeP2rhyVyyeh1dxTAXD+2+Y7BQV4KA4=",
+        "owner": "kewiechecki",
+        "repo": "Autoencoders.jl",
+        "rev": "50bcdf80210b70053ff5c33fa192658a59bce74a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kewiechecki",
+        "repo": "Autoencoders.jl",
+        "type": "github"
+      }
+    },
+    "DeePWAK": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743539771,
+        "narHash": "sha256-NWeU20FsGDuYL99CPsCUMbuBIxanrME0G0xtGXMjh6c=",
+        "owner": "kewiechecki",
+        "repo": "DeePWAK.jl",
+        "rev": "15a175bc7d4d5f22cf075b2285d238e312646918",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kewiechecki",
+        "repo": "DeePWAK.jl",
+        "type": "github"
+      }
+    },
+    "DictMap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736367294,
+        "narHash": "sha256-95p2TTVU1HfFyzgBlQj+VDWDzatBBE6Ay495yfEvV7g=",
+        "owner": "kewiechecki",
+        "repo": "DictMap.jl",
+        "rev": "0d1e8355f2b03a256923d20b2f6f3c896147ba56",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kewiechecki",
+        "repo": "DictMap.jl",
+        "type": "github"
+      }
+    },
+    "Leiden": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1684447666,
+        "narHash": "sha256-z4LjshMHA/t1D9cCC2eLZdDpNSH6mFGYwmpBLOPRdFY=",
+        "owner": "pitsianis",
+        "repo": "Leiden.jl",
+        "rev": "86e9142110ef425239aa11578c7edd64124612ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pitsianis",
+        "repo": "Leiden.jl",
+        "type": "github"
+      }
+    },
+    "TrainingIO": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736368065,
+        "narHash": "sha256-s7Y6nlbm7jLaJtFpNN0w38IFzC6oJx3JM6Mu1lbf7wo=",
+        "owner": "kewiechecki",
+        "repo": "TrainingIO.jl",
+        "rev": "5e7a1515e1f92e921d73602f02224c04eb3383b3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kewiechecki",
+        "repo": "TrainingIO.jl",
+        "type": "github"
+      }
+    },
+    "igraph_jll": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667591370,
+        "narHash": "sha256-oy88CQJLJPzkDmd1Sqev0M+CXFPHIs/D7VTq491eYog=",
+        "owner": "fcdimitr",
+        "repo": "igraph_jll.jl",
+        "rev": "4b8cb043f8480f087f5d050713eced0d898b04d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fcdimitr",
+        "repo": "igraph_jll.jl",
+        "type": "github"
+      }
+    },
+    "leiden_jll": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667600714,
+        "narHash": "sha256-ctt3z3YlgncypAg09jwIqM03GYy2GKOS3R+CXbaz4x8=",
+        "owner": "fcdimitr",
+        "repo": "leiden_jll.jl",
+        "rev": "b1eb404ff4a63ac4b694d2d430997e9e6734687c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fcdimitr",
+        "repo": "leiden_jll.jl",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1743315132,
@@ -18,6 +130,13 @@
     },
     "root": {
       "inputs": {
+        "Autoencoders": "Autoencoders",
+        "DeePWAK": "DeePWAK",
+        "DictMap": "DictMap",
+        "Leiden": "Leiden",
+        "TrainingIO": "TrainingIO",
+        "igraph_jll": "igraph_jll",
+        "leiden_jll": "leiden_jll",
         "nixpkgs": "nixpkgs",
         "utils": "utils"
       }

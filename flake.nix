@@ -8,13 +8,42 @@
     utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    Autoencoders.url = "github:kewiechecki/Autoencoders.jl";
-    TrainingIO.url = "github:kewiechecki/TrainingIO.jl";
-    DictMap.url = "github:kewiechecki/DictMap.jl";
-    DeePWAK.url = "github:kewiechecki/DeePWAK.jl";
+    igraph_jll = {
+	  url = "github:fcdimitr/igraph_jll.jl";
+	  flake = false;
+	};
+    leiden_jll = {
+	  url = "github:fcdimitr/leiden_jll.jl";
+	  flake = false;
+	};
+	Leiden = {
+	  url = "github:pitsianis/Leiden.jl";
+	  flake = false;
+	};
+
+    Autoencoders = {
+	  url = "github:kewiechecki/Autoencoders.jl";
+	  flake = false;
+	};
+    DictMap = {
+	  url = "github:kewiechecki/DictMap.jl";
+	  flake = false;
+	};
+    TrainingIO = {
+	  url = "github:kewiechecki/TrainingIO.jl";
+	  flake = false;
+	};
+    DeePWAK = {
+	  url = "github:kewiechecki/DeePWAK.jl";
+	  flake = false;
+	};
   };
 
-  outputs = { self, nixpkgs, utils  }:
+  outputs = { 
+    self, nixpkgs, utils, 
+	igraph_jll, leiden_jll, Leiden,
+	Autoencoders, TrainingIO, DictMap, DeePWAK 
+  }:
     utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
@@ -44,16 +73,37 @@
             python3Packages.virtualenv
             julia
             git  # for git prompt support
+            gcc
+			gfortran
           ];
           shellHook = ''
             source ${git}/share/bash-completion/completions/git-prompt.sh
-	        export LD_LIBRARY_PATH=/usr/lib
 	        export DEVICE="cuda:0"
-            julia --project=. -e 'using Pkg; 
-			                      Pkg.develop(path="${Autoencoders}"); 
-								  Pkg.develop(path="${TrainingIO}"); 
-								  Pkg.develop(path="${DictMap}"); 
-								  Pkg.develop(path="${DeePWAK}")'
+
+            env LD_LIBRARY_PATH=${gfortran.libc}/lib:${gcc.libc}/lib:${gcc.libc}/lib64:/usr/lib \
+			julia --project=. -e '
+			  using Pkg; 
+              for (pkg, path) in [
+                   ("igraph_jll", "${toString igraph_jll}"),
+                   ("leiden_jll", "${toString leiden_jll}"),
+                   ("Leiden", "${toString Leiden}"),
+                   ("Autoencoders", "${toString Autoencoders}"),
+                   ("TrainingIO", "${toString TrainingIO}"),
+                   ("DictMap", "${toString DictMap}"),
+                   ("DeePWAK", "${toString DeePWAK}")
+               ]
+                   try
+                       @eval import $(Symbol(pkg))
+                       println("Package ", pkg, " is already installed.")
+                   catch e
+                       println("Developing package ", pkg, " from ", path)
+                       try
+					       Pkg.develop(path=path)
+					   catch e
+					       println("Error precompiling ", pkg, ": ", e)
+						   break
+                   end
+               end'
           '';
         };
       });
