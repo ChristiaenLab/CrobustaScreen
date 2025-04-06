@@ -80,8 +80,7 @@
             source ${git}/share/bash-completion/completions/git-prompt.sh
 	        export DEVICE="cuda:0"
 
-            env LD_LIBRARY_PATH=${gfortran.libc}/lib:${gcc.libc}/lib:${gcc.libc}/lib64:/usr/lib \
-			julia --project=. -e '
+  			cat > julia_deps.jl <<EOF
 			  using Pkg; 
               for (pkg, path) in [
                    ("igraph_jll", "${toString igraph_jll}"),
@@ -93,7 +92,7 @@
                    ("DeePWAK", "${toString DeePWAK}")
                ]
                    try
-                       @eval import $(Symbol(pkg))
+                       @eval import \\$(Symbol(pkg))
                        println("Package ", pkg, " is already installed.")
                    catch e
                        println("Developing package ", pkg, " from ", path)
@@ -103,7 +102,10 @@
 					       println("Error precompiling ", pkg, ": ", e)
 						   break
                    end
-               end'
+               end
+			   EOF
+            env LD_LIBRARY_PATH=${gfortran.libc}/lib:${gcc.libc}/lib:${gcc.libc}/lib64:/usr/lib \
+			julia --project=. julia_deps.jl
           '';
         };
       });
