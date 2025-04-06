@@ -18,8 +18,8 @@ for (pkg, path) in [
             Pkg.precompile(only=[pkg])
         catch e
             println("Error precompiling ", pkg, ": ", e)
-            #break
-			exit(1)
+            exit(1)
         end
     end
 end
+
