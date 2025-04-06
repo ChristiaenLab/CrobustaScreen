@@ -66,7 +66,7 @@ for (pkg, path) in [
     ("Autoencoders", "__AUTOENCODERS__"),
     ("TrainingIO", "__TRAININGIO__"),
     ("DictMap", "__DICTMAP__"),
-    ("DeePWAK", "__DEE_PWAK__")
+    ("DeePWAK", "__DEEPWAK__")
 ]
     try
         @eval import __DOLLAR_PLACEHOLDER__(Symbol(pkg))
@@ -95,7 +95,25 @@ end
           name = "crobusta-screen-shell";
           buildInputs = [
             R
-            python3
+            pkgs.rPackages.optparse
+            pkgs.rPackages.purrr
+			# to fetch interactions
+            pkgs.rPackages.biomaRt
+            pkgs.rPackages.STRINGdb
+			# clustering
+            pkgs.rPackages.class
+            pkgs.rPackages.cluster
+            pkgs.rPackages.fgsea
+            pkgs.rPackages.igraph
+            pkgs.rPackages.leiden
+			# visualization
+			pkgs.rPackages.circlize
+			pkgs.rPackages.ComplexHeatmap
+			pkgs.rPackages.ggplot2
+			pkgs.rPackages.ggpubr
+			pkgs.rPackages.umap
+            # Python environment with selected packages.
+            (python3.withPackages (ps: with ps; [ umap-learn leidenalg igraph ]))
             python3Packages.virtualenv
             julia
             git      # for git prompt support
@@ -118,7 +136,7 @@ sed -i \"s|__LEIDEN__|${toString Leiden}|g\" julia_deps.jl
 sed -i \"s|__AUTOENCODERS__|${toString Autoencoders}|g\" julia_deps.jl
 sed -i \"s|__TRAININGIO__|${toString TrainingIO}|g\" julia_deps.jl
 sed -i \"s|__DICTMAP__|${toString DictMap}|g\" julia_deps.jl
-sed -i \"s|__DEE_PWAK__|${toString DeePWAK}|g\" julia_deps.jl
+sed -i \"s|__DEEPWAK__|${toString DeePWAK}|g\" julia_deps.jl
 
 # Replace the dollar placeholder with a literal dollar sign.
 sed -i \"s|__DOLLAR_PLACEHOLDER__|\\\$|g\" julia_deps.jl

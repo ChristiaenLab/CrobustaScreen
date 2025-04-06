@@ -32,6 +32,13 @@ These should be automatically installed when loading the appropriate R packages.
 
 ## Usage
 
+### with Nix
+All requirements *should* be automatically installed with
+
+```nix
+nix develop .
+```
+
 ### Internal prerequisites
 All of the necessary files are included in `data/`. You should not need to run these; they are only included for completeness.
 
