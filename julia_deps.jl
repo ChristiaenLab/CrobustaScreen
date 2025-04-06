@@ -1,4 +1,5 @@
 using Pkg
+Pkg.add("cuDNN")
 for (pkg, path) in [
     ("igraph_jll", "/nix/store/p89x11x3nb62b9qvd57rgyghpkvggnvl-source"),
     ("leiden_jll", "/nix/store/5hyzr4d5nj51mvii224n0z1dw14ywnir-source"),

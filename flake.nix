@@ -58,6 +58,7 @@
         # NOTE: The closing delimiter (two single quotes) MUST be flush with the left margin.
         juliaScript = ''
 using Pkg
+Pkg.add("cuDNN")
 for (pkg, path) in [
     ("igraph_jll", "__IGRAPH_JLL__"),
     ("leiden_jll", "__LEIDEN_JLL__"),
