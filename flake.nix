@@ -24,7 +24,7 @@
 
     Autoencoders = {
       url = "github:kewiechecki/Autoencoders.jl";
-      flake = false;
+      flake = true;
     };
     DictMap = {
       url = "github:kewiechecki/DictMap.jl";
@@ -58,6 +58,7 @@
         # NOTE: The closing delimiter (two single quotes) MUST be flush with the left margin.
         juliaScript = ''
 using Pkg
+#Pkg.activate(".")
 Pkg.add("cuDNN")
 for (pkg, path) in [
     ("igraph_jll", "__IGRAPH_JLL__"),
@@ -78,10 +79,12 @@ for (pkg, path) in [
             Pkg.precompile(only=[pkg])
         catch e
             println("Error precompiling ", pkg, ": ", e)
-            exit(1)
+            #exit(1)
         end
     end
 end
+#Pkg.instantiate()
+Pkg.precompile()
 '';
 
       in {
@@ -142,7 +145,10 @@ sed -i \"s|__DEEPWAK__|${toString DeePWAK}|g\" julia_deps.jl
 sed -i \"s|__DOLLAR_PLACEHOLDER__|\\\$|g\" julia_deps.jl
 
 # Run the Julia script with LD_LIBRARY_PATH set to include libraries from gfortran and the stdenv compiler.
-env LD_LIBRARY_PATH=${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64:/usr/lib julia --project=. julia_deps.jl
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64
+#env LD_LIBRARY_PATH=${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64:/usr/lib julia --project=. julia_deps.jl
+#env LD_LIBRARY_PATH=${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64:/usr/lib julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.precompile() ; using Autoencoders'
+julia --project=. julia_deps.jl
 ";
         };
       });

@@ -1,4 +1,5 @@
 using Pkg
+#Pkg.activate(".")
 Pkg.add("cuDNN")
 for (pkg, path) in [
     ("igraph_jll", "/nix/store/p89x11x3nb62b9qvd57rgyghpkvggnvl-source"),
@@ -19,8 +20,10 @@ for (pkg, path) in [
             Pkg.precompile(only=[pkg])
         catch e
             println("Error precompiling ", pkg, ": ", e)
-            exit(1)
+            #exit(1)
         end
     end
 end
+#Pkg.instantiate()
+Pkg.precompile()
 
