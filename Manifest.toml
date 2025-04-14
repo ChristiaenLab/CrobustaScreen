@@ -2,7 +2,7 @@
 
 julia_version = "1.11.4"
 manifest_format = "2.0"
-project_hash = "eebe0461dd0f5d6b1087e6108571deebac2264f6"
+project_hash = "07c3612ca66f6c4c40c1be5c1317803552ff5e45"
 
 [[deps.ANSIColoredPrinters]]
 git-tree-sha1 = "574baf8110975760d391c710b6341da1afa48d8c"
@@ -1650,6 +1650,12 @@ version = "2.11.2"
 deps = ["InteractiveUtils", "Markdown", "Sockets", "StyledStrings", "Unicode"]
 uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 version = "1.11.0"
+
+[[deps.REPLVim]]
+deps = ["JSON3", "Logging", "REPL", "Sockets", "StructTypes"]
+path = "/nix/store/piiymj7whwf1naq8pmi8dk4cn9jbahzd-source"
+uuid = "2a140ba1-97ad-47e0-ac3b-8e555ea992ff"
+version = "0.1.0"
 
 [[deps.Random]]
 deps = ["SHA"]

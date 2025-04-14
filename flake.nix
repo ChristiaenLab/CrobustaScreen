@@ -9,6 +9,10 @@
     utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+	REPLVim = {
+	  url = "github:kewiechecki/julia-repl-vim";
+	  flake = false;
+	};
     igraph_jll = {
       url = "github:fcdimitr/igraph_jll.jl";
       flake = false;
@@ -40,7 +44,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, utils, igraph_jll, leiden_jll, Leiden,
+  outputs = { self, nixpkgs, utils, REPLVim, igraph_jll, leiden_jll, Leiden,
               Autoencoders, TrainingIO, DictMap, DeePWAK }:
     utils.lib.eachDefaultSystem (system:
       let
@@ -59,8 +63,11 @@
         juliaScript = ''
 using Pkg
 #Pkg.activate(".")
+#Pkg.add(url="__REPLVim__")
 Pkg.add("cuDNN")
+
 for (pkg, path) in [
+    ("REPLVim", "__REPLVim__"),
     ("igraph_jll", "__IGRAPH_JLL__"),
     ("leiden_jll", "__LEIDEN_JLL__"),
     ("Leiden", "__LEIDEN__"),
@@ -133,6 +140,7 @@ ${juliaScript}
 EOF
 
 # Replace placeholders with actual paths.
+sed -i \"s|__REPLVim__|${toString REPLVim}|g\" julia_deps.jl
 sed -i \"s|__IGRAPH_JLL__|${toString igraph_jll}|g\" julia_deps.jl
 sed -i \"s|__LEIDEN_JLL__|${toString leiden_jll}|g\" julia_deps.jl
 sed -i \"s|__LEIDEN__|${toString Leiden}|g\" julia_deps.jl

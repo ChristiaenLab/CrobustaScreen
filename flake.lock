@@ -64,6 +64,22 @@
         "type": "github"
       }
     },
+    "REPLVim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719156106,
+        "narHash": "sha256-M5Tx3iqCTqUxwuw7bbyJKI3sHHanZYvDrZ3r0p+LRl4=",
+        "owner": "kewiechecki",
+        "repo": "julia-repl-vim",
+        "rev": "49dc50348df20cc54628b4599d0ce89bd07213e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kewiechecki",
+        "repo": "julia-repl-vim",
+        "type": "github"
+      }
+    },
     "TrainingIO": {
       "flake": false,
       "locked": {
@@ -134,6 +150,7 @@
         "DeePWAK": "DeePWAK",
         "DictMap": "DictMap",
         "Leiden": "Leiden",
+        "REPLVim": "REPLVim",
         "TrainingIO": "TrainingIO",
         "igraph_jll": "igraph_jll",
         "leiden_jll": "leiden_jll",

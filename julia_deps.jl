@@ -1,7 +1,10 @@
 using Pkg
 #Pkg.activate(".")
+#Pkg.add(url="/nix/store/piiymj7whwf1naq8pmi8dk4cn9jbahzd-source")
 Pkg.add("cuDNN")
+
 for (pkg, path) in [
+    ("REPLVim", "/nix/store/piiymj7whwf1naq8pmi8dk4cn9jbahzd-source"),
     ("igraph_jll", "/nix/store/p89x11x3nb62b9qvd57rgyghpkvggnvl-source"),
     ("leiden_jll", "/nix/store/5hyzr4d5nj51mvii224n0z1dw14ywnir-source"),
     ("Leiden", "/nix/store/611wgj6ynw0knrk6jrnjdc4q935pl83j-source"),
