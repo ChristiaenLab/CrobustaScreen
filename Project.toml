@@ -1,11 +1,5 @@
 [deps]
-Autoencoders = "b00fdf05-2506-4616-becf-033b9f32b9b9"
-DeePWAK = "92881724-8e20-4814-a3b7-397623d3b5cc"
-DictMap = "a05f2ffc-8bb7-4579-883d-9dc27fa701ed"
-Leiden = "8876827e-33c4-4373-8179-6e3204d93767"
 PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
 RCall = "6f49c342-dc21-5d91-9882-a32aef131414"
-TrainingIO = "fb09e1ef-72bf-4ed6-9109-b670e2ff62f7"
+StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
 cuDNN = "02a925ec-e4fe-4b08-9a7e-0d78e3d38ccd"
-igraph_jll = "4d841945-e0c2-5143-9479-18e4f0102556"
-leiden_jll = "b3d7b256-84d9-5f32-9065-d6f1a433f499"
