@@ -1,5 +1,4 @@
 using Pkg
-#Pkg.activate(".")
 Pkg.add("cuDNN")
 for (pkg, path) in [
     ("igraph_jll", "/nix/store/p89x11x3nb62b9qvd57rgyghpkvggnvl-source"),
@@ -24,6 +23,9 @@ for (pkg, path) in [
         end
     end
 end
-#Pkg.instantiate()
+Pkg.add("PyCall")
+Pkg.build("RCall")
+Pkg.instantiate()
 Pkg.precompile()
+using DeePWAK, PyCall, RCall, cuDNN
 

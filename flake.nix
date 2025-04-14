@@ -53,12 +53,12 @@
         # Get library paths from the stdenv compiler and from gfortran.
         gccPath = toString pkgs.stdenv.cc.cc.lib;
         gfortranPath = toString pkgs.gfortran;
+		rPath = toString pkgs.R;
 
         # Define the multi-line Julia script.
         # NOTE: The closing delimiter (two single quotes) MUST be flush with the left margin.
         juliaScript = ''
 using Pkg
-#Pkg.activate(".")
 Pkg.add("cuDNN")
 for (pkg, path) in [
     ("igraph_jll", "__IGRAPH_JLL__"),
@@ -83,8 +83,11 @@ for (pkg, path) in [
         end
     end
 end
-#Pkg.instantiate()
+Pkg.add("PyCall")
+Pkg.build("RCall")
+Pkg.instantiate()
 Pkg.precompile()
+using DeePWAK, PyCall, RCall, cuDNN
 '';
 
       in {
@@ -145,9 +148,9 @@ sed -i \"s|__DEEPWAK__|${toString DeePWAK}|g\" julia_deps.jl
 sed -i \"s|__DOLLAR_PLACEHOLDER__|\\\$|g\" julia_deps.jl
 
 # Run the Julia script with LD_LIBRARY_PATH set to include libraries from gfortran and the stdenv compiler.
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64
-#env LD_LIBRARY_PATH=${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64:/usr/lib julia --project=. julia_deps.jl
-#env LD_LIBRARY_PATH=${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64:/usr/lib julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.precompile() ; using Autoencoders'
+export R_HOME=${rPath}/lib/R
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64:${rPath}/lib/R/lib
+echo $LD_LIBRARY_PATH
 julia --project=. julia_deps.jl
 ";
         };
