@@ -32,15 +32,15 @@
     };
     DictMap = {
       url = "github:kewiechecki/DictMap.jl";
-      flake = false;
+      flake = true;
     };
     TrainingIO = {
       url = "github:kewiechecki/TrainingIO.jl";
-      flake = false;
+      flake = true;
     };
     DeePWAK = {
       url = "github:kewiechecki/DeePWAK.jl";
-      flake = false;
+      flake = true;
     };
   };
 
