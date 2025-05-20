@@ -38,7 +38,7 @@ G_cond = Matrix{Int64}(undef, c, c)
 G_cond .= 0
 G_cond[i_stringdb] .= 1
 
-function intxsub(G::AbstractMatrix, i, j)
+function intxsub(G::AbstractMatrix, i, j; scale = false)
     G[C[i, :], C[j, :]]
 end
 

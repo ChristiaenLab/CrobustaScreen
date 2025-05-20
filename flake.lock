@@ -48,7 +48,7 @@
         "type": "github"
       }
     },
-    "Leiden": {
+    "LeidenSrc": {
       "flake": false,
       "locked": {
         "lastModified": 1684447666,
@@ -64,14 +64,14 @@
         "type": "github"
       }
     },
-    "REPLVim": {
+    "REPLVimSrc": {
       "flake": false,
       "locked": {
-        "lastModified": 1719156106,
-        "narHash": "sha256-M5Tx3iqCTqUxwuw7bbyJKI3sHHanZYvDrZ3r0p+LRl4=",
+        "lastModified": 1744668835,
+        "narHash": "sha256-IJZLdWmBnY8LSE/9LBMOvHo+Tlds3JiDEMNjeW6sEFs=",
         "owner": "kewiechecki",
         "repo": "julia-repl-vim",
-        "rev": "49dc50348df20cc54628b4599d0ce89bd07213e5",
+        "rev": "4c0ffcf2f533f1005b2e81101d17bc9f905957e3",
         "type": "github"
       },
       "original": {
@@ -96,7 +96,7 @@
         "type": "github"
       }
     },
-    "igraph_jll": {
+    "igraph_jllSrc": {
       "flake": false,
       "locked": {
         "lastModified": 1667591370,
@@ -112,7 +112,7 @@
         "type": "github"
       }
     },
-    "leiden_jll": {
+    "leiden_jllSrc": {
       "flake": false,
       "locked": {
         "lastModified": 1667600714,
@@ -149,11 +149,11 @@
         "Autoencoders": "Autoencoders",
         "DeePWAK": "DeePWAK",
         "DictMap": "DictMap",
-        "Leiden": "Leiden",
-        "REPLVim": "REPLVim",
+        "LeidenSrc": "LeidenSrc",
+        "REPLVimSrc": "REPLVimSrc",
         "TrainingIO": "TrainingIO",
-        "igraph_jll": "igraph_jll",
-        "leiden_jll": "leiden_jll",
+        "igraph_jllSrc": "igraph_jllSrc",
+        "leiden_jllSrc": "leiden_jllSrc",
         "nixpkgs": "nixpkgs",
         "utils": "utils"
       }

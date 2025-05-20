@@ -20,53 +20,65 @@ savepath(p_sae, "fig", "loss_SAE.pdf")
 markershape = :cross
 markersize = 5
 
+labs_d = ["PCA (k = " * string(k_pca) * ")",
+          "SAE (k = " * string(k_sae) * ")"]
+labs_k = ["PCA (d = " * string(d_pca) * ")",
+          "SAE (d = " * string(d_sae) * ")",
+          "autoencoder (d = " * string(d_enc) * ")"]
+
+labs_dNES = ["PCA (k = " * string(k_pcaNES) * ")",
+             "SAE (k = " * string(k_saeNES) * ")"]
+labs_kNES = ["PCA (d = " * string(d_pcaNES) * ")",
+             "SAE (d = " * string(d_saeNES) * ")",
+             "autoencoder (d = " * string(d_encNES) * ")"]
+
 p_dMSE = plotloss([L_d[1].MSE, L_d[2].MSE],
-                  ["PCA (k = 78)", "SAE (k = 60)"],
+                  labs_d,
                   "MSE", "d";
                   markershape = markershape, markersize = markersize,
                   legend = false);
 p_dES = plotloss([L_d[1].ES, L_d[2].ES],
-                 ["PCA (k = 78)", "SAE (k = 60)"],
+                 labs_d,
                  "ES", "d";
                  markershape = markershape, markersize = markersize,
                  legend = false);
 p_dNES = plotloss([L_d[1].NES, L_d[2].NES],
-                  ["PCA (k = 78)", "SAE (k = 60)"],
+                  labs_d,
                   "NES", "d";
                   markershape = markershape, markersize = markersize,
                   legend = false);
 p_dPrec = plotloss([L_d[1].precision, L_d[2].precision],
-                   ["PCA (k = 78)", "SAE (k = 60)"],
+                   labs_d,
                    "precision", "d";
                    markershape = markershape, markersize = markersize,
                    legend = false);
 p_dRec = plotloss([L_d[1].recall, L_d[2].recall],
-                  ["PCA (k = 78)", "SAE (k = 60)"],
+                  labs_d,
                   "recall", "d";
                   markershape = markershape, markersize = markersize);
 
 p_kMSE = plotloss([L_k[1].MSE, L_k[2].MSE, L_k[3].MSE],
-                  ["PCA (d = 29)", "SAE (d = 41)", "autoencoder (d = 14)"],
+                  labs_k,
                   "MSE", "k";
                   markershape = markershape, markersize = markersize, 
                   legend = false);
 p_kES = plotloss([L_k[1].ES, L_k[2].ES, L_k[3].ES],
-                 ["PCA (d = 29)", "SAE (d = 41)", "autoencoder (d = 14)"],
+                 labs_k,
                  "ES", "k";
                  markershape = markershape, markersize = markersize, 
                  legend = false);
 p_kNES = plotloss([L_k[1].NES, L_k[2].NES, L_k[3].NES],
-                  ["PCA (d = 29)", "SAE (d = 41)", "autoencoder (d = 14)"],
+                  labs_k,
                   "NES", "k";
                   markershape = markershape, markersize = markersize, 
                   legend = false);
 p_kPrec = plotloss([L_k[1].precision, L_k[2].precision, L_k[3].precision],
-                   ["PCA (d = 29)", "SAE (d = 41)", "autoencoder (d = 14)"],
+                   labs_k,
                    "precision", "k";
                    markershape = markershape, markersize = markersize, 
                    legend = false);
 p_kRec = plotloss([L_k[1].recall, L_k[2].recall, L_k[3].recall],
-                  ["PCA (d = 29)", "SAE (d = 41)", "autoencoder (d = 14)"],
+                  labs_k
                   "recall", "k";
                   markershape = markershape, markersize = markersize);
 

@@ -1,3 +1,4 @@
+# crobustascreen/flake.nix (Refactored)
 {
   description = "Flake for CrobustaScreen using R, Python, and Julia";
 
@@ -7,163 +8,194 @@
 
   inputs = {
     utils.url = "github:numtide/flake-utils";
+    # Point all flakes to the same nixpkgs instance for consistency
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-	REPLVim = {
-	  url = "github:kewiechecki/julia-repl-vim";
-	  flake = false;
-	};
-    igraph_jll = {
-      url = "github:fcdimitr/igraph_jll.jl";
-      flake = false;
-    };
-    leiden_jll = {
-      url = "github:fcdimitr/leiden_jll.jl";
-      flake = false;
-    };
-    Leiden = {
-      url = "github:pitsianis/Leiden.jl";
-      flake = false;
-    };
+    # --- Julia Package Sources ---
+    # Non-flake git repos (use .src suffix for clarity)
+    REPLVimSrc = { url = "github:kewiechecki/julia-repl-vim"; flake = false; };
+    igraph_jllSrc = { url = "github:fcdimitr/igraph_jll.jl"; flake = false; };
+    leiden_jllSrc = { url = "github:fcdimitr/leiden_jll.jl"; flake = false; };
+    LeidenSrc = { url = "github:pitsianis/Leiden.jl"; flake = false; };
 
+    # Flake dependencies providing Nix packages (like the new Autoencoders)
     Autoencoders = {
       url = "github:kewiechecki/Autoencoders.jl";
       flake = true;
+      inputs.nixpkgs.follows = "nixpkgs"; # <<< Ensure consistency
     };
+    # !!! IMPORTANT: Assume these are ALSO updated to provide packages.default !!!
+    # !!! If not, change flake=false and handle like REPLVimSrc above     !!!
     DictMap = {
       url = "github:kewiechecki/DictMap.jl";
-      flake = true;
+      flake = true; # Assumed updated
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     TrainingIO = {
       url = "github:kewiechecki/TrainingIO.jl";
-      flake = true;
+      flake = true; # Assumed updated
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     DeePWAK = {
       url = "github:kewiechecki/DeePWAK.jl";
-      flake = true;
+      flake = true; # Assumed updated
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, utils, REPLVim, igraph_jll, leiden_jll, Leiden,
-              Autoencoders, TrainingIO, DictMap, DeePWAK }:
+  outputs = { 
+    self, nixpkgs, utils, 
+	REPLVimSrc,
+    igraph_jllSrc, leiden_jllSrc, LeidenSrc,
+    Autoencoders, DictMap, TrainingIO, DeePWAK
+  }@inputs:
     utils.lib.eachDefaultSystem (system:
       let
+        # --- Julia Package Overlay ---
+        # Defines how Nix finds/builds all custom Julia deps
+		/*
+        juliaOverlay = final: prev: {
+          juliaPackages = prev.juliaPackages // {
+            # Build from source inputs using buildJuliaPackage
+            REPLVim = final.juliaPackages.buildJuliaPackage {
+              pname = "REPLVim"; version = "git"; src = inputs.REPLVimSrc;
+            };
+            igraph_jll = final.juliaPackages.buildJuliaPackage {
+              pname = "igraph_jll"; version = "git"; src = inputs.igraph_jllSrc;
+              # JLLs might need special care, check JuliaNix examples
+            };
+            leiden_jll = final.juliaPackages.buildJuliaPackage {
+              pname = "leiden_jll"; version = "git"; src = inputs.leiden_jllSrc;
+              # JLLs might need special care
+            };
+            Leiden = final.juliaPackages.buildJuliaPackage {
+              pname = "Leiden"; version = "git"; src = inputs.LeidenSrc;
+            };
+
+            # Import directly from flake dependency outputs
+            Autoencoders = inputs.Autoencoders.packages.${system}.default;
+            # --- ASSUMPTIONS ---
+            DictMap = inputs.DictMap.packages.${system}.default;
+            TrainingIO = inputs.TrainingIO.packages.${system}.default;
+            DeePWAK = inputs.DeePWAK.packages.${system}.default;
+            # --- If assumptions are wrong, build from src like REPLVim ---
+            # e.g., DictMap = final.juliaPackages.buildJuliaPackage { pname="DictMap"; ... src=inputs.DictMap; };
+          };
+        };
+
+        # --- Base Nixpkgs with Overlay ---
         pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
-          config.cudaSupport = system == "x86_64-linux";
+          overlays = [ juliaOverlay ];
+          config = { allowUnfree = true; cudaSupport = system == "x86_64-linux"; };
         };
 
-        # Get library paths from the stdenv compiler and from gfortran.
-        gccPath = toString pkgs.stdenv.cc.cc.lib;
-        gfortranPath = toString pkgs.gfortran;
-		rPath = toString pkgs.R;
+        # --- Julia Environment ---
+        # Builds an environment based on ./Project.toml in CrobustaScreen repo
+        # Assumes Project.toml lists deps like "REPLVim", "Autoencoders", "cuDNN", "PyCall" etc.
+        # The overlay ensures these names map to the Nix derivations.
+        juliaEnv = pkgs.juliaPackages.buildJuliaApplication {
+          name = "crobusta-screen-julia-env";
+          src = ./.; # Needs Project.toml + optionally Manifest.toml here
 
-        # Define the multi-line Julia script.
-        # NOTE: The closing delimiter (two single quotes) MUST be flush with the left margin.
-        juliaScript = ''
-using Pkg
-#Pkg.activate(".")
-#Pkg.add(url="__REPLVim__")
-Pkg.instantiate()
+          # You might need to propagate runtime libs here if julia packages need them
+          # and the wrappers don't handle it automatically.
+          # propagatedBuildInputs = [ pkgs.cudaPackages.cudnn pkgs.stdenv.cc.cc.lib ];
+        };
+*/
+        pkgs = import nixpkgs {
+          inherit system;
+          config = { allowUnfree = true; cudaSupport = system == "x86_64-linux"; };
+        };
 
-Pkg.add("cuDNN")
-Pkg.add("PyCall")
-Pkg.build("RCall")
-Pkg.add("StructArrays")
+        autoencodersPkg = Autoencoders.packages.${system}.default;
+        dictMapPkg = DictMap.packages.${system}.default;
+        trainingIOPkg = TrainingIO.packages.${system}.default;
 
-for (pkg, path) in [
-    ("REPLVim", "__REPLVim__"),
-    ("igraph_jll", "__IGRAPH_JLL__"),
-    ("leiden_jll", "__LEIDEN_JLL__"),
-    ("Leiden", "__LEIDEN__"),
-    ("Autoencoders", "__AUTOENCODERS__"),
-    ("TrainingIO", "__TRAININGIO__"),
-    ("DictMap", "__DICTMAP__"),
-    ("DeePWAK", "__DEEPWAK__")
-]
-    try
-        @eval import __DOLLAR_PLACEHOLDER__(Symbol(pkg))
-        println("Package ", pkg, " is already installed.")
-    catch e
-        println("Developing package ", pkg, " from ", path)
-        try
-            Pkg.develop(path=path)
-            Pkg.precompile(only=[pkg])
-        catch e
-            println("Error precompiling ", pkg, ": ", e)
-            #exit(1)
-        end
-    end
-end
-Pkg.precompile()
-using DeePWAK, PyCall, RCall, cuDNN
-'';
+        # --- Python Environment ---
+        pythonEnv = pkgs.python3.withPackages (ps: with ps; [ umap-learn leidenalg igraph ]);
+
+        # --- Shell Packages ---
+        # List everything needed in the final shell
+        shellPkgsNested = with pkgs; [
+          # Language Environments
+          #juliaEnv  # The derivation containing Julia and ALL specified packages
+		  julia
+          R         # Base R
+          pythonEnv # Python with its packages
+          # R Packages (consider managing via renv/Nix integration if complex)
+          rPackages.optparse rPackages.purrr rPackages.biomaRt rPackages.STRINGdb
+          rPackages.class rPackages.cluster rPackages.fgsea rPackages.igraph rPackages.leiden
+          rPackages.circlize rPackages.ComplexHeatmap rPackages.ggplot2 rPackages.ggpubr rPackages.umap
+          # System Tools & Runtime Libs
+          git
+          stdenv.cc.cc.lib # Core GCC libs (for R, Python, Julia deps)
+          gfortran         # Needed if anything still links gfortran libs directly
+          (lib.optional stdenv.isLinux cudaPackages.cudatoolkit) # Runtime CUDA
+          (lib.optional stdenv.isLinux cudaPackages.cudnn)      # Runtime cuDNN
+          python3Packages.virtualenv # Maybe remove if pythonEnv is sufficient?
+        ];
+        shellPkgs = pkgs.lib.flatten shellPkgsNested;
+
+        # --- Julia setup script for shellHook ---
+        juliaSetupScript = ''
+          using Pkg
+          # Use a temporary environment to avoid polluting user's default
+          Pkg.activate(; temp=true)
+          # Ensure current project is activated inside the temp env logic??
+          # This part is tricky - maybe activate "." is better? Let's try activating "."
+          Pkg.activate(".")
+
+          let # Define local mapping from name to Nix store path
+              dev_pkgs = [
+                  ("igraph_jll", "${inputs.igraph_jllSrc}"),
+                  ("leiden_jll", "${inputs.leiden_jllSrc}"),
+                  ("Leiden", "${inputs.LeidenSrc}")
+              ]
+          end
+
+          println("+++ Ensuring development packages (non-flake git repos) are linked +++")
+          # Force develop for non-flake sources every time; Pkg handles idempotency
+          for (pkg_name, pkg_path) in dev_pkgs
+              println("Developing ", pkg_name, " from ", pkg_path)
+              # Add try-catch for robustness
+              try Pkg.develop(path=pkg_path) catch e; println("WARN: Pkg.develop failed for ", pkg_name, ": ", e) end
+          end
+
+          println("+++ Instantiating project environment (resolving registry pkgs, linking flake pkgs?) +++")
+          try Pkg.instantiate() catch e; println("WARN: Pkg.instantiate failed: ", e) end
+
+          # Optional: Precompile everything now to avoid delay later
+          # println("+++ Precompiling project +++")
+          # try Pkg.precompile() catch e; println("WARN: Pkg.precompile failed: ", e) end
+
+          println("+++ Julia setup script finished +++")
+        '';
 
       in {
-        defaultPackage = pkgs.stdenv.mkDerivation {
-          name = "CrobustaScreen";
-          src = ./.;
-          buildInputs = [];
-        };
+        # defaultPackage = ??? # Define if CrobustaScreen itself builds something installable
 
-        devShell = with pkgs; mkShell {
+        devShell = pkgs.mkShell {
           name = "crobusta-screen-shell";
-          buildInputs = [
-            R
-            pkgs.rPackages.optparse
-            pkgs.rPackages.purrr
-			# to fetch interactions
-            pkgs.rPackages.biomaRt
-            pkgs.rPackages.STRINGdb
-			# clustering
-            pkgs.rPackages.class
-            pkgs.rPackages.cluster
-            pkgs.rPackages.fgsea
-            pkgs.rPackages.igraph
-            pkgs.rPackages.leiden
-			# visualization
-			pkgs.rPackages.circlize
-			pkgs.rPackages.ComplexHeatmap
-			pkgs.rPackages.ggplot2
-			pkgs.rPackages.ggpubr
-			pkgs.rPackages.umap
-            # Python environment with selected packages.
-            (python3.withPackages (ps: with ps; [ umap-learn leidenalg igraph ]))
-            python3Packages.virtualenv
-            julia
-            git      # for git prompt support
-            pkgs.stdenv.cc
-            pkgs.gfortran
-          ];
-          shellHook = "
-source ${git}/share/bash-completion/completions/git-prompt.sh
-export DEVICE=\"cuda:0\"
+          # Use the combined list of environments and tools
+          buildInputs = shellPkgs;
 
-# Write the Julia script to a file.
-cat > julia_deps.jl <<'EOF'
-${juliaScript}
-EOF
+          # Dramatically simplified shellHook
+          shellHook = ''
+            source ${pkgs.git}/share/bash-completion/completions/git-prompt.sh
+            # Set env vars needed by tools/packages at runtime
+            export DEVICE="cuda:0"
+            export R_HOME="${pkgs.R}/lib/R" # For RCall.jl
+            export JULIA_PROJECT="@."       # Tell Julia to use the project env
 
-# Replace placeholders with actual paths.
-sed -i \"s|__REPLVim__|${toString REPLVim}|g\" julia_deps.jl
-sed -i \"s|__IGRAPH_JLL__|${toString igraph_jll}|g\" julia_deps.jl
-sed -i \"s|__LEIDEN_JLL__|${toString leiden_jll}|g\" julia_deps.jl
-sed -i \"s|__LEIDEN__|${toString Leiden}|g\" julia_deps.jl
-sed -i \"s|__AUTOENCODERS__|${toString Autoencoders}|g\" julia_deps.jl
-sed -i \"s|__TRAININGIO__|${toString TrainingIO}|g\" julia_deps.jl
-sed -i \"s|__DICTMAP__|${toString DictMap}|g\" julia_deps.jl
-sed -i \"s|__DEEPWAK__|${toString DeePWAK}|g\" julia_deps.jl
+            # Set LD_LIBRARY_PATH from everything in buildInputs
+            # Should include paths from juliaEnv, R libs, Python libs, CUDA, GCC libs etc.
+            export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath shellPkgs}";
 
-# Replace the dollar placeholder with a literal dollar sign.
-sed -i \"s|__DOLLAR_PLACEHOLDER__|\\\$|g\" julia_deps.jl
-
-# Run the Julia script with LD_LIBRARY_PATH set to include libraries from gfortran and the stdenv compiler.
-export R_HOME=${rPath}/lib/R
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${gfortranPath}/lib:${gccPath}/lib:${gccPath}/lib64:${rPath}/lib/R/lib
-echo $LD_LIBRARY_PATH
-julia --project=. julia_deps.jl
-";
+            echo "CrobustaScreen dev shell activated. Nix handles R/Py/Jl environments."
+            # No more julia_deps.jl !
+          '';
         };
-      });
+      }
+    );
 }

@@ -9,7 +9,6 @@ include("gsea.jl")
 window_d = 5
 window_k = 5
 window_γ = 1.0
-n_γ = 5
 
 steps = 100
 path = "data/DEWAK/MSE/" 
@@ -35,7 +34,7 @@ X = readmat("data/X.csv")'
 m, n = size(X)
 
 E = readmat("data/E.csv")'
-ŋ, _ = size(E)
+d_enc, _ = size(E)
 
 F = readmat("data/SAE/E.csv")'
 ################################
@@ -69,7 +68,7 @@ writecsv(hcat(L_pca_dk...), path * "PCA", "loss_dk.csv")
 
 ################################
 # use autoencoder embeddings rather than raw data
-dewak_enc = DEWAK(E; d_0 = ŋ, k_0 = dewak_pca.k,
+dewak_enc = DEWAK(E; d_0 = d_enc, k_0 = dewak_pca.k,
                   lossfn = loss_dewak, losslabs = losslabs)
 
 ## we don't want to reduce dimensions further, so d_window is set to 0
@@ -81,7 +80,7 @@ writecsv(hcat(L_enc...), path * "autoencoder", "loss_dk.csv")
 
 ################################
 # use embeddings from sparse autoencoder
-dewak_sae = DEWAK(F; d_0 = window_d + 1, k_0 = window_k + 1,
+dewak_sae = DEWAK(F; d_0 = dewak_pca.d, k_0 = dewak_pca.k,
               lossfn = loss_dewak, losslabs = losslabs)
 
 L_sae = @showprogress mapreduce(vcat, 1:steps) do _
@@ -91,8 +90,10 @@ end
 writecsv(losslog(dewak_sae), path * "SAE", "loss.csv")
 writecsv(dewak_sae.pcs', path * "SAE", "PCs.csv")
 
+dewak_sae = DEWAK(F; d_0 = dewak_pca.d, k_0 = dewak_sae.k,
+              lossfn = loss_dewak, losslabs = losslabs)
 L_sae_dk = update!(dewak_sae, G_i->loss(dewak_sae, G_i),
-            dewak_sae.d - 1, dewak_sae.k - 1)
+            dewak_pca.d - 1, dewak_sae.k - 1)
 writecsv(hcat(L_sae_dk...), path * "SAE", "loss_dk.csv")
 ################################
 
