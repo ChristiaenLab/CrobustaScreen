@@ -1,4 +1,4 @@
-using DeePWAK, InvertedIndices, PyCall
+using DeePWAK, InvertedIndices, PyCall, Leiden
 
 include("gsea.jl")
 

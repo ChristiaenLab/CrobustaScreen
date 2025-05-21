@@ -78,7 +78,7 @@ end
 f_init = (d_0, k_0)->begin
     dewak = DEWAK(X; d_0 = d_0, k_0 = k_0,
                   lossfn = loss_dewak, losslabs = losslabs)
-    depwak = DEPWAK(dewak, pyleiden; graphfn = pygraph)
+    depwak = DEPWAK(dewak, pyleiden; graphfn = pygraph, γ_0 = window_γ)
 end
 
 writeDEPWAK = path->begin
