@@ -33,9 +33,9 @@ loss_depwak = (depwak, G, E, Ê, X̂, X)->begin
     P = partition(depwak)
     Ĝ = G .* P
     sil = silhouette(dist(depwak), P)
-    G_network = condnetwork(G, P, depwak.γ)
+    G_network = condnetwork(G, P, 1.0)
     
-    prec_intx, rec_intx = cv_edge(G_network, G_cond)
+    prec_intx, rec_intx = cv_edge(G_network, G_cond; weighted = true)
     ES_cl, NES_cl, prec_cl, rec_cl = loss_stringdb(G, P)
     L, ES, NES, prec, rec = loss_dewak(depwak, Ĝ, E, Ê, X̂, X)
 
@@ -55,7 +55,7 @@ loss_depwak = (depwak, G)->begin
     X̂ = decode(depwak, Ê)
 
     sil = silhouette(dist(depwak), P)
-    G_network = condnetwork(G, P, depwak.γ)
+    G_network = condnetwork(G, P, 1.0)
     
     prec_intx, rec_intx = cv_edge(G_network, G_cond)
     ES_cl, NES_cl, prec_cl, rec_cl = loss_stringdb(G, P)
@@ -107,24 +107,4 @@ writeDEPWAK("data/DEWAK/MSE/")
 
 @readDEWAK "data/DEWAK/NES/"
 writeDEPWAK("data/DEWAK/NES/")
-
-depwak_pca = f_init(d_pca, k_pca)
-depwak_enc = f_init(d_enc, k_enc)
-depwak_sae = f_init(d_sae, k_sae)
-
-depwak_pcaNES = f_init(d_pcaNES, k_pcaNES)
-depwak_encNES = f_init(d_encNES, k_encNES)
-depwak_saeNES = f_init(d_saeNES, k_saeNES)
-################################
-
-
-################################
-# optimization
-L_pca = writeloss!(depwak_pca, "PCA")
-L_enc = writeloss!(depwak_enc, "autoencoder")
-L_sae = writeloss!(depwak_sae, "SAE")
-
-L_pcaNES = writeloss!(depwak_pcaNES, "PCA_NES")
-L_encNES = writeloss!(depwak_encNES, "autoencoder_NES")
-L_saeNES = writeloss!(depwak_saeNES, "SAE_NES")
 ################################

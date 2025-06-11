@@ -94,9 +94,14 @@ box.heatmap <- function(m, clustdat, boxdat, outldat,
 
 clustparam <- function(dat, clusts, out,
 		       logfc.cutoff = 0.5, 
-		       fdr.cutoff = 0.05){
+		       fdr.cutoff = 0.05,
+			   subset = NULL){
 	clustdat <- split(dat, clusts)
 	test <- test.clust.params(dat,clustdat)
+
+	if(!is.null(subset)){
+		test <- test[subset]
+	}
 
 	# select fields from output
 	mudat <- sapply(test, '[', "mu", )

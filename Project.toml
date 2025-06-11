@@ -2,4 +2,5 @@
 PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
 RCall = "6f49c342-dc21-5d91-9882-a32aef131414"
 StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
+SymbolServer = "cf896787-08d5-524d-9de7-132aaa0cb996"
 cuDNN = "02a925ec-e4fe-4b08-9a7e-0d78e3d38ccd"

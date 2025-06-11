@@ -175,10 +175,14 @@
       in {
         # defaultPackage = ??? # Define if CrobustaScreen itself builds something installable
 
-        devShell = pkgs.mkShell {
+        devShell = with pkgs; mkShell {
           name = "crobusta-screen-shell";
           # Use the combined list of environments and tools
-          buildInputs = shellPkgs;
+          buildInputs = [
+		    shellPkgs
+			bzip2 curl gsl icu75 libpng libuv libxml2 openssl
+			];
+
 
           # Dramatically simplified shellHook
           shellHook = ''
@@ -191,7 +195,16 @@
             # Set LD_LIBRARY_PATH from everything in buildInputs
             # Should include paths from juliaEnv, R libs, Python libs, CUDA, GCC libs etc.
             export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath shellPkgs}";
+			export LD_LIBRARY_PATH="${
+				libpng.out}/lib:${
+				icu75.out}/lib:${
+				bzip2.out}/lib:${
+				curl.out}/lib:${
+				libxml2.out}/lib:${
+				gsl.out}/lib:${
+				openssl.out}/lib:$LD_LIBRARY_PATH"
 
+			echo "→ LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
             echo "CrobustaScreen dev shell activated. Nix handles R/Py/Jl environments."
             # No more julia_deps.jl !
           '';

@@ -2,7 +2,7 @@
 
 julia_version = "1.11.4"
 manifest_format = "2.0"
-project_hash = "ba8c74692d5af21bfcbe07bb06d89d8015bec859"
+project_hash = "e6f609721fdd479545b380c9a2c0c958e9aaddec"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -753,6 +753,12 @@ version = "1.11.0"
 deps = ["Artifacts", "Libdl", "libblastrampoline_jll"]
 uuid = "bea87d4a-7f5b-5778-9afe-8cc45184846c"
 version = "7.7.0+0"
+
+[[deps.SymbolServer]]
+deps = ["InteractiveUtils", "LibGit2", "Markdown", "Pkg", "REPL", "SHA", "Serialization", "Sockets", "UUIDs"]
+git-tree-sha1 = "edb76e0a729bf3d3f164cca8c0280b1ae6e1659c"
+uuid = "cf896787-08d5-524d-9de7-132aaa0cb996"
+version = "8.0.0"
 
 [[deps.TOML]]
 deps = ["Dates"]

@@ -134,6 +134,26 @@ dir.f(clustparam, "out")(z, clusts[,clust_sel_method],
 dir.f(clustparam, "out")(encoded, clusts[,clust_sel_method],
 			 filename = "embeddings")
 
+dir.f(clustparam, "out")(params, groups$Condition,
+			 filename = "condition/params")
+dir.f(clustparam, "out")(z, groups$Condition,
+			 filename = "condition/z")
+dir.f(clustparam, "out")(encoded, groups$Condition,
+			 filename = "condition/embeddings")
+
+dir.f(clustparam, "out")(params, groups$Condition,
+						 logfc.cutoff = 0.25, fdr.cutoff = 0.05, 
+						 subset = c("Arhgef8", "Depdc", "Tyrosinase"),
+						 filename = "Arhgef8_Depdc_Tyr/params")
+dir.f(clustparam, "out")(z, groups$Condition,
+						 logfc.cutoff = 0.25, fdr.cutoff = 0.05, 
+						 subset = c("Arhgef8", "Depdc", "Tyrosinase"),
+						 filename = "Arhgef8_Depdc_Tyr/z")
+dir.f(clustparam, "out")(encoded, groups$Condition,
+						 logfc.cutoff = 0, fdr.cutoff = 1, 
+						 subset = c("Arhgef8", "Depdc", "Tyrosinase"),
+						 filename = "Arhgef8_Depdc_Tyr/embeddings")
+
 g <- gene.network(knn, resolution, groups$Condition, 
 		  mode = 'directed')
 

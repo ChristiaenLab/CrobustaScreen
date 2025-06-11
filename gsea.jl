@@ -87,8 +87,12 @@ end
 
 # crossvalidation for adjacency matrix compared to an expected
 # adjacency matrix
-function cv_edge(G, G_0)
-    G = G .> 0
+function cv_edge(G, G_0; weighted = false)
+    if !weighted
+        G = G .> 0
+    else
+        G = G ./ maximum(G)
+    end
     TP = sum(G .* G_0)
     precision = TP / sum(G)
     recall = TP / sum(G_0)
