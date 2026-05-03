@@ -2,18 +2,17 @@ source("R/dirfns.R")
 source("R/pois.R")
 
 dotPois <- function(pois, out, append.date = T){
-	require(moreComplexHeatmap)
+	#require(moreComplexHeatmap)
 	#require(dirfns)
 
-	dotPscale(
+	dir.pdf('conditionEdgePois', out, append.date = append.date)
+	dotplot.outl(
 		pois$log2OR, 
-		pois$p, 
+		-log10(pois$p), 
 		pois$count, 
-		file = 'conditionEdgePois', 
-		path = out, 
-		row_title_rot = 0,
-		append.date = append.date
+		row_title_rot = 0
 	)
+	dev.off()
 
 	dir.csv(pois$log2OR, 'conditionPoisLog2OR', 
 		out, append.date = append.date)
@@ -115,7 +114,7 @@ plotNetworkCircle <- function(g, file, out = '.', colfn, lgd,
 }
 
 enrichCond <- function(cond, dists, out, layout = layout_nicely){
-	require(moreComplexHeatmap)
+	#require(moreComplexHeatmap)
 	require(igraph)
 
 	#number of embryos per condition

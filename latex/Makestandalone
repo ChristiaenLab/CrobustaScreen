@@ -1,0 +1,22 @@
+INPUT ?= default
+FORMAT ?= svg
+
+standalone/$(INPUT).$(FORMAT): build/standalone/$(INPUT).pdf
+	mkdir -p standalone/$(dir $(INPUT))
+	pdftocairo -$(FORMAT) build/standalone/$(INPUT).pdf standalone/$(INPUT).$(FORMAT)
+
+build/standalone/$(INPUT).pdf: $(INPUT).standalone.tex
+	xelatex -output-directory=build/standalone $(INPUT).standalone.tex
+	mkdir -p build/standalone/$(dir $(INPUT))
+	mv build/standalone/$(notdir $(INPUT)).standalone.pdf build/standalone/$(INPUT).pdf
+	mv $(INPUT).standalone.tex build/standalone
+
+$(INPUT).standalone.tex: build/standalone
+	sed "s|INPUT|$(INPUT)|g" standalonetemplate.tex > "$(INPUT).standalone.tex"
+
+build/standalone:
+	mkdir -p build/standalone
+
+clean:
+	rm -rf build/standalone
+	rm *.standalone.tex

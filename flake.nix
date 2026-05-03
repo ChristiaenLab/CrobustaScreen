@@ -21,25 +21,19 @@
     # Flake dependencies providing Nix packages (like the new Autoencoders)
     Autoencoders = {
       url = "github:kewiechecki/Autoencoders.jl";
-      flake = true;
-      inputs.nixpkgs.follows = "nixpkgs"; # <<< Ensure consistency
+      flake = false;
     };
-    # !!! IMPORTANT: Assume these are ALSO updated to provide packages.default !!!
-    # !!! If not, change flake=false and handle like REPLVimSrc above     !!!
     DictMap = {
       url = "github:kewiechecki/DictMap.jl";
-      flake = true; # Assumed updated
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false; 
     };
     TrainingIO = {
       url = "github:kewiechecki/TrainingIO.jl";
-      flake = true; # Assumed updated
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false; 
     };
     DeePWAK = {
       url = "github:kewiechecki/DeePWAK.jl";
-      flake = true; # Assumed updated
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false; 
     };
   };
 
@@ -108,12 +102,8 @@
           config = { allowUnfree = true; cudaSupport = system == "x86_64-linux"; };
         };
 
-        autoencodersPkg = Autoencoders.packages.${system}.default;
-        dictMapPkg = DictMap.packages.${system}.default;
-        trainingIOPkg = TrainingIO.packages.${system}.default;
-
         # --- Python Environment ---
-        pythonEnv = pkgs.python3.withPackages (ps: with ps; [ umap-learn leidenalg igraph ]);
+        pythonEnv = pkgs.python3.withPackages (ps: with ps; [ umap-learn leidenalg igraph numpy pandas seaborn ]);
 
         # --- Shell Packages ---
         # List everything needed in the final shell
@@ -150,13 +140,18 @@
               dev_pkgs = [
                   ("igraph_jll", "${inputs.igraph_jllSrc}"),
                   ("leiden_jll", "${inputs.leiden_jllSrc}"),
-                  ("Leiden", "${inputs.LeidenSrc}")
+                  ("Leiden", "${inputs.LeidenSrc}"),
+                  ("Autoencoders", "${inputs.Autoencoders}"),
+                  ("DictMap", "${inputs.DictMap}"),
+                  ("TrainingIO", "${inputs.TrainingIO}"),
+                  ("DeePWAK", "${inputs.DeePWAK}")
               ]
           end
 
           println("+++ Ensuring development packages (non-flake git repos) are linked +++")
           # Force develop for non-flake sources every time; Pkg handles idempotency
           for (pkg_name, pkg_path) in dev_pkgs
+
               println("Developing ", pkg_name, " from ", pkg_path)
               # Add try-catch for robustness
               try Pkg.develop(path=pkg_path) catch e; println("WARN: Pkg.develop failed for ", pkg_name, ": ", e) end
@@ -191,15 +186,19 @@
             export DEVICE="cuda:0"
             export R_HOME="${pkgs.R}/lib/R" # For RCall.jl
             export JULIA_PROJECT="@."       # Tell Julia to use the project env
+            
+            # Critical fixes for R and Reticulate integration
+            export RETICULATE_PYTHON="$(which python)"
+            export R_LIBS_USER=/dev/null  # Prevent R from loading incompatible user libraries
 
             # Set LD_LIBRARY_PATH from everything in buildInputs
             # Should include paths from juliaEnv, R libs, Python libs, CUDA, GCC libs etc.
+				# curl.out}/lib:$
             export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath shellPkgs}";
 			export LD_LIBRARY_PATH="${
 				libpng.out}/lib:${
 				icu75.out}/lib:${
 				bzip2.out}/lib:${
-				curl.out}/lib:${
 				libxml2.out}/lib:${
 				gsl.out}/lib:${
 				openssl.out}/lib:$LD_LIBRARY_PATH"

@@ -1,0 +1,32 @@
+\begin{tikzpicture}[
+    node distance = 5mm and 5mm,
+    punkt/.style = {rectangle, draw},
+    pil/.style = {black, -stealth},
+    font=\small
+    ]
+
+	\node[label=left:input data] (X) {$X::\mathbb{R}^{114 \times 2178}$} ;
+	\node[punkt] (la) [below=of X] {$\tanhl^{114 \to 58}$} ;
+	\node[punkt,label=left:encoder] (lb) [below=of la] {$\tanhl^{58 \to 29}$} ;
+	\node[punkt] (lc) [below=of lb] {$\tanhl^{29 \to 14}$} ;
+
+	\node[label=left:embeddings] (E) [below=of lc] {$E::\mathbb{R}^{14 \times 2178}$} ;
+
+	\node[punkt] (ld) [below=of E] {$\tanhl^{14 \to 29}$} ;
+	\node[punkt,label=left:decoder] (le) [below=of ld] {$\tanhl^{29 \to 58}$} ;
+	\node[punkt] (lf) [below=of le] {$\tanhl^{58 \to 114}$} ;
+
+	\node[label=left:reconstructed data] (Xhat) [below=of lf] {$\hat{X}::\mathbb{R}^{114 \times 2178}$} ;
+
+	\draw[pil]
+	(X) edge (la)
+	(la) edge (lb)
+	(lb) edge (lc)
+	(lc) edge (E)
+
+	(E) edge (ld)
+	(ld) edge (le)
+	(le) edge (lf)
+	(lf) edge (Xhat) ;
+\end{tikzpicture}
+

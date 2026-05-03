@@ -105,3 +105,29 @@ function condnetwork(G::AbstractMatrix, P::AbstractMatrix, γ::AbstractFloat)
     Ĝ
 end
 
+function clustmat(clusts::AbstractVector, i)
+    x = clusts .== i
+    x * x'
+end
+
+function clustdist(clusts::AbstractVector, D::AbstractMatrix, i) 
+    M = clustmat(clusts, i)
+    dropdims(sum(D .* M; dims=1); dims=1)
+end
+
+function clustdsort(clusts::AbstractVector, D::AbstractMatrix)
+    map(unique(clusts)) do i
+        dists = clustdist(clusts, D, i)
+        ix = sortperm(dists; rev=true)
+        cutoff = sum(dists .> 0)
+        ix[1:cutoff]
+    end
+end
+
+
+function centroidix(clusts::AbstractVector, D::AbstractMatrix)
+    map(unique(clusts)) do i
+        M = clustmat(clusts, i)
+        dropdims(sum(D .* M; dims=1); dims=1) |> argmax
+    end
+end

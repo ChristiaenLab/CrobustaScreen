@@ -45,13 +45,15 @@ read.params <- function(dir){
 	pheno <- read.opt(dir, "phenotype.csv",
 			  row.names = 1)
 	interactions <- parse.interactions(dir,groups)
+	conds <- groups$Condition
 
+	excl = c("Threshold.nuclei", "Threshold.membrane", "surface.dist")
 	params <- read.opt(dir, "params.csv",
 			  row.names = 1)
 	z <- read.opt(dir, "z_dat.csv",
 			  row.names = 1)
 
-	colsel <- sapply(z,compose(abs,sum)) > 0
+	colsel <- (sapply(z,compose(abs,sum)) > 0) & !(names(z) %in% excl)
 	params <- params[,colsel]
 	z <- z[,colsel]
 
@@ -59,7 +61,8 @@ read.params <- function(dir){
 	     pheno = pheno,
 	     params = params,
 	     z = z,
-	     interactions = interactions)
+	     interactions = interactions,
+		 conds = conds)
 }
 
 read.embeddings <- function(path){

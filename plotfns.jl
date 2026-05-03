@@ -80,3 +80,4 @@ function plotstat(Ls::AbstractVector, param::String, stat::String,
         scatter!(x, y; label = lab, markersize = markersize, 
                  markershape = markershape)
     end
+end

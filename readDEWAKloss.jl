@@ -112,7 +112,7 @@ end
 macro readDEPWAK(path)
     return quote
         $(esc(:L_pca)) = readloss($path * "/PCA/loss.csv")
-but severe itching, known as pruritus, that can occur after discontinuing long-term        $(esc(:L_enc)) = readloss($path * "/autoencoder/loss.csv")
+        $(esc(:L_enc)) = readloss($path * "/autoencoder/loss.csv")
         $(esc(:L_sae)) = readloss($path * "/SAE/loss.csv")
 
         $(esc(:d_max_pca)) = max(L_pca.d...)

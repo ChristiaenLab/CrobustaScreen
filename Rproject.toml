@@ -1,0 +1,98 @@
+[project]
+name = "CrobustaScreen"
+description = "Pipeline for self-supervised phenotype detection from confocal images of Ciona robusta embryos"
+version = "1.0.0"
+authors = ["Christiaen Lab"]
+license = "MIT"
+readme = "README.md"
+r-version = ">=4.3.0"
+
+[project.urls]
+homepage = "https://github.com/christiaenlab/CrobustaScreen"
+repository = "https://github.com/christiaenlab/CrobustaScreen"
+
+# Core dependencies required for the pipeline
+[dependencies]
+# Command line interface
+optparse = "*"
+
+# Data manipulation and functional programming
+purrr = "*"
+
+# Graph analysis and clustering
+igraph = "*"
+leiden = "*"
+cluster = "*"
+class = "*"
+
+# Dimension reduction and visualization
+umap = "*"
+ggplot2 = "*"
+ggpubr = "*"
+circlize = "*"
+
+# Bioinformatics packages (Bioconductor)
+ComplexHeatmap = { source = "bioconductor" }
+biomaRt = { source = "bioconductor" }
+fgsea = { source = "bioconductor" }
+STRINGdb = { source = "bioconductor" }
+BiocManager = "*"
+
+# Python integration
+reticulate = "*"
+
+# Development and testing dependencies
+[dev-dependencies]
+devtools = "*"
+testthat = "*"
+roxygen2 = "*"
+lintr = "*"
+styler = "*"
+
+# Optional dependencies for enhanced functionality
+[optional-dependencies]
+# Enhanced plotting
+plotly = "*"
+gganimate = "*"
+ggraph = "*"
+
+# Data import/export
+readxl = "*"
+writexl = "*"
+jsonlite = "*"
+
+# Statistical modeling
+lme4 = "*"
+car = "*"
+broom = "*"
+
+# Parallel computing
+foreach = "*"
+doParallel = "*"
+
+# GitHub dependencies
+[github-dependencies]
+# Example: custom packages from GitHub
+# "username/repo" = "main"
+
+# Package source configuration
+[sources]
+cran = "https://cloud.r-project.org"
+bioconductor = "https://bioconductor.org/packages/release/bioc"
+
+# renv configuration
+[tool.renv]
+use-cache = false
+snapshot-type = "explicit"
+
+# Integration with conda
+[tool.conda]
+r-home = "${CONDA_PREFIX}/lib/R"
+python = "${CONDA_PREFIX}/bin/python"
+
+# Development tools configuration
+[tool.lintr]
+line-length = 100
+
+[tool.styler]
+indent-by = 2

@@ -111,28 +111,41 @@ plot.edge <- function(dat, g, clusts = NULL,
 	}
 }
 
-plot.pt <- function(dat, g, clusts = NULL,
+plot.pt <- function(dat, g, clusts = NULL, subset = NULL,
 		    legendpos = "topright",
 		    pch = 19, cex = 0.8, ...){
 	require(purrr)
-	f <- function(sel, col) points(dat[sel, ], 
+	
+	if(is.null(subset)) subset <- 1:nrow(dat)
+	else if(is.logical(subset)) subset <- which(subset)
+
+	if(!is.null(clusts) && length(clusts) == nrow(dat)) {
+		clusts <- clusts[subset]
+	}
+
+	f <- function(sel, col) points(dat[subset[sel], ], 
 				      col = col,
 				      pch = pch,
 				      cex = cex, ...)
 	dists <- plot.knn(dat, g)
 
-	clustn <- unique(clusts)
-	clustn <- clustn[order(clustn)]
-	clustsel <- lapply(clustn, 
-			   purrr::compose(which, 
+	if(!is.null(clusts)){
+		clustn <- unique(clusts)
+		clustn <- clustn[order(clustn)]
+		clustsel <- lapply(clustn, 
+				   purrr::compose(which, 
 					  partial(`==`, 
 						  clusts)))
-	cols <- rainbow(length(clustsel))
-	mapply(f, clustsel, cols)
-	legend(legendpos,
-	       as.character(clustn),
-	       col = cols,
-	       pch = pch)
+		cols <- rainbow(length(clustsel))
+		mapply(f, clustsel, cols)
+		
+		if(length(clustn) > 0){
+			legend(legendpos,
+			       as.character(clustn),
+			       col = cols,
+			       pch = pch)
+		}
+	}
 }
 
 

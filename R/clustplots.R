@@ -121,7 +121,7 @@ clustplots <- function(dat, clusts, conds, distmat,
 }
 
 condDist <- function(clust, cond, dists, out){
-	require(moreComplexHeatmap)
+	#require(moreComplexHeatmap)
 
 	condsel <- sapply(unique(cond), function(x) cond == x)
 	conds <- combn(unique(cond), 2)
@@ -174,14 +174,17 @@ condDist <- function(clust, cond, dists, out){
 	topann <- columnAnnotation(size = anno_barplot(size),
 				   score = anno_barplot(score),
 				   name = paste("score =", as.character(total)))
-	quantHeatmap(
-		log2(dat), 'cond_dist', path = out,
-		conds = row.names(dat), show_row_names = F,
+	dir.pdf('cond_dist', path = out)
+	draw(hm.cell(
+		log2(dat), 
+		# conds = row.names(dat), 
+		show_row_names = F,
 		top_annotation = topann,
 		right_annotation = rowAnnotation(avg.dist = anno_barplot(avg)),
 		column_title = paste('total score =', as.character(total)),
 		split = sp, row_title_rot = 0
-	)
+	))
+	dev.off()
 
 	out <- lapply(tmp, function(x) x[length(unique(cond))+1:length(x)])
 	mean(unlist(self))/mean(unlist(out))
