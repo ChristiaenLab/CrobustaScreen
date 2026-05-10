@@ -1,4 +1,7 @@
 # search k and gamma values 
+Sys.setenv(RETICULATE_PYTHON = Sys.which("python"))
+options(reticulate.autoconfig = FALSE)
+options(reticulate.conda_fallback = FALSE)
 
 source('R/optimization.R')
 source("R/io.R")

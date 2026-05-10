@@ -1,3 +1,7 @@
+Sys.setenv(RETICULATE_PYTHON = Sys.which("python"))
+options(reticulate.autoconfig = FALSE)
+options(reticulate.conda_fallback = FALSE)
+
 source("R/leiden.R")
 source("R/gene.network.R")
 
@@ -60,12 +64,13 @@ dir.plot("knn")(plot.edge, umap.coords, knn)
 
 plots <- lapply(names(leidens)[2:7], dot.stat, leidens)
 
-es <- dot.stat("ES", ks)
-dir.f(ggexport)(ggarrange(plotlist = list(es), 
-			  ncol = 3, nrow = 3),
-		filename = "ES.pdf")
- 
-plots <- append(plots, list(es))
+if ("ES" %in% names(ks)) {
+	es <- dot.stat("ES", ks)
+	dir.f(ggexport)(ggarrange(plotlist = list(es), 
+				  ncol = 3, nrow = 3),
+			filename = "ES.pdf")
+	plots <- append(plots, list(es))
+}
 arrange.stats(plots, "optimization")
 
 sel <- sapply(leidens[, c(2:6)], which.max)

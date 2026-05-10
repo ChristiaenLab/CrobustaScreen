@@ -124,7 +124,7 @@
           R         # Base R
           pythonEnv # Python with its packages
           # R Packages (consider managing via renv/Nix integration if complex)
-          rPackages.optparse rPackages.purrr rPackages.biomaRt rPackages.STRINGdb
+          rPackages.optparse rPackages.purrr rPackages.biomaRt rPackages.STRINGdb rPackages.languageserver
           rPackages.class rPackages.cluster rPackages.fgsea rPackages.igraph rPackages.leiden
           rPackages.circlize rPackages.ComplexHeatmap rPackages.ggplot2 rPackages.ggpubr rPackages.umap
           # System Tools & Runtime Libs

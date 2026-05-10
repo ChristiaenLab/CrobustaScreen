@@ -31,11 +31,11 @@ test.clust.params <- function(dat,clustdat){
 box.heatmap <- function(m, clustdat, boxdat, outldat,
 		  out, path, 
 		  boxtitle = "log2(FC)",
-		  outltitle = "-log10(FDR)", ...){
+		  outltitle = "-log10(FDR)", ylim=c(-1,1), ...){
 	# This scale will be used for the fold changes 
 	# between average feature values in each cluster 
 	# from the background.
-        boxcol <- col.z(boxdat, .05, 1)
+        boxcol <- col.z(boxdat, .05, 0)
 
         # creates a color scale from 0 to 2
         # This will give a log10 scale for FDR values 
@@ -53,10 +53,11 @@ box.heatmap <- function(m, clustdat, boxdat, outldat,
                         which = 'row',
                         width = unit(1, 'in'),
                         box_width = 0.9,
+						ylim=ylim,
                         gp = gpar(
                                 fill = fc.cols,
                                 col = fdr.cols
-                        )
+                        ), ...
                 ))
         }
 

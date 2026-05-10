@@ -1,0 +1,115 @@
+Parameter descriptions for data/params.csv
+==========================================
+
+These parameters are summary statistics derived from Imaris segmentation outputs
+by readEmbryos.R and readPheno.R.
+
+Cell types:
+  - TVC: Trunk Ventral Cells (cardiopharyngeal progenitors)
+  - ATM: Anterior Tail Muscles
+
+Suffixes:
+  - _Nucleus: computed from nucleus centroid coordinates
+  - _Cell: computed from cell centroid coordinates
+  - min/max/mean/sd or SD: summary statistics across cells within each embryo
+
+--------------------------------------------------------------------------------
+DISTANCE PARAMETERS
+--------------------------------------------------------------------------------
+
+ATM.dist.mean_{Nucleus,Cell}
+  Mean pairwise distance between ATM cells, normalized by maximum distance.
+
+TVC.dist.{min,max,mean,sd}_{Nucleus,Cell}
+  Pairwise distances between TVC cells, normalized by maximum distance.
+
+TVC.ATM.dist.{min,max,mean,sd}_{Nucleus,Cell}
+  Distances between TVC and ATM cells, normalized by maximum distance.
+
+TVC.cosine.{min,max,sd}_{Nucleus,Cell}
+  Cosine of angles formed by triplets of TVC cells. Measures angular
+  arrangement/spread of TVC cells. Values near 1 indicate aligned cells,
+  values near -1 indicate cells at opposite ends.
+
+ATM.Nucleus.Dist.to.Cell.Membrane.{min,max,mean,SD}
+  Distance from ATM nucleus centroid to cell membrane, normalized.
+
+TVC.Nucleus.Dist.to.Cell.Membrane.{min,max,mean,SD}
+  Distance from TVC nucleus centroid to cell membrane, normalized.
+
+--------------------------------------------------------------------------------
+CELL SHAPE PARAMETERS
+--------------------------------------------------------------------------------
+
+{ATM,TVC}.Cell.Ellipticity..oblate..{min,max,mean,SD}
+  Oblate ellipticity of cells (0-1). Higher values indicate disc/pancake shape.
+
+{ATM,TVC}.Cell.Ellipticity..prolate..{min,max,mean,SD}
+  Prolate ellipticity of cells (0-1). Higher values indicate cigar/elongated shape.
+
+{ATM,TVC}.Cell.Sphericity.{min,max,mean,SD}
+  Sphericity of cells (0-1). Value of 1 indicates perfect sphere.
+
+{ATM,TVC}.Cell.Volume.frac.{min,max,mean,SD}
+  Fraction of total cell volume occupied by each cell type.
+
+{ATM,TVC}.Cell.Nucleus.to.Cytoplasm.Volume.Ratio.{min,max,mean,SD}
+  Ratio of nucleus volume to cytoplasm volume for each cell.
+
+--------------------------------------------------------------------------------
+NUCLEUS SHAPE PARAMETERS
+--------------------------------------------------------------------------------
+
+{ATM,TVC}.Nucleus.Ellipticity..oblate..{min,max,mean,SD}
+  Oblate ellipticity of nuclei.
+
+{ATM,TVC}.Nucleus.Ellipticity..prolate..{min,max,mean,SD}
+  Prolate ellipticity of nuclei.
+
+{ATM,TVC}.Nucleus.Sphericity.{min,max,mean,SD}
+  Sphericity of nuclei.
+
+{ATM,TVC}.Nucleus.Volume.frac.{min,max,mean,SD}
+  Fraction of total nucleus volume occupied by each cell type.
+
+--------------------------------------------------------------------------------
+CELL COUNTS
+--------------------------------------------------------------------------------
+
+nATM
+  Number of ATM cells in the embryo.
+
+nTVC
+  Number of TVC cells in the embryo.
+
+--------------------------------------------------------------------------------
+GROUP/SURFACE PARAMETERS
+--------------------------------------------------------------------------------
+
+{ATM,TVC}group.Ellipticity..oblate.
+  Oblate ellipticity of the grouped surface for ATM/TVC.
+
+{ATM,TVC}group.Ellipticity..prolate.
+  Prolate ellipticity of the grouped surface for ATM/TVC.
+
+{ATM,TVC}group.Sphericity
+  Sphericity of the grouped surface for ATM/TVC.
+
+{ATM,TVC}.contiguous
+  Whether cells form a single contiguous surface (1) or multiple surfaces (0).
+
+{ATM,TVC}.Volume
+  Fractional volume of the ATM/TVC group surface.
+
+--------------------------------------------------------------------------------
+IMAGING PARAMETERS
+--------------------------------------------------------------------------------
+
+Threshold.nuclei
+  Intensity threshold used for nuclei segmentation in Imaris.
+
+Threshold.membrane
+  Intensity threshold used for membrane segmentation in Imaris.
+
+surface.dist
+  Shortest edge-to-edge distance between ATM group and TVC group surfaces (um).

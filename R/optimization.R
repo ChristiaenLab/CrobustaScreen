@@ -2,9 +2,14 @@ source("R/descend.R")
 source("R/test.knn.R")
 source("R/leiden.R")
 
-par.apply <- function(..., f = pbsapply){
+par.apply <- function(..., f = NULL){
 	require(parallel)
-	require(pbapply)
+	has.pb <- require(pbapply)
+
+	if(is.null(f)) {
+		if(has.pb) f <- pbapply::pbsapply
+		else f <- parallel::parSapply
+	}
 
 	ncore <- detectCores() - 2
 	cl <- makeCluster(ncore, "FORK")
@@ -73,7 +78,8 @@ get.res.unif <- function(range, k, dat, int, groups,
 	out <- par.apply(res, test.leiden, 
 			 k = k, g = g, dat = dat, 
 			 reps = 1000, 
-			 groups = groups, int = int)
+			 groups = groups, int = int,
+			 dists = dists)
 	return(cbind(resolution = res, t(out)))
 }
 

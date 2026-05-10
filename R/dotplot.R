@@ -1,31 +1,10 @@
-writepdf <- function(expr,file,out='.',...){
-    pdf(paste0(out,'/',file),...)
+source("R/dirfns.R")
+source("R/heatmapfns.R")
+
+writepdf <- function(expr,file,out='.',append.date=F,...){
+    out <- mkdate(file, ext='', path=out, append.date=append.date)
+    pdf(out,...)
     tryCatch(expr,finally=dev.off())
-}
-        
-#' Wrapper for \code{Heatmap()} which allows specifying cell dimensions and resizing the heatmap accordingly.
-#'
-#' @param x A numeric matrix to be plotted.
-#' @param ... Additional arguments to \code{Heatmap()}.
-#' @param cell.h The cell height.
-#' @param cell.w The cell width.
-#' @param height The heatmap height. Ignored if \code{cell.h} is specified.
-#' @param width The heatmap width. Ignored if \code{cell.w} is specified.
-#' @param units The unit scale to be used for \code{cell.h} and \code{cell.w}.
-#' @return A ComplexHeatmap.
-#' @import ComplexHeatmap
-#' @export
-hm.cell <- function(
-		x,...,
-		cell.h=NULL,cell.w=NULL,
-		height=NULL,width=NULL,
-		# heatmap_height=NULL, 
-		# heatmap_width=NULL,
-		units='in'
-){
-	if(!is.null(cell.h)) height <- unit(nrow(x)*cell.h,units)
-	if(!is.null(cell.w)) width <- unit(ncol(x)*cell.w,units)
-	return(Heatmap(x,...,height=height,width=width))
 }
 
 #' accepts the results of an enrichment test applied to each cell in a matrix

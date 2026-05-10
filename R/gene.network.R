@@ -1,19 +1,19 @@
 source("R/dirfns.R")
 source("R/pois.R")
+source("R/dotplot.R")
 
 dotPois <- function(pois, out, append.date = T){
-	require(moreComplexHeatmap)
+	#require(moreComplexHeatmap)
 	#require(dirfns)
 
-	dotPscale(
-		pois$log2OR, 
-		pois$p, 
-		pois$count, 
-		file = 'conditionEdgePois', 
-		path = out, 
-		row_title_rot = 0,
-		append.date = append.date
-	)
+	writepdf({
+		dotplot.outl(
+			pois$log2OR, 
+			-log10(pois$p), 
+			pois$count, 
+			row_title_rot = 0
+		)
+	}, 'conditionEdgePois.pdf', out, append.date = append.date)
 
 	dir.csv(pois$log2OR, 'conditionPoisLog2OR', 
 		out, append.date = append.date)

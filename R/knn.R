@@ -3,7 +3,7 @@ get.knn <- function(dists, k, mode = 'directed'){
 	neighbors <- apply(dists, 2, order)
 	adj <- sapply(1:ncol(neighbors), function(i){
 			      r <- dists[,i]
-			      sel <- neighbors[-1:-k, i]
+			      sel <- neighbors[-(1:k), i]
 			      r[sel] <- 0
 			      return(r)
 	})
