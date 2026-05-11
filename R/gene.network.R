@@ -2,7 +2,7 @@ source("R/dirfns.R")
 source("R/pois.R")
 source("R/dotplot.R")
 
-dotPois <- function(pois, out, append.date = T){
+dotPois <- function(pois, out, append.date = F){
 	#require(moreComplexHeatmap)
 	#require(dirfns)
 
@@ -67,7 +67,7 @@ plotNetwork <- function(g, file, out = '.', colfn, lgd,
 			title = 'log2OR', layout = layout_nicely,
 			vertex.shape = 'none',
 			vertex.size = 10, ...,
-			append.date = T){
+			append.date = F){
 	tmp <- do.call(rbind, strsplit(as_ids(E(g)), '\\|'))
 	curved <- sapply(1:nrow(tmp), function(x) { 
 		y <- which(tmp[, 1] == tmp[x, 2] & tmp[, 2] == tmp[x, 1]) 
@@ -102,7 +102,7 @@ plotNetwork <- function(g, file, out = '.', colfn, lgd,
 plotNetworkCircle <- function(g, file, out = '.', colfn, lgd, 
 			      title = 'log2OR', 
 			      layout = layout.circle, 
-			      append.date = T){
+			      append.date = F){
 	#require(dirfns)
 
 	dir.pdf(file, out, append.date = append.date)
@@ -114,7 +114,8 @@ plotNetworkCircle <- function(g, file, out = '.', colfn, lgd,
 	dev.off()
 }
 
-enrichCond <- function(cond, dists, out, layout = layout_nicely){
+enrichCond <- function(cond, dists, out, layout = layout_nicely,
+					   append.date = F, ...){
 	require(moreComplexHeatmap)
 	require(igraph)
 
@@ -122,15 +123,16 @@ enrichCond <- function(cond, dists, out, layout = layout_nicely){
 	ncond <- table(cond)
 
 	pois <- getPois(cond, dists)
-	dotPois(pois, out)
+	dotPois(pois, out, append.date)
 
 	g <- poisGraph(pois, up = F)
 	colfn <- col.z(E(g)$weight)
-	networkPois(g, 'conditionEdgeNetwork', out, colfn, layout = layout.circle, vertex.shape = 'none')
+	networkPois(g, 'conditionEdgeNetwork', out, colfn, layout = layout.circle, 
+				vertex.shape = 'none', append.date = append.date, ...)
 
 	g.up <- poisGraph(pois)
 	networkPois(g.up, 'conditionEdgeNetworkUp',
-		    out, colfn, layout = layout)
+		    out, colfn, layout = layout, append.date = append.date, ...)
 }
 
 

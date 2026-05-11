@@ -25,7 +25,7 @@ group.edge <- function(g, groups){
 
 graph.pdf <- function(out, g,
 		      layout = layout_nicely,
-		      ..., append.date = T){
+		      ..., append.date = F){
 	dir.pdf(out, append.date = append.date)
 	plot(g, layout = layout, ...)
 	dev.off()

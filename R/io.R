@@ -63,14 +63,32 @@ read.params <- function(dir) {
        interactions = interactions)
 }
 
-read.embeddings <- function(path) {
-  #encoded <- read.opt(path, "E.csv")
+read.embeddings <- function(path, meta = NULL) {
+  print(paste("Reading embeddings from:", path))
   encoded <- read.csv(path)
+
+  # If the first column is character/factor, use it as row names
+  if(!is.numeric(encoded[,1])) {
+    rownames(encoded) <- encoded[,1]
+    encoded <- encoded[,-1]
+  }
+
+  # Align with metadata if provided
+  if(!is.null(meta)) {
+    common_ids <- intersect(rownames(encoded), rownames(meta))
+    if(length(common_ids) > 0) {
+      encoded <- encoded[common_ids, , drop = FALSE]
+    }
+  }
+
   names(encoded) <- sub("Column", "embedding",
             names(encoded))
 
-  dists <- as.matrix(dist(encoded))
-  list(encoded = encoded,
+  # Ensure all data is numeric before dist()
+  numeric_only <- encoded[sapply(encoded, is.numeric)]
+  dists <- as.matrix(dist(numeric_only))
+  
+  list(encoded = numeric_only,
        dists = dists)
 }
 
@@ -109,7 +127,8 @@ parse.env <- function(parser) {
   opts <- parse_args(parser)
 
   dat <- read.params(opts$meta_dir)
-  embedding <- read.embeddings(opts$embeddings)
+  # Pass params to align embeddings
+  embedding <- read.embeddings(opts$embeddings, meta = dat$params)
 
   list2env(opts, globalenv())
   list2env(dat, globalenv())

@@ -1,10 +1,10 @@
 source("R/dirfns.R")
 source("R/heatmapfns.R")
 
-writepdf <- function(expr,file,out='.',append.date=F,...){
+writepdf <- function(expr, file, out='.', append.date=F,...) {
     out <- mkdate(file, ext='', path=out, append.date=append.date)
     pdf(out,...)
-    tryCatch(expr,finally=dev.off())
+    tryCatch(expr, finally=dev.off())
 }
 
 #' accepts the results of an enrichment test applied to each cell in a matrix
@@ -21,144 +21,144 @@ writepdf <- function(expr,file,out='.',append.date=F,...){
 #' @export
 #' @importFrom grid gpar unit grid.points
 hmdot.outl <- function(
-	mat, outl, size, 
-	col.mat, col.outl, scale, size.breaks,
-	mat.name="log2(OR)", 
-	outl.name="size", 
-	size.name="-log10(FDR)", 
-	#file, path='.',
+    mat, outl, size, 
+    col.mat, col.outl, scale, size.breaks,
+    mat.name="log2(OR)", 
+    outl.name="size", 
+    size.name="-log10(FDR)", 
+    #file, path='.',
         cell.dim=.15,
-	#, width=12, height=12, append.date=F,
-	...
-){
+    #, width=12, height=12, append.date=F,
+    ...
+) {
     require(ComplexHeatmap)
-	#         outl <- -log10(outl)
-	#         mat[mat<0] <- 0
-	mat[is.na(mat)] <- 0
-	mat[mat==Inf] <- max(mat[is.finite(mat)])
-	mat[mat==-Inf] <- min(mat[is.finite(mat)])
-	#         outl[!is.finite(outl)] <- 0
+    #         outl <- -log10(outl)
+    #         mat[mat<0] <- 0
+    mat[is.na(mat)] <- 0
+    mat[mat==Inf] <- max(mat[is.finite(mat)])
+    mat[mat==-Inf] <- min(mat[is.finite(mat)])
+    #         outl[!is.finite(outl)] <- 0
 
-	#         cexfn <- function(x) unit(min(x/-log10(0.001),
-	#					1)*cell.dim,'in')
-	cexfn <- function(x) unit((1.2 * x / max(size)) * 
-				  cell.dim, 'in')
-	#         col.mat <- col.z(mat)
-	#         col.outl <- col.abs(outl)
-	#         col.outl <- colorRamp2(c(0,2),c('white','black'))
-	cellfn <- function(j, i, x, y, width, height, fill) {
+    #         cexfn <- function(x) unit(min(x/-log10(0.001),
+    #                    1)*cell.dim,'in')
+    cexfn <- function(x) unit((1.2 * x / max(size)) * 
+                  cell.dim, 'in')
+    #         col.mat <- col.z(mat)
+    #         col.outl <- col.abs(outl)
+    #         col.outl <- colorRamp2(c(0, 2), c('white','black'))
+    cellfn <- function(j, i, x, y, width, height, fill) {
             grid.points(
-		x = x, y = y, 
-		size = cexfn(size[i, j]),
-		pch = 16,
+        x = x, y = y, 
+        size = cexfn(size[i, j]),
+        pch = 16,
                 gp = gpar(
-			col = col.mat(mat[i, j]) 
-			# col = col.outl(outl[i, j])
-		)
-	    )
+            col = col.mat(mat[i, j]) 
+            # col = col.outl(outl[i, j])
+        )
+        )
             grid.points(
-		x = x, y = y, 
-		size=cexfn(size[i, j]),
-		pch=1,
+        x = x, y = y, 
+        size=cexfn(size[i, j]),
+        pch=1,
                 gp = gpar(
-			col = col.outl(outl[i, j])
-		)
-	    )
+            col = col.outl(outl[i, j])
+        )
+        )
         }
 
-	# mat.breaks <- round(seq(range(attr(col.mat,'breaks'), 
-	#				length.out=6)))
-	# outl.breaks <- round(seq(range(attr(col.outl,'breaks'), 
-	#				length.out=6)))
+    # mat.breaks <- round(seq(range(attr(col.mat,'breaks'), 
+    #                length.out=6)))
+    # outl.breaks <- round(seq(range(attr(col.outl,'breaks'), 
+    #                length.out=6)))
 
-	lgd <- list(
-		Legend(col_fun = col.mat, title = mat.name),
-			# at=mat.breaks),
-		Legend(col_fun = col.outl, title = outl.name),
-			# at=outl.breaks),
-		Legend( title=size.name,
-			at=size.breaks,
-			type='points',
-			background=0,
-			pch=16,
-			size=unit(sapply(size.breaks,cexfn),'in'),
-			legend_gp=gpar(col=1,fill=0)
-		)
-	)
+    lgd <- list(
+        Legend(col_fun = col.mat, title = mat.name),
+            # at=mat.breaks),
+        Legend(col_fun = col.outl, title = outl.name),
+            # at=outl.breaks),
+        Legend( title=size.name,
+            at=size.breaks,
+            type='points',
+            background=0,
+            pch=16,
+            size=unit(sapply(size.breaks, cexfn),'in'),
+            legend_gp=gpar(col=1, fill=0)
+        )
+    )
 
-	hm <- hm.cell(
-		mat,
-		cell_fun=cellfn,
-		#                 name='log2OR',
-		#                 col=col.mat,
-		rect_gp = gpar(type = "none"),
-		cell.w=cell.dim,
-		cell.h=cell.dim,
-		#                 show_column_dend=F,
-		#                 show_row_dend=F,
-		show_heatmap_legend=F,
-		...
-	)
+    hm <- hm.cell(
+        mat,
+        cell_fun=cellfn,
+        #                 name='log2OR',
+        #                 col=col.mat,
+        rect_gp = gpar(type = "none"),
+        cell.w=cell.dim,
+        cell.h=cell.dim,
+        #                 show_column_dend=F,
+        #                 show_row_dend=F,
+        show_heatmap_legend=F,
+        ...
+    )
 
-	#dir.pdf(
-	#  file,path,
-	#  append.date=append.date,
-	#  width=width,
-	#  height=height
-	#)
-	draw(hm, annotation_legend_list=lgd)
-	#dev.off()
+    #dir.pdf(
+    #  file, path,
+    #  append.date=append.date,
+    #  width=width,
+    #  height=height
+    #)
+    draw(hm, annotation_legend_list=lgd)
+    #dev.off()
 }
 
 hmdot <- function(
-	mat, size, 
-	col.mat, scale, size.breaks,
-	mat.name="log2(OR)", 
-	size.name="-log10(FDR)", 
+    mat, size, 
+    col.mat, scale, size.breaks,
+    mat.name="log2(OR)", 
+    size.name="-log10(FDR)", 
         cell.dim=.15,
-	...
-){
+    ...
+) {
     require(ComplexHeatmap)
-	mat[is.na(mat)] <- 0
-	mat[mat==Inf] <- max(mat[is.finite(mat)])
-	mat[mat==-Inf] <- min(mat[is.finite(mat)])
+    mat[is.na(mat)] <- 0
+    mat[mat==Inf] <- max(mat[is.finite(mat)])
+    mat[mat==-Inf] <- min(mat[is.finite(mat)])
 
-	cexfn <- function(x) unit((1.2 * x / max(size)) * 
-				  cell.dim, 'in')
-	cellfn <- function(j, i, x, y, width, height, fill) {
+    cexfn <- function(x) unit((1.2 * x / max(size)) * 
+                  cell.dim, 'in')
+    cellfn <- function(j, i, x, y, width, height, fill) {
             grid.points(
-		x = x, y = y, 
-		size = cexfn(size[i, j]),
-		pch = 16,
+        x = x, y = y, 
+        size = cexfn(size[i, j]),
+        pch = 16,
                 gp = gpar(
-			col = col.mat(mat[i, j]) 
-		)
-	    )
+            col = col.mat(mat[i, j]) 
+        )
+        )
         }
 
-	lgd <- list(
-		Legend(col_fun = col.mat, title = mat.name),
-		Legend( title=size.name,
-			at=size.breaks,
-			type='points',
-			background=0,
-			pch=16,
-			size=unit(sapply(size.breaks,cexfn),'in'),
-			legend_gp=gpar(col=1,fill=0)
-		)
-	)
+    lgd <- list(
+        Legend(col_fun = col.mat, title = mat.name),
+        Legend( title=size.name,
+            at=size.breaks,
+            type='points',
+            background=0,
+            pch=16,
+            size=unit(sapply(size.breaks, cexfn),'in'),
+            legend_gp=gpar(col=1, fill=0)
+        )
+    )
 
-	hm <- hm.cell(
-		mat,
-		cell_fun=cellfn,
-		rect_gp = gpar(type = "none"),
-		cell.w=cell.dim,
-		cell.h=cell.dim,
-		show_heatmap_legend=F,
-		...
-	)
+    hm <- hm.cell(
+        mat,
+        cell_fun=cellfn,
+        rect_gp = gpar(type = "none"),
+        cell.w=cell.dim,
+        cell.h=cell.dim,
+        show_heatmap_legend=F,
+        ...
+    )
 
-	draw(hm, annotation_legend_list=lgd)
+    draw(hm, annotation_legend_list=lgd)
 }
 
 
@@ -169,53 +169,53 @@ hmdot <- function(
 #' @param ... Additional arguments to \code{hmdot()}.
 #' @export
 dotplot.outl <- function(dot, size, outline, 
-		    sizelim = -log10(0.01), 
-		    outl.name = 'size', 
-		    size.name = '-log10(FDR)', ...){
-	size[which(size > sizelim)] <- sizelim
-	#logFDR <- -log10(size)
-	dot[is.na(dot)] <- 0
-	dot[dot == Inf] <- sizelim
-	dot[dot == -Inf] <- 0
-	size[!is.finite(size)] <- 0
+            sizelim = -log10(0.01), 
+            outl.name = 'size', 
+            size.name = '-log10(FDR)', ...) {
+    size[which(size > sizelim)] <- sizelim
+    #logFDR <- -log10(size)
+    dot[is.na(dot)] <- 0
+    dot[dot == Inf] <- sizelim
+    dot[dot == -Inf] <- 0
+    size[!is.finite(size)] <- 0
 
-	col.dot <- col.z(dot)
+    col.dot <- col.z(dot)
 
-	outline[!is.finite(outline)] <- 0
-	outlinescale <- c(0, quantile(as.matrix(outline)[
-			 	      as.matrix(outline) != 0 
-				      ], 0.95))
-	col.outl <- colorRamp2(outlinescale, c('white', 'black'))
+    outline[!is.finite(outline)] <- 0
+    outlinescale <- c(0, quantile(as.matrix(outline)[
+                       as.matrix(outline) != 0 
+                      ], 0.95))
+    col.outl <- colorRamp2(outlinescale, c('white', 'black'))
 
-	size.breaks <- seq(0, sizelim, length.out = 6)
+    size.breaks <- seq(0, sizelim, length.out = 6)
 
-	hmdot.outl(dot, 
-		   outline, 
-		   size, 
-		   col.mat = col.dot, 
-		   col.outl = col.outl, 
-		   scale = outlinescale, 
-		   size.breaks = size.breaks,
-		   outl.name = outl.name,
-		   size.name = size.name, ...)
+    hmdot.outl(dot, 
+           outline, 
+           size, 
+           col.mat = col.dot, 
+           col.outl = col.outl, 
+           scale = outlinescale, 
+           size.breaks = size.breaks,
+           outl.name = outl.name,
+           size.name = size.name, ...)
 }
 
 dotplot <- function(dot, size,
-		    sizelim = -log10(0.01), 
-		    size.name = '-log10(FDR)', ...){
-	size[which(size > sizelim)] <- sizelim
-	dot[is.na(dot)] <- 0
-	dot[dot == Inf] <- sizelim
-	dot[dot == -Inf] <- 0
-	size[!is.finite(size)] <- 0
+            sizelim = -log10(0.01), 
+            size.name = '-log10(FDR)', ...) {
+    size[which(size > sizelim)] <- sizelim
+    dot[is.na(dot)] <- 0
+    dot[dot == Inf] <- sizelim
+    dot[dot == -Inf] <- 0
+    size[!is.finite(size)] <- 0
 
-	col.dot <- col.z(dot)
+    col.dot <- col.z(dot)
 
-	size.breaks <- seq(0, sizelim, length.out = 6)
+    size.breaks <- seq(0, sizelim, length.out = 6)
 
-	hmdot(dot, 
-	      size, 
-	      col.mat = col.dot, 
-	      size.breaks = size.breaks,
-	      size.name = size.name, ...)
+    hmdot(dot, 
+          size, 
+          col.mat = col.dot, 
+          size.breaks = size.breaks,
+          size.name = size.name, ...)
 }
