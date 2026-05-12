@@ -26,26 +26,17 @@ hmdot.outl <- function(
     mat.name="log2(OR)", 
     outl.name="size", 
     size.name="-log10(FDR)", 
-    #file, path='.',
         cell.dim=.15,
-    #, width=12, height=12, append.date=F,
+    filename = NULL, path = '.', append.date = F, # Added for dir.hm
     ...
 ) {
     require(ComplexHeatmap)
-    #         outl <- -log10(outl)
-    #         mat[mat<0] <- 0
     mat[is.na(mat)] <- 0
     mat[mat==Inf] <- max(mat[is.finite(mat)])
     mat[mat==-Inf] <- min(mat[is.finite(mat)])
-    #         outl[!is.finite(outl)] <- 0
 
-    #         cexfn <- function(x) unit(min(x/-log10(0.001),
-    #                    1)*cell.dim,'in')
     cexfn <- function(x) unit((1.2 * x / max(size)) * 
                   cell.dim, 'in')
-    #         col.mat <- col.z(mat)
-    #         col.outl <- col.abs(outl)
-    #         col.outl <- colorRamp2(c(0, 2), c('white','black'))
     cellfn <- function(j, i, x, y, width, height, fill) {
             grid.points(
         x = x, y = y, 
@@ -53,7 +44,6 @@ hmdot.outl <- function(
         pch = 16,
                 gp = gpar(
             col = col.mat(mat[i, j]) 
-            # col = col.outl(outl[i, j])
         )
         )
             grid.points(
@@ -66,16 +56,9 @@ hmdot.outl <- function(
         )
         }
 
-    # mat.breaks <- round(seq(range(attr(col.mat,'breaks'), 
-    #                length.out=6)))
-    # outl.breaks <- round(seq(range(attr(col.outl,'breaks'), 
-    #                length.out=6)))
-
     lgd <- list(
         Legend(col_fun = col.mat, title = mat.name),
-            # at=mat.breaks),
         Legend(col_fun = col.outl, title = outl.name),
-            # at=outl.breaks),
         Legend( title=size.name,
             at=size.breaks,
             type='points',
@@ -89,25 +72,18 @@ hmdot.outl <- function(
     hm <- hm.cell(
         mat,
         cell_fun=cellfn,
-        #                 name='log2OR',
-        #                 col=col.mat,
         rect_gp = gpar(type = "none"),
         cell.w=cell.dim,
         cell.h=cell.dim,
-        #                 show_column_dend=F,
-        #                 show_row_dend=F,
         show_heatmap_legend=F,
         ...
     )
 
-    #dir.pdf(
-    #  file, path,
-    #  append.date=append.date,
-    #  width=width,
-    #  height=height
-    #)
-    draw(hm, annotation_legend_list=lgd)
-    #dev.off()
+    # Use dir.hm to save with automatic sizing
+    if (!is.null(filename)) {
+        dir.hm(hm, filename, path = path, annotation_legend_list = lgd, append.date = append.date)
+    }
+    return(invisible(hm)) # Return hm invisibly for potential further manipulation
 }
 
 hmdot <- function(
@@ -116,6 +92,7 @@ hmdot <- function(
     mat.name="log2(OR)", 
     size.name="-log10(FDR)", 
         cell.dim=.15,
+    filename = NULL, path = '.', append.date = F, # Added for dir.hm
     ...
 ) {
     require(ComplexHeatmap)
@@ -158,7 +135,11 @@ hmdot <- function(
         ...
     )
 
-    draw(hm, annotation_legend_list=lgd)
+    # Use dir.hm to save with automatic sizing
+    if (!is.null(filename)) {
+        dir.hm(hm, filename, path = path, annotation_legend_list = lgd, append.date = append.date)
+    }
+    return(invisible(hm)) # Return hm invisibly
 }
 
 

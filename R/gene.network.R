@@ -6,14 +6,15 @@ dotPois <- function(pois, out, append.date = F){
 	#require(moreComplexHeatmap)
 	#require(dirfns)
 
-	writepdf({
-		dotplot.outl(
-			pois$log2OR, 
-			-log10(pois$p), 
-			pois$count, 
-			row_title_rot = 0
-		)
-	}, 'conditionEdgePois.pdf', out, append.date = append.date)
+	dotplot.outl(
+		pois$log2OR, 
+		-log10(pois$p), 
+		pois$count, 
+		row_title_rot = 0,
+		filename = 'conditionEdgePois.pdf', # Explicit filename for dotplot.outl
+		path = out, # Path for dotplot.outl
+		append.date = append.date
+	)
 
 	dir.csv(pois$log2OR, 'conditionPoisLog2OR', 
 		out, append.date = append.date)

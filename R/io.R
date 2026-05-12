@@ -52,7 +52,7 @@ read.params <- function(dir) {
   z <- read.opt(dir, "z_dat.csv",
         row.names = 1)
 
-  colsel <- sapply(z,compose(abs,sum)) > 0
+  colsel <- sapply(z, purrr::compose(abs, sum)) > 0
   params <- params[,colsel]
   z <- z[,colsel]
 

@@ -17,7 +17,10 @@ mkdate <- function(filename,ext='',path='.',append.date = F){
   filename <- paste0(path,'/' ,filename)
   path <- sub('(^.*\\/).*',"\\1",filename)
   if(!dir.exists(path)) dir.create(path,recursive = T)
-  if(ext!='') filename <- paste0(filename,'.',ext)
+  # Avoid adding extension if it already exists
+  if(ext!='' && !grepl(paste0('\\.', ext, '$'), filename)) {
+    filename <- paste0(filename,'.',ext)
+  }
   return(filename)
 }
 
@@ -228,6 +231,37 @@ dir.gg <- function(x,filename,path='.',ext='pdf',...,append.date = F) {
   require(ggplot2)
   filename <- mkdate(filename,ext,path,append.date)
   ggsave(filename,x,ext,...)
+}
+
+#' Concatenates a path, filename, and file extension into an output path, then opens a pdf connection scaled to the size of a heatmap.
+#' Any folders in the path that do not exist are created.
+#'
+#' @param filename The output file name.
+#' @param hm A Heatmap or HeatmapList object.
+#' @param path The path to the output file.
+#' @param ... Additional arguments to \code{draw}. 
+#' @param append.date Whether to write the output to a directory with today's date.
+#' @export
+#' @examples
+dir.hm <- function(hm, filename, path = '.', ..., append.date = F) {
+  require(ComplexHeatmap)
+  require(grid)
+  
+  # 1. Draw to a null PDF device to calculate dimensions
+  pdf(NULL)
+  hm_drawn <- draw(hm, ...)
+  dev.off() # Close the null device
+  
+  # 2. Get width and height in inches from the drawn object
+  w <- ComplexHeatmap:::width(hm_drawn)
+  h <- ComplexHeatmap:::height(hm_drawn)
+  
+  # 3. Create the real PDF with the correct dimensions
+  dir.pdf(filename, path = path, width = grid::convertWidth(w, "in", valueOnly = TRUE), height = grid::convertHeight(h, "in", valueOnly = TRUE), append.date = append.date)
+  
+  # 4. Draw the heatmap for the final time to the PDF
+  draw(hm, ...)
+  dev.off()
 }
 
 #' Wrapper for applying a write function to each element of list \code{x} and using \code{names(x)} as the filenames.

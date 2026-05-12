@@ -42,6 +42,9 @@ writefn <- function(f, arg = "filename") {
 	function(...) dir.f(f, arg)(..., path = out_dir, append.date = F)
 }
 
+omit <- c(-105:-106, -115:-117)
+params <- params[, omit]
+
 umap.coords <- umap(encoded)$layout
 colnames(umap.coords) <- c("UMAP1", "UMAP2")
 
@@ -124,53 +127,52 @@ clustplots(encoded,
        NULL,
        dists, legend.ncol = 1, legend.cex = 1)
 
-omit <- c(-105:-106, -115:-117)
-writefn(quantHeatmap)(params[,omit], "value", filename = "params",
+writefn(quantHeatmap)(params[,omit], name = "value", filename = "params",
             split = clusts[, clust_sel_method],
             cell.w = 0.12, cell.h = 0.005,
             show_row_names = F)
-writefn(quantHeatmap)(z, "z-score", filename = "z",
+writefn(quantHeatmap)(z, name = "z-score", filename = "z",
             split = clusts[, clust_sel_method],
-            cell.w = 0.012, cell.h = 0.005,
+            cell.w = 0.12, cell.h = 0.005,
             show_row_names = F)
-writefn(quantHeatmap)(encoded, "value", filename = "embedding",
+writefn(quantHeatmap)(encoded, name = "value", filename = "embedding",
             split = clusts[, clust_sel_method],
             cell.w = 0.2, cell.h = 0.005,
             show_row_names = F)
 
-writefn(clusthyper, 'out')(groups[, "Condition", drop = F], 
-             clusts[, clust_sel_method], 
-             filename = "condition")
-writefn(clusthyper, 'out')(as.data.frame(pheno), clusts[, clust_sel_method],
-            filename = 'pheno')
-
-writefn(clustparam, "out")(params, clusts[, clust_sel_method],
-             filename = "params")
-writefn(clustparam, "out")(z, clusts[, clust_sel_method],
+writefn(clusthyper, 'path')(groups[, "Condition", drop = F],
+              clusts[, clust_sel_method],
+              filename = "clusters/condition")
+writefn(clusthyper, 'path')(as.data.frame(pheno), clusts[, clust_sel_method],
+             filename = 'clusters/pheno')
+writefn(clustparam, "path")(params, clusts[, clust_sel_method],
+             filename = "clusters/params", omit = omit)
+writefn(clustparam, "path")(z, clusts[, clust_sel_method],
              filename = "z")
-writefn(clustparam, "out")(encoded, clusts[, clust_sel_method],
-             filename = "embeddings")
+writefn(clustparam, "path")(encoded, clusts[, clust_sel_method],
+             filename = "clusters/embeddings")
 
-writefn(clustparam, "out")(params, groups$Condition,
-             filename = "condition/params")
-writefn(clustparam, "out")(z, groups$Condition,
-             filename = "condition/z")
-writefn(clustparam, "out")(encoded, groups$Condition,
-             filename = "condition/embeddings")
+writefn(clusthyper, 'path')(as.data.frame(pheno), groups$Condition,
+             filename = 'condition/pheno')
+writefn(clustparam, "path")(params, groups$Condition,
+              filename = "condition/params", omit = omit)
+writefn(clustparam, "path")(z, groups$Condition,
+              filename = "condition/z")
+writefn(clustparam, "path")(encoded, groups$Condition,
+              filename = "condition/embeddings")
 
-writefn(clustparam, "out")(params, groups$Condition,
-                         logfc.cutoff = 0.25, fdr.cutoff = 0.05, 
+writefn(clustparam, "path")(params, groups$Condition,
+                         logfc.cutoff = 0.25, fdr.cutoff = 0.05,
                          subset = c("Arhgef8", "Depdc", "Tyrosinase"),
                          filename = "Arhgef8_Depdc_Tyr/params")
-writefn(clustparam, "out")(z, groups$Condition,
-                         logfc.cutoff = 0.25, fdr.cutoff = 0.05, 
+writefn(clustparam, "path")(z, groups$Condition,
+                         logfc.cutoff = 0.25, fdr.cutoff = 0.05,
                          subset = c("Arhgef8", "Depdc", "Tyrosinase"),
                          filename = "Arhgef8_Depdc_Tyr/z")
-writefn(clustparam, "out")(encoded, groups$Condition,
-                         logfc.cutoff = 0, fdr.cutoff = 1, 
+writefn(clustparam, "path")(encoded, groups$Condition,
+                         logfc.cutoff = 0, fdr.cutoff = 1,
                          subset = c("Arhgef8", "Depdc", "Tyrosinase"),
                          filename = "Arhgef8_Depdc_Tyr/embeddings")
-
 g <- gene.network(knn, resolution, groups$Condition, 
           mode = 'directed')
 

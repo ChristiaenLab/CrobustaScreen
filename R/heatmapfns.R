@@ -32,17 +32,22 @@ hm.cell <- function(
 #' @param path Output path.
 #' @param ... Additional arguments to Heatmap.
 #' @export
-quantHeatmap <- function(x, filename = NULL, path = '.', ..., append.date = F){
+quantHeatmap <- function(x, filename = NULL, path = '.', 
+                         name = "value",
+                         show_row_names = TRUE, show_column_names = TRUE,
+                         show_row_dend = TRUE, show_column_dend = TRUE,
+                         ..., 
+                         append.date = F){
 	require(ComplexHeatmap)
 	col <- col.z(x)
-	hm <- hm.cell(x, col = col, ...)
+	hm <- hm.cell(x, col = col, 
+                  name = name,
+                  show_row_names = show_row_names, show_column_names = show_column_names,
+                  show_row_dend = show_row_dend, show_column_dend = show_column_dend,
+                  ...)
 	
 	if(!is.null(filename)){
-		if(!grepl("\\.pdf$", filename)) filename <- paste0(filename, ".pdf")
-		out <- mkdate(filename, path = path, append.date = append.date)
-		pdf(out)
-		draw(hm)
-		dev.off()
+		dir.hm(hm, filename, path = path, append.date = append.date)
 	}
 	return(hm)
 }
@@ -56,10 +61,20 @@ quantHeatmap <- function(x, filename = NULL, path = '.', ..., append.date = F){
 #' @importFrom circlize colorRamp2
 #' @export
 col.z <- function(x,quant=.01, mid=0, cols=c('blue', 'white', 'red')) {
-	breaks <- c(quantile(x, quant, na.rm=T),
-		    mid,
-		    quantile(x, 1-quant, na.rm=T))
-	colorRamp2(breaks, cols)
+	lower <- quantile(x, quant, na.rm = T)
+	upper <- quantile(x, 1 - quant, na.rm = T)
+	if(upper > 0) {
+		if(lower < 0) {
+			breaks <- c(lower, mid, upper)
+			colorRamp2(breaks, cols)
+		} else {
+			breaks <- c(lower, upper)
+			colorRamp2(breaks, cols[-1])
+		}
+	} else {
+		breaks <- c(lower, upper)
+		colorRamp2(breaks, cols[-2])
+	}
 }
 
 

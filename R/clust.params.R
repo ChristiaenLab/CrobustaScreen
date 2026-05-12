@@ -31,7 +31,9 @@ test.clust.params <- function(dat, clustdat) {
 box.heatmap <- function(m, clustdat, boxdat, outldat,
           out, path,
           boxtitle = "log2(FC)",
-          outltitle = "-log10(FDR)", ylim = c(-1, 1), ...) {
+          outltitle = "-log10(FDR)", ylim = c(-1, 1), 
+		  omit = NULL, ...) {
+		if(!is.null(omit)) m <- m[, !omit]
         # clip clustdat to ylim
         clustdat <- lapply(clustdat, function(x) {
                 x[x < ylim[1]] <- ylim[1]
@@ -101,12 +103,13 @@ box.heatmap <- function(m, clustdat, boxdat, outldat,
         dev.off()
 }
 
-clustparam <- function(dat, clusts, out,
+clustparam <- function(m, clusts, path,
                logfc.cutoff = 0.5,
                fdr.cutoff = 0.05,
-               subset = NULL) {
-    clustdat <- split(dat, clusts)
-    test <- test.clust.params(dat, clustdat)
+               subset = NULL,
+               omit = NULL, ...) {
+    clustdat <- split(m, clusts)
+    test <- test.clust.params(m, clustdat)
 
     if(!is.null(subset)) {
         test <- test[subset]
@@ -124,13 +127,10 @@ clustparam <- function(dat, clusts, out,
     fdr.u <- apply(p.u, 2,
                function(x) p.adjust(unlist(x)))
 
-    #fdr.t <- p.adjust(p.t)
-    #fdr.u <- p.adjust(p.u)
-
-    dir.csv(mudat, "mean", out, append.date = F)
-    dir.csv(fcdat, "FC", out, append.date = F)
-    dir.csv(fdr.t, "FDR_t", out, append.date = F)
-    dir.csv(fdr.u, "FDR_u", out, append.date = F)
+    dir.csv(mudat, "mean", path, append.date = F)
+    dir.csv(fcdat, "FC", path, append.date = F)
+    dir.csv(fdr.t, "FDR_t", path, append.date = F)
+    dir.csv(fdr.u, "FDR_u", path, append.date = F)
 
     log.fc <- log2(fcdat)
     log.fc[!is.finite(log.fc)] <- 0
@@ -150,48 +150,44 @@ clustparam <- function(dat, clusts, out,
                function(x) t(x)[row.names(log.fc),])
     clustdat.t <- lapply(clustdat,`[`, rsel.t,)
     clustdat.u <- lapply(clustdat,`[`, rsel.u,)
-    # col.z creates a color scale centered on 0 ranging
-    # from the 0.01 to 0.99 quantiles of the input data
+
     if(length(unique(clusts)) > 1) {
         box.heatmap(m[rsel.t,],
                 clustdat.t,
                 log.fc[rsel.t,],
                 log.t[rsel.t,],
-                "t.boxplot", out)
+                "t.boxplot", path,
+				omit = omit, ...)
 
         box.heatmap(m[rsel.u,],
                 clustdat.u,
                 log.fc[rsel.u,],
                 log.u[rsel.u,],
-                "u.boxplot", out)
+                "u.boxplot", path,
+				omit = omit, ...)
 
-        writepdf({
-            dotplot(log.fc[rsel.t,],
+        dotplot(log.fc[rsel.t,],
                 log.t[rsel.t,],
                 mat.name = "log2(FC)",
-                row_title_rot = 0)
-        }, "t.fc.pdf", out, height = 24)
+                row_title_rot = 0,
+                filename = "t.fc.pdf", path = path)
 
-        writepdf({
-            dotplot(log.fc[rsel.u,],
+        dotplot(log.fc[rsel.u,],
                 log.u[rsel.u,],
                 mat.name = "log2(FC)",
-                row_title_rot = 0)
-        }, "u.fc.pdf", out, height = 24)
+                row_title_rot = 0,
+                filename = "u.fc.pdf", path = path)
    
-        writepdf({
-            dotplot(mudat[rsel.t,],
+        dotplot(mudat[rsel.t,],
                 log.t[rsel.t,],
                 mat.name = "mean",
-                row_title_rot = 0)
-        }, "t.pdf", out, height = 24)
+                row_title_rot = 0,
+                filename = "t.pdf", path = path)
 
-        writepdf({
-            dotplot(mudat[rsel.u,],
+        dotplot(mudat[rsel.u,],
                 log.u[rsel.u,],
                 mat.name = "mean",
-                row_title_rot = 0)
-        }, "u.pdf", out, height = 24)
+                row_title_rot = 0,
+                filename = "u.pdf", path = path)
     }
 }
-
