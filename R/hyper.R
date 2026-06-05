@@ -1,6 +1,6 @@
 source("R/dotplot.R")
 
-clusthyper <- function(dat, clusts, out, ...){
+clusthyper <- function(dat, clusts, path, ...){
 	# require(moreComplexHeatmap)
 
 	# run hypergeometric tests for enrichment of conditions and phenotypes
@@ -31,34 +31,32 @@ clusthyper <- function(dat, clusts, out, ...){
 		parameter=rowsplit,
 		condition=row.names(odds),
 		as.data.frame(odds)
-	),'log2OR', out, append.date=F)
+	),'log2OR', path, append.date=F)
 	dir.csv(cbind(
 		parameter=rowsplit,
 		condition=row.names(odds),
 		as.data.frame(fdr)
-	),'FDR', out, append.date=F)
+	),'FDR', path, append.date=F)
 	dir.csv(cbind(
 		parameter=rowsplit,
 		condition=row.names(odds),
 		as.data.frame(qval)
-	),'size', out, append.date=F)
+	),'size', path, append.date=F)
 
-        writepdf({
-    #pdf(paste0(out,'/hyper.pdf'))
-            dotplot.outl(odds,
+        dotplot.outl(odds,
                 	 logfdr,
                 	 qval,
                 	 row_split = rowsplit,
-                	 row_title_rot = 0, ...)
-    #dev.off()
-        },'hyper.outl.pdf',out)
+                	 row_title_rot = 0,
+                     filename = 'hyper.outl.pdf', path = path, append.date = F, # Pass arguments
+                     ...)
 
-        writepdf({
-            dotplot(odds,
-                    logfdr,
-                    row_split = rowsplit,
-                    row_title_rot = 0, ...)
-        },'hyper.pdf',out)
+        dotplot(odds,
+                logfdr,
+                row_split = rowsplit,
+                row_title_rot = 0,
+                filename = 'hyper.pdf', path = path, append.date = F, # Pass arguments
+                ...)
 
 	#if(length(unique(clusts)) > 1){
 	#	dotPscale(

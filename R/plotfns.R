@@ -23,7 +23,7 @@ dot.col <- function(y, dat, cols = '', id = 'group', ...){
 dir.f <- function(f, file.arg = 'filename'){
 	#require(dirfns)
 
-	function(..., filename = '', ext = '', path = '.', append.date = T){
+	function(..., filename = '', ext = '', path = '.', append.date = F){
 		out <- mkdate(filename, ext = ext, path = path, append.date = append.date)
 		arglist <- append(list(...), setNames(out, file.arg))
 		do.call(f, arglist)

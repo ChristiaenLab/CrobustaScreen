@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' mkdate("example","txt",path="path/to")
-mkdate <- function(filename,ext='',path='.',append.date=T){
+mkdate <- function(filename,ext='',path='.',append.date = F){
   if(append.date){
     if(grepl('^[~/\\.]',path)) path <- paste(path, Sys.Date(), sep = '/')
     else path <- paste(Sys.Date(), path, sep = '/')
@@ -17,7 +17,10 @@ mkdate <- function(filename,ext='',path='.',append.date=T){
   filename <- paste0(path,'/' ,filename)
   path <- sub('(^.*\\/).*',"\\1",filename)
   if(!dir.exists(path)) dir.create(path,recursive = T)
-  if(ext!='') filename <- paste0(filename,'.',ext)
+  # Avoid adding extension if it already exists
+  if(ext!='' && !grepl(paste0('\\.', ext, '$'), filename)) {
+    filename <- paste0(filename,'.',ext)
+  }
   return(filename)
 }
 
@@ -35,7 +38,7 @@ mkdate <- function(filename,ext='',path='.',append.date=T){
 #' @export
 #' @examples
 #' dir.out(iris, write.table,"example","txt",path="path/to")
-dir.out <- function(x,fn,filename,ext='txt',path='.',...,append.date=T){
+dir.out <- function(x,fn,filename,ext='txt',path='.',...,append.date = F){
   filename <- mkdate(filename,ext,path,append.date)
   fn(x,filename,...)
 }
@@ -55,7 +58,7 @@ dir.out <- function(x,fn,filename,ext='txt',path='.',...,append.date=T){
 #' dir.img(pdf,"example","pdf",path="path/to")
 #' plot(1:5,1:5)
 #' dev.off()
-dir.img <- function(filename, fn,ext='', path = '.', ...,append.date=T){
+dir.img <- function(filename, fn,ext='', path = '.', ...,append.date = F){
   filename <- mkdate(filename,ext,path,append.date)
   fn(filename, ...)
 }
@@ -73,7 +76,7 @@ dir.img <- function(filename, fn,ext='', path = '.', ...,append.date=T){
 #' @export
 #' @examples
 #' dir.tab(iris, "example", path="path/to")
-dir.tab <- function(x,filename, path = '.',ext='txt',quote=F,...,append.date=T){
+dir.tab <- function(x,filename, path = '.',ext='txt',quote=F,...,append.date = F){
   dir.out(x,write.table,filename,ext,path,sep='\t', quote=quote,...,append.date=append.date)
 }
 
@@ -89,7 +92,7 @@ dir.tab <- function(x,filename, path = '.',ext='txt',quote=F,...,append.date=T){
 #' @export
 #' @examples
 #' dir.csv(iris, "example", path="path/to")
-dir.csv <- function(x,filename, path = '.', summary=F,quote=T,...,append.date=T){
+dir.csv <- function(x,filename, path = '.', summary=F,quote=T,...,append.date = F){
   dir.out(x,write.csv,filename,'csv',path,quote=quote,...,append.date=append.date)
 }
 
@@ -105,7 +108,7 @@ dir.csv <- function(x,filename, path = '.', summary=F,quote=T,...,append.date=T)
 #' @seealso \code{\link{dir.out}}, \code{\link{rtracklayer::export}}
 #' @export
 #' @examples
-dir.export <- function(x,filename,path='.',format='bed',...,append.date=T){ 
+dir.export <- function(x,filename,path='.',format='bed',...,append.date = F){ 
   require(rtracklayer)
   dir.out(x,export,filename,ext=format,path,format,...,append.date=append.date)
 }
@@ -126,7 +129,7 @@ dir.export <- function(x,filename,path='.',format='bed',...,append.date=T){
 #' dir.png("example",path="path/to")
 #' plot(1:5,1:5)
 #' dev.off()
-dir.png <- function(filename, path = '.', ...,append.date=T) dir.img(
+dir.png <- function(filename, path = '.', ...,append.date = F) dir.img(
   filename,png,'png',path,res=300,width=2000,height=2000,...,append.date=append.date
 )
 
@@ -143,7 +146,7 @@ dir.png <- function(filename, path = '.', ...,append.date=T) dir.img(
 #' dir.pdf("example",path="path/to")
 #' plot(1:5,1:5)
 #' dev.off()
-dir.pdf <- function(filename, path = '.', ...,append.date=T) dir.img(
+dir.pdf <- function(filename, path = '.', ...,append.date = F) dir.img(
   filename,pdf,'pdf',path,...,append.date=append.date
 )
 
@@ -160,7 +163,7 @@ dir.pdf <- function(filename, path = '.', ...,append.date=T) dir.img(
 #' dir.svg("example",path="path/to")
 #' plot(1:5,1:5)
 #' dev.off()
-dir.svg <- function(filename, path = '.', ...,append.date=T) dir.img(
+dir.svg <- function(filename, path = '.', ...,append.date = F) dir.img(
   filename,svg,'svg',path,...,append.date=append.date
 )
 
@@ -177,7 +180,7 @@ dir.svg <- function(filename, path = '.', ...,append.date=T) dir.img(
 #' dir.eps("example",path="path/to")
 #' plot(1:5,1:5)
 #' dev.off()
-dir.eps <- function(filename,path='.',...,append.date=T) {
+dir.eps <- function(filename,path='.',...,append.date = F) {
   setEPS()
   dir.img(filename,postscript,'eps',path,...,append.date=append.date)
 }
@@ -199,7 +202,7 @@ dir.eps <- function(filename,path='.',...,append.date=T) {
 #' dir.hist(1:100,"example",path="path/to",quant=.9)
 #' plot(1:5,1:5)
 #' dev.off()
-dir.hist <- function(x, file, breaks='FD', quant=1, path='.', append.date=T, 
+dir.hist <- function(x, file, breaks='FD', quant=1, path='.', append.date = F, 
 		     col='gray28', border=F, main='', xlab='length (bp)', ...){
 	xmax <- quantile(x,quant)
 	x <- x[x<xmax]
@@ -224,10 +227,41 @@ dir.hist <- function(x, file, breaks='FD', quant=1, path='.', append.date=T,
 #' dir.gg(x,"example",path="path/to")
 #' plot(1:5,1:5)
 #' dev.off()
-dir.gg <- function(x,filename,path='.',ext='pdf',...,append.date=T) {
+dir.gg <- function(x,filename,path='.',ext='pdf',...,append.date = F) {
   require(ggplot2)
   filename <- mkdate(filename,ext,path,append.date)
   ggsave(filename,x,ext,...)
+}
+
+#' Concatenates a path, filename, and file extension into an output path, then opens a pdf connection scaled to the size of a heatmap.
+#' Any folders in the path that do not exist are created.
+#'
+#' @param filename The output file name.
+#' @param hm A Heatmap or HeatmapList object.
+#' @param path The path to the output file.
+#' @param ... Additional arguments to \code{draw}. 
+#' @param append.date Whether to write the output to a directory with today's date.
+#' @export
+#' @examples
+dir.hm <- function(hm, filename, path = '.', ..., append.date = F) {
+  require(ComplexHeatmap)
+  require(grid)
+  
+  # 1. Draw to a null PDF device to calculate dimensions
+  pdf(NULL)
+  hm_drawn <- draw(hm, ...)
+  dev.off() # Close the null device
+  
+  # 2. Get width and height in inches from the drawn object
+  w <- ComplexHeatmap:::width(hm_drawn)
+  h <- ComplexHeatmap:::height(hm_drawn)
+  
+  # 3. Create the real PDF with the correct dimensions
+  dir.pdf(filename, path = path, width = grid::convertWidth(w, "in", valueOnly = TRUE), height = grid::convertHeight(h, "in", valueOnly = TRUE), append.date = append.date)
+  
+  # 4. Draw the heatmap for the final time to the PDF
+  draw(hm, ...)
+  dev.off()
 }
 
 #' Wrapper for applying a write function to each element of list \code{x} and using \code{names(x)} as the filenames.

@@ -1,11 +1,11 @@
 source("R/test.knn.R")
 
 test.leiden <- function(res, k, g, dat, 
-			reps, groups, int, ...){
+			reps, groups, int, dists = NULL, ...){
 	require(cluster)
 	require(leiden)
 
-	dists <- as.matrix(dist(dat))
+	if(is.null(dists)) dists <- as.matrix(dist(dat))
 
 	clust <- leiden(g, resolution_parameter = res)
 	if(all(clust == 1)){
