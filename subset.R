@@ -30,19 +30,19 @@ parser <- add_option(parser, c("-s", "--clust_sel_method"),
 		     #default = "combined_score",
 		     default = "ES",
 		     help = "resolution selection parameter method for clusters. One of \"combined_score\", \"ES\", \"log2error\", \"mean_silhouette\", \"nclusts\".")
-parser <- add_option(parser, c("-n", "--n_clusts"),
-	action="store",
-	default="3", 
-	help="number of clusters to write to `data/clusters1-{n_clusts}/E.csv`")
+parser <- add_option(parser, c('-f', "--from"),
+	action = "store", default = "1",
+	help = "first cluster to write to `data/clusters_{from}-{to}/E.csv`")
+parser <- add_option(parser, c('-t', "--to"),
+	action = "store", default = "Inf",
+	help = "last cluster to write to `data/clusters_{from}-{to}/E.csv`")
 parse.env(parser)
 
 # read data into global env
 list2env(read.clusts(clust_dir), globalenv())
 
-n <- as.numeric(n_clusts)
-dir <- sprintf("data/clusters_1-%d", n)
-clust.opts <- paste(" -o", dir, "-e", paste0(dir, "/E.csv"))
-plot.opts <- paste(clust.opts, "-c", dir)
+from <- as.numeric(from)
+to <- as.numeric(to)
 
 sel <- sapply(leidens[, c(2:6)], which.max)
 sel["recall"] <- which(leidens[, 1] == 
@@ -50,8 +50,13 @@ sel["recall"] <- which(leidens[, 1] ==
 			   max(leidens[, 4]), 1]))
 clusts <- clusts[, sel]
 colnames(clusts) <- names(leidens[2:6])
+cl <- clusts[,clust_sel_method]
+sel <- (cl >= from) & (cl <= to)
+r <- range(cl[sel])
 
-sel <- clusts[,clust_sel_method] >= n
+dir <- sprintf("data/clusters_%d-%d", r[1], r[2])
+clust.opts <- paste(" -o", dir, "-e", paste0(dir, "/E.csv"))
+plot.opts <- paste(clust.opts, "-c", dir)
 
 dir.csv(encoded[sel,], "E", dir, row.names=F, append.date=F)
 dir.csv(groups[sel,], "groups", dir, row.names=F, append.date=F)
